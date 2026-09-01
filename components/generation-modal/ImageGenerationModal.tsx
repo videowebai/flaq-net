@@ -13,6 +13,7 @@ import ImageHistory from '@/components/image-ui-form/image-history';
 import { ScrollRef } from '@/components/image-ui-form/shared/scroll';
 
 import {
+  GPT_PROVIDER,
   NANO_BANANA_PROVIDER,
   SEEDREAM_PROVIDER,
   type ImageModelVersionConfig,
@@ -21,6 +22,7 @@ import useImageFormStore from '@/store/form/useImageFormStore';
 import useUserImageHistory from '@/network/image/history';
 
 const ALL_AVAILABLE_VERSIONS: ImageModelVersionConfig[] = [
+  ...GPT_PROVIDER.versions,
   ...SEEDREAM_PROVIDER.versions,
   ...NANO_BANANA_PROVIDER.versions,
 ];
@@ -75,8 +77,8 @@ export default function ImageGenerationModal({
   const { data: imageHistory, total: imageHistoryTotal, isLoading } = useUserImageHistory(pageNum, 30);
   const updateImageObj = useImageFormStore((state) => state.updateImageObj);
 
-  // Default to Nano Banana Pro (Gemini 3 Pro Image Preview)
-  const defaultVersion = NANO_BANANA_PROVIDER.versions.find((v) => v.modelVersion === 'nano-banana-pro') || NANO_BANANA_PROVIDER.versions[0];
+  // Default to GPT Image 2 for text-to-image generation.
+  const defaultVersion = GPT_PROVIDER.versions.find((v) => v.modelVersion === 'gpt-image-2') || GPT_PROVIDER.versions[0];
 
   // Reset tab when modal closes, but keep imageObj to allow polling to complete and save results
   useEffect(() => {
@@ -146,7 +148,7 @@ export default function ImageGenerationModal({
               resolution: ['2k'],
             }}
             defaultValues={{
-              modelVersion: defaultVersion?.modelVersion || 'nano-banana-pro',
+              modelVersion: defaultVersion?.modelVersion || 'gpt-image-2',
               aspectRatio: defaultAspectRatio || defaultVersion?.options?.ratio?.[0]?.value || '9:16',
               resolution: '2k',
             }}

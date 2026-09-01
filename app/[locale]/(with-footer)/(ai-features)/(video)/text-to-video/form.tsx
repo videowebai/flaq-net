@@ -14,9 +14,9 @@ export default function Form() {
       formTitle={t('title')}
       showAllVideoHistory={true}
       defaultValues={{
-        modelVersion: 'veo3.1-text-to-video',
+        modelVersion: 'seedance-v2.5-text-to-video',
         ratio: '16:9',
-        enableEndFrame: true,
+        enableEndFrame: false,
       }}
     />
   );

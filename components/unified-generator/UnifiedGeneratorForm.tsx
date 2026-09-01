@@ -241,10 +241,10 @@ export default function UnifiedGeneratorForm({
       setOpenPopover(null);
       return;
     }
-    const defaultModel = ALL_VIDEO_MODELS.find((model) => model.model === 'seedance-v2.0-image-to-video');
+    const defaultModel = ALL_VIDEO_MODELS.find((model) => model.model === 'seedance-v2.5-image-to-video');
     const defaultVersion = defaultModel ? getVersionConfig(defaultModel.modelVersion) : undefined;
     store.setVideoType('image-to-video');
-    store.setVideoModel('image-to-video', 'seedance-v2.0-image-to-video');
+    store.setVideoModel('image-to-video', 'seedance-v2.5-image-to-video');
     store.setVideoPrompt('');
     store.setVideoStartInput(null);
     store.setVideoEndInput(null);

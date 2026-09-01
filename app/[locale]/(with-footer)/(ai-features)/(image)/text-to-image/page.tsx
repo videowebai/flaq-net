@@ -18,7 +18,7 @@ const DEFAULT_PRIORITY = {
 const DEFAULT_VALUES = {
   prompt: '',
   images: [],
-  modelVersion: 'nano-banana-pro',
+  modelVersion: 'gpt-image-2',
   aspectRatio: '16:9',
   resolution: '2k',
   quality: 'medium',

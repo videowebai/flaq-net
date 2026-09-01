@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { useFormContext } from 'react-hook-form';
 
-import { GEMINI_PROVIDER, SEEDREAM_PROVIDER } from '@/lib/constants/image';
+import { GEMINI_PROVIDER, GPT_PROVIDER, SEEDREAM_PROVIDER } from '@/lib/constants/image';
 import type { ImageModelVersionConfig } from '@/lib/constants/image';
 import { useModelConfig } from '@/components/image-ui-form/hooks';
 import ImageForm from '@/components/image-ui-form/image-form';
@@ -19,6 +19,7 @@ const TRY_ON_PROMPT =
   "Dress the person from the first image in the clothing from the second image. Exactly maintain the clothing's original proportions, length, and design. Preserve the character's identical pose and body shape. The outfit must flatter the figure — subtly slimming and contouring the body for a more elegant silhouette — while staying slim, lightweight, and non-bulky. No excessive volume, no puffiness, realistic fabric behavior and natural folds, photorealistic integration.";
 
 const ALLOWED_VERSIONS = new Set([
+  'gpt-image-2-edit',
   'nano-banana-pro-edit',
   'nano-banana-2-edit',
   'seedream-v5.0-edit',
@@ -26,6 +27,7 @@ const ALLOWED_VERSIONS = new Set([
 ]);
 
 const TRYON_VERSION_LIST: ImageModelVersionConfig[] = [
+  ...GPT_PROVIDER.versions,
   ...GEMINI_PROVIDER.versions,
   ...SEEDREAM_PROVIDER.versions,
 ].filter((v) => ALLOWED_VERSIONS.has(v.modelVersion));
@@ -111,7 +113,7 @@ export default function Form({ hintsPresets }: FormProps) {
       defaultValues={{
         prompt: '',
         images: [],
-        modelVersion: 'nano-banana-pro-edit',
+        modelVersion: 'gpt-image-2-edit',
         aspectRatio: '9:16',
         resolution: '2k',
       }}

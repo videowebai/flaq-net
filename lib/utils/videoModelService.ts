@@ -103,7 +103,15 @@ export function getCurrentModel(
  * Get default model version
  */
 export function getDefaultModel(): string {
+  const preferredModel = 'seedance-v2.5-text-to-video';
   const providers = getFilteredProviders(true);
+  const preferredVersion = providers
+    .flatMap((provider) => provider.versions)
+    .find((version) => version.modelVersion === preferredModel);
+
+  if (preferredVersion) {
+    return preferredVersion.modelVersion;
+  }
 
   if (providers && providers.length > 0 && providers[0].versions.length > 0) {
     return providers[0].versions[0].modelVersion;
