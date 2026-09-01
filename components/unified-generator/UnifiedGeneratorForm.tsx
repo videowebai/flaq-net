@@ -292,9 +292,45 @@ export default function UnifiedGeneratorForm({
       negativePrompt: '',
     });
     if (videoType === 'reference-to-video') {
-      store.setReferenceImages(store.referenceImages.slice(0, nextModel.options.multiImage?.maxImages || 0));
-      store.setReferenceVideos(store.referenceVideos.slice(0, nextModel.options.multiVideo?.maxVideos || 0));
-      store.setReferenceAudios(store.referenceAudios.slice(0, nextModel.options.multiAudio?.maxAudios || 0));
+      const imageMax = nextModel.options.multiImage?.isSupported
+        ? nextModel.options.multiImage.maxImages
+        : 0;
+      const videoMax = nextModel.options.multiVideo?.isSupported
+        ? nextModel.options.multiVideo.maxVideos
+        : nextModel.options.videoUrl?.isSupported
+          ? 1
+          : 0;
+      const audioMax = nextModel.options.multiAudio?.isSupported
+        ? nextModel.options.multiAudio.maxAudios
+        : nextModel.options.audioUrl
+          ? 1
+          : 0;
+      const referenceFileMax = nextModel.options.referenceFile?.isSupported
+        ? nextModel.options.referenceFile.maxFiles
+        : 0;
+      const referenceLinkMax = nextModel.options.referenceLink?.isSupported
+        ? nextModel.options.referenceLink.maxLinks
+        : 0;
+      let referenceImages = store.referenceImages.slice(0, imageMax);
+      let referenceVideos = store.referenceVideos.slice(0, videoMax);
+      const referenceFiles = store.referenceFiles.slice(0, referenceFileMax);
+      const referenceLinks = referenceFiles.length > 0
+        ? []
+        : store.referenceLinks.slice(0, referenceLinkMax);
+
+      if (nextModel.options.maxReferenceSubjects !== undefined) {
+        referenceImages = referenceImages.slice(0, nextModel.options.maxReferenceSubjects);
+        referenceVideos = referenceVideos.slice(
+          0,
+          Math.max(nextModel.options.maxReferenceSubjects - referenceImages.length, 0),
+        );
+      }
+
+      store.setReferenceImages(referenceImages);
+      store.setReferenceVideos(referenceVideos);
+      store.setReferenceAudios(store.referenceAudios.slice(0, audioMax));
+      store.setReferenceFiles(referenceFiles);
+      store.setReferenceLinks(referenceLinks);
     } else {
       if (videoType !== 'image-to-video') {
         store.setVideoStartInput(null);

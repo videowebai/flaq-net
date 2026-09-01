@@ -21,7 +21,7 @@ export default function CreatorVideoPreview({
 
   useEffect(() => {
     setCoverIndex(0);
-  }, [item.id]);
+  }, [item.coverImage, item.id, item.imageUrl, item.videoThumbnailUrl]);
 
   const cover = covers[coverIndex];
   if (cover) {

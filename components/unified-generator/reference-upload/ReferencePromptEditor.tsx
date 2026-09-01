@@ -44,29 +44,43 @@ export type ReferenceMentionInsertRequest = {
   key: number;
 };
 
-const referenceAssetObjectUrls = new WeakMap<File, string>();
-
-function getReferenceAssetPreviewUrl(source: File | string) {
-  if (typeof source === 'string') {
-    return source;
-  }
-
-  const cachedUrl = referenceAssetObjectUrls.get(source);
-  if (cachedUrl) {
-    return cachedUrl;
-  }
-
-  const objectUrl = URL.createObjectURL(source);
-  referenceAssetObjectUrls.set(source, objectUrl);
-  return objectUrl;
-}
-
-function toReferenceMentionItem(asset: UnifiedGeneratorReferenceMentionAsset): ReferenceMentionItem {
+function toReferenceMentionItem(
+  asset: UnifiedGeneratorReferenceMentionAsset,
+  previewUrl: string,
+): ReferenceMentionItem {
   return {
     ...asset,
     label: `@${asset.id}`,
-    previewUrl: getReferenceAssetPreviewUrl(asset.source),
+    previewUrl,
   };
+}
+
+function useReferenceMentionItems(assets: UnifiedGeneratorReferenceMentionAsset[]) {
+  const [items, setItems] = useState<ReferenceMentionItem[]>([]);
+
+  useEffect(() => {
+    const objectUrls: string[] = [];
+    const nextItems = assets.map((asset) => {
+      if (typeof asset.source === 'string') {
+        return toReferenceMentionItem(asset, asset.source);
+      }
+
+      const objectUrl = URL.createObjectURL(asset.source);
+      objectUrls.push(objectUrl);
+      return toReferenceMentionItem(asset, objectUrl);
+    });
+
+    setItems(nextItems);
+
+    return () => {
+      // Let TipTap reconcile or unmount nodes that still contain the previous preview URLs.
+      window.setTimeout(() => {
+        objectUrls.forEach((objectUrl) => URL.revokeObjectURL(objectUrl));
+      }, 0);
+    };
+  }, [assets]);
+
+  return items;
 }
 
 function getEmptyMentionLabel(kind: UnifiedGeneratorReferenceMentionAsset['kind']) {
@@ -603,7 +617,7 @@ export function ReferenceMentionPickerPopover({
 }) {
   const t = useTranslations('components.hero-form.reference-upload');
   const [open, setOpen] = useState(false);
-  const items = useMemo(() => assets.map(toReferenceMentionItem), [assets]);
+  const items = useReferenceMentionItems(assets);
   const isDisabled = disabled || items.length === 0;
 
   return (
@@ -655,7 +669,7 @@ export default function ReferencePromptEditor({
 }) {
   const t = useTranslations('components.hero-form');
   const lastInsertMentionRequestKeyRef = useRef(insertMentionRequest?.key ?? 0);
-  const mentionItems = useMemo(() => assets.map(toReferenceMentionItem), [assets]);
+  const mentionItems = useReferenceMentionItems(assets);
   const extensions = useMemo(
     () => [
       StarterKit.configure({
