@@ -31,6 +31,13 @@ export const RATIO_21_9: RatioConfig = {
   iconHeight: '12px',
 };
 
+export const RATIO_2_1: RatioConfig = {
+  name: '2:1',
+  value: '2:1',
+  iconWidth: '20px',
+  iconHeight: '10px',
+};
+
 export const RATIO_4_3: RatioConfig = {
   name: '4:3',
   value: '4:3',

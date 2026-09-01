@@ -3,6 +3,7 @@
 import {
   GEMINI_IMAGE_MODELS,
   GPT_IMAGE_MODELS,
+  QWEN_IMAGE_MODELS,
   SEEDREAM_IMAGE_MODELS,
   type TemplateModelConfig,
 } from '@/lib/constants/template-models';
@@ -83,6 +84,7 @@ function toImageModel(model: TemplateModelConfig): ImageModel {
     ratio: toRatioOptions(model.params?.ratio),
     resolution: toResolutionOptions(model.params?.resolution),
     quality: toQualityOptions(model.params?.quality),
+    seed: !!model.params?.seed,
     imageInput: imageInput?.supported
       ? {
           required: imageInput.required,
@@ -126,6 +128,7 @@ function toVersionConfig(model: TemplateModelConfig): ImageModelVersionConfig {
       resolution: mappedModel.options.resolution,
       ratio: mappedModel.options.ratio,
       quality: mappedModel.options.quality,
+      seed: mappedModel.options.seed,
     },
     models: [mappedModel],
   };
@@ -134,6 +137,7 @@ function toVersionConfig(model: TemplateModelConfig): ImageModelVersionConfig {
 const GEMINI_VERSION_CONFIGS: ImageModelVersionConfig[] = GEMINI_IMAGE_MODELS.map(toVersionConfig);
 const SEEDREAM_VERSION_CONFIGS: ImageModelVersionConfig[] = SEEDREAM_IMAGE_MODELS.map(toVersionConfig);
 const GPT_VERSION_CONFIGS: ImageModelVersionConfig[] = GPT_IMAGE_MODELS.map(toVersionConfig);
+const QWEN_VERSION_CONFIGS: ImageModelVersionConfig[] = QWEN_IMAGE_MODELS.map(toVersionConfig);
 
 export const GEMINI_PROVIDER: ImageProviderConfig = {
   provider: 'gemini',
@@ -155,19 +159,28 @@ export const GPT_PROVIDER: ImageProviderConfig = {
   versions: GPT_VERSION_CONFIGS,
 };
 
+export const QWEN_PROVIDER: ImageProviderConfig = {
+  provider: 'qwen',
+  name: 'Qwen',
+  versions: QWEN_VERSION_CONFIGS,
+};
+
 export const ALL_IMAGE_PROVIDERS: ImageProviderConfig[] = [
   SEEDREAM_PROVIDER,
   GEMINI_PROVIDER,
   GPT_PROVIDER,
+  QWEN_PROVIDER,
 ];
 
 const GEMINI_ALL_MODELS: ImageModel[] = GEMINI_PROVIDER.versions.flatMap((version) => version.models);
 const SEEDREAM_ALL_MODELS: ImageModel[] = SEEDREAM_PROVIDER.versions.flatMap((version) => version.models);
 const GPT_ALL_MODELS: ImageModel[] = GPT_PROVIDER.versions.flatMap((version) => version.models);
+const QWEN_ALL_MODELS: ImageModel[] = QWEN_PROVIDER.versions.flatMap((version) => version.models);
 export const ALL_IMAGE_MODELS: ImageModel[] = [
   ...SEEDREAM_ALL_MODELS,
   ...GEMINI_ALL_MODELS,
   ...GPT_ALL_MODELS,
+  ...QWEN_ALL_MODELS,
 ];
 
 export function getImageModelVersionName(modelName: string): string | undefined {

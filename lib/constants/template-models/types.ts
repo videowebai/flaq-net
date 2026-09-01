@@ -1,8 +1,33 @@
+export type TemplateGenerationType =
+  | 'text-to-image'
+  | 'image-to-image'
+  | 'text-to-video'
+  | 'image-to-video'
+  | 'reference-to-video'
+  | 'video-edit';
+
+export type TemplateMediaInputConfig = {
+  supported: boolean;
+  required: boolean;
+  multiple?: boolean;
+  min?: number;
+  max?: number;
+  minDurationSeconds?: number;
+  maxDurationSeconds?: number;
+  maxTotalDurationSeconds?: number;
+  minSidePx?: number;
+  maxSidePx?: number;
+  acceptedFormats?: string[];
+  allowAlphaChannel?: boolean;
+};
+
 export type TemplateModelConfig = {
   id: string;
   label: string;
   mediaType: 'image' | 'video';
   provider?: string;
+  generationType?: TemplateGenerationType;
+  disabled?: boolean;
 
   request: {
     endpoint: 'image' | 'video';
@@ -11,17 +36,19 @@ export type TemplateModelConfig = {
 
   inputs: {
     prompt?: { supported: boolean; required: boolean };
-    image?: {
-      supported: boolean;
-      required: boolean;
-      multiple?: boolean;
-      min?: number;
-      max?: number;
-    };
+    image?: TemplateMediaInputConfig;
     startFrame?: { supported: boolean; required: boolean };
     endFrame?: { supported: boolean; required: boolean };
-    video?: { supported: boolean; required: boolean };
-    audio?: { supported: boolean; required: boolean };
+    video?: TemplateMediaInputConfig;
+    audio?: TemplateMediaInputConfig;
+    file?: {
+      supported: boolean;
+      required: boolean;
+      max?: number;
+      acceptedFormats?: string[];
+      maxPages?: number;
+    };
+    link?: { supported: boolean; required: boolean; max?: number };
   };
 
   params?: {
@@ -31,11 +58,15 @@ export type TemplateModelConfig = {
     durationRange?: { min: number; max: number };
     style?: string[];
     quality?: string[];
-    seed?: boolean;
+    seed?: boolean | { min: number; max: number };
     negativePrompt?: boolean;
     guidanceScale?: boolean;
     sound?: boolean;
+    defaultSound?: boolean;
     bgm?: boolean;
     keepOriginalSound?: boolean;
+    minReferenceSubjects?: number;
+    maxReferenceSubjects?: number;
+    independentReferenceLimits?: boolean;
   };
 };

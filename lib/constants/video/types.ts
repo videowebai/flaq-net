@@ -10,6 +10,10 @@ export interface RatioConfig {
 export interface FrameConfig {
   required: boolean;
   isSupported: boolean;
+  minSidePx?: number;
+  maxSidePx?: number;
+  acceptedFormats?: string[];
+  allowAlphaChannel?: boolean;
 }
 
 export interface MultiImageConfig {
@@ -17,6 +21,49 @@ export interface MultiImageConfig {
   isSupported?: boolean;
   minImages?: number;
   maxImages: number;
+  minSidePx?: number;
+  maxSidePx?: number;
+  acceptedFormats?: string[];
+  allowAlphaChannel?: boolean;
+}
+
+export interface MultiVideoConfig {
+  required: boolean;
+  isSupported?: boolean;
+  minVideos?: number;
+  maxVideos: number;
+  minDurationSeconds?: number;
+  maxDurationSeconds?: number;
+  maxTotalDurationSeconds?: number;
+  minSidePx?: number;
+  maxSidePx?: number;
+  acceptedFormats?: string[];
+}
+
+export interface MultiAudioConfig {
+  required: boolean;
+  isSupported?: boolean;
+  minAudios?: number;
+  maxAudios: number;
+  minDurationSeconds?: number;
+  maxDurationSeconds?: number;
+  maxTotalDurationSeconds?: number;
+  acceptedFormats?: string[];
+}
+
+export interface SeedConfig {
+  min: number;
+  max: number;
+}
+
+export interface ReferenceFileConfig extends FrameConfig {
+  maxFiles: number;
+  acceptedFormats: string[];
+  maxPages?: number;
+}
+
+export interface ReferenceLinkConfig extends FrameConfig {
+  maxLinks: number;
 }
 
 export interface ModelOptions {
@@ -27,9 +74,17 @@ export interface ModelOptions {
   startFrame?: FrameConfig;
   endFrame?: FrameConfig;
   multiImage?: MultiImageConfig;
+  multiVideo?: MultiVideoConfig;
+  multiAudio?: MultiAudioConfig;
+  referenceFile?: ReferenceFileConfig;
+  referenceLink?: ReferenceLinkConfig;
+  minReferenceSubjects?: number;
+  maxReferenceSubjects?: number;
+  independentReferenceLimits?: boolean;
   audio?: boolean;
   audioUrl?: boolean;
   sound?: boolean;
+  defaultSound?: boolean;
   bgm?: boolean;
   style?: string[];
   videoUrl?: FrameConfig;
@@ -38,7 +93,7 @@ export interface ModelOptions {
   multiPrompt?: boolean;
   guidanceScale?: boolean;
   cameraFixed?: boolean;
-  seed?: boolean;
+  seed?: boolean | SeedConfig;
   negativePrompt?: boolean;
 }
 
@@ -50,15 +105,23 @@ export interface ModelVersionOptions {
   startFrame?: FrameConfig;
   endFrame?: FrameConfig;
   multiImage?: MultiImageConfig;
+  multiVideo?: MultiVideoConfig;
+  multiAudio?: MultiAudioConfig;
+  referenceFile?: ReferenceFileConfig;
+  referenceLink?: ReferenceLinkConfig;
+  minReferenceSubjects?: number;
+  maxReferenceSubjects?: number;
+  independentReferenceLimits?: boolean;
   audio?: boolean;
   audioUrl?: boolean;
   sound?: boolean;
+  defaultSound?: boolean;
   bgm?: boolean;
   style?: string[];
   videoUrl?: FrameConfig;
   keepOriginalSound?: boolean;
   guidanceScale?: boolean;
-  seed?: boolean;
+  seed?: boolean | SeedConfig;
   negativePrompt?: boolean;
 }
 

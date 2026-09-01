@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
 import {
+  FLUX_VIDEO_MODELS,
+  HAPPYHORSE_VIDEO_MODELS,
   KLING_VIDEO_MODELS,
+  MINIMAX_VIDEO_MODELS,
+  SEEDANCE_VIDEO_MODELS,
   VEO_VIDEO_MODELS,
   VIDU_VIDEO_MODELS,
   WAN_VIDEO_MODELS,
@@ -9,6 +13,7 @@ import {
 } from '@/lib/constants/template-models';
 import {
   RATIO_1_1,
+  RATIO_2_1,
   RATIO_16_9,
   RATIO_21_9,
   RATIO_3_4,
@@ -30,6 +35,7 @@ export * from './ratios';
 
 const VIDEO_RATIO_MAP: Record<string, RatioConfig> = {
   '1:1': RATIO_1_1,
+  '2:1': RATIO_2_1,
   '16:9': RATIO_16_9,
   '21:9': RATIO_21_9,
   '4:3': RATIO_4_3,
@@ -44,10 +50,87 @@ function toRatioOptions(values?: string[]): RatioConfig[] | null {
 }
 
 function toGenerationType(model: TemplateModelConfig): VideoGenerationType {
+  if (model.generationType && model.mediaType === 'video') {
+    return model.generationType as VideoGenerationType;
+  }
   if (model.inputs.startFrame?.supported || model.inputs.endFrame?.supported) {
     return 'image-to-video';
   }
   return 'text-to-video';
+}
+
+function toMultiImageOptions(model: TemplateModelConfig) {
+  const input = model.inputs.image;
+  if (!input?.supported || !input.multiple) return undefined;
+
+  return {
+    required: input.required,
+    isSupported: true,
+    minImages: input.min,
+    maxImages: input.max || 1,
+    minSidePx: input.minSidePx,
+    maxSidePx: input.maxSidePx,
+    acceptedFormats: input.acceptedFormats,
+    allowAlphaChannel: input.allowAlphaChannel,
+  };
+}
+
+function toMultiVideoOptions(model: TemplateModelConfig) {
+  const input = model.inputs.video;
+  if (!input?.supported || !input.multiple) return undefined;
+
+  return {
+    required: input.required,
+    isSupported: true,
+    minVideos: input.min,
+    maxVideos: input.max || 1,
+    minDurationSeconds: input.minDurationSeconds,
+    maxDurationSeconds: input.maxDurationSeconds,
+    maxTotalDurationSeconds: input.maxTotalDurationSeconds,
+    minSidePx: input.minSidePx,
+    maxSidePx: input.maxSidePx,
+    acceptedFormats: input.acceptedFormats,
+  };
+}
+
+function toMultiAudioOptions(model: TemplateModelConfig) {
+  const input = model.inputs.audio;
+  if (!input?.supported || !input.multiple) return undefined;
+
+  return {
+    required: input.required,
+    isSupported: true,
+    minAudios: input.min,
+    maxAudios: input.max || 1,
+    minDurationSeconds: input.minDurationSeconds,
+    maxDurationSeconds: input.maxDurationSeconds,
+    maxTotalDurationSeconds: input.maxTotalDurationSeconds,
+    acceptedFormats: input.acceptedFormats,
+  };
+}
+
+function toReferenceFileOptions(model: TemplateModelConfig) {
+  const input = model.inputs.file;
+  if (!input?.supported) return undefined;
+
+  return {
+    required: input.required,
+    isSupported: true,
+    maxFiles: input.max || 1,
+    acceptedFormats: input.acceptedFormats || [],
+    maxPages: input.maxPages,
+  };
+}
+
+function toReferenceLinkOptions(model: TemplateModelConfig) {
+  const input = model.inputs.link;
+  if (!input?.supported) return undefined;
+
+  return {
+    required: input.required,
+    isSupported: true,
+    maxLinks: input.max || 1,
+  };
 }
 
 function toModelOptions(
@@ -70,9 +153,18 @@ function toModelOptions(
     endFrame: model.inputs.endFrame
       ? { isSupported: model.inputs.endFrame.supported, required: model.inputs.endFrame.required }
       : { isSupported: false, required: false },
-    audio: !!model.inputs.audio?.supported || !!familyOptions.audio,
-    audioUrl: !!model.inputs.audio?.supported,
+    multiImage: toMultiImageOptions(model),
+    multiVideo: toMultiVideoOptions(model),
+    multiAudio: toMultiAudioOptions(model),
+    referenceFile: toReferenceFileOptions(model),
+    referenceLink: toReferenceLinkOptions(model),
+    minReferenceSubjects: model.params?.minReferenceSubjects,
+    maxReferenceSubjects: model.params?.maxReferenceSubjects,
+    independentReferenceLimits: model.params?.independentReferenceLimits,
+    audio: !!familyOptions.audio,
+    audioUrl: !!model.inputs.audio?.supported && !model.inputs.audio.multiple,
     sound: !!model.params?.sound,
+    defaultSound: !!model.params?.defaultSound,
     bgm: !!model.params?.bgm,
     style: model.params?.style,
     videoUrl: model.inputs.video
@@ -80,7 +172,7 @@ function toModelOptions(
       : undefined,
     keepOriginalSound: !!model.params?.keepOriginalSound,
     guidanceScale: !!model.params?.guidanceScale,
-    seed: !!model.params?.seed,
+    seed: model.params?.seed,
     negativePrompt: !!model.params?.negativePrompt,
   };
 }
@@ -101,6 +193,7 @@ function toVideoModel(
     isPaid: false,
     generationType: toGenerationType(model),
     options: toModelOptions(model, familyOptions),
+    disabled: model.disabled,
   };
 }
 
@@ -121,9 +214,18 @@ function buildModelVersion(model: TemplateModelConfig, provider: string): ModelV
     endFrame: model.inputs.endFrame
       ? { isSupported: model.inputs.endFrame.supported, required: model.inputs.endFrame.required }
       : { isSupported: false, required: false },
-    audio: !!model.inputs.audio?.supported,
-    audioUrl: !!model.inputs.audio?.supported,
+    multiImage: toMultiImageOptions(model),
+    multiVideo: toMultiVideoOptions(model),
+    multiAudio: toMultiAudioOptions(model),
+    referenceFile: toReferenceFileOptions(model),
+    referenceLink: toReferenceLinkOptions(model),
+    minReferenceSubjects: model.params?.minReferenceSubjects,
+    maxReferenceSubjects: model.params?.maxReferenceSubjects,
+    independentReferenceLimits: model.params?.independentReferenceLimits,
+    audio: false,
+    audioUrl: !!model.inputs.audio?.supported && !model.inputs.audio.multiple,
     sound: !!model.params?.sound,
+    defaultSound: !!model.params?.defaultSound,
     bgm: !!model.params?.bgm,
     style: model.params?.style,
     videoUrl: model.inputs.video
@@ -131,7 +233,7 @@ function buildModelVersion(model: TemplateModelConfig, provider: string): ModelV
       : undefined,
     keepOriginalSound: !!model.params?.keepOriginalSound,
     guidanceScale: !!model.params?.guidanceScale,
-    seed: !!model.params?.seed,
+    seed: model.params?.seed,
     negativePrompt: !!model.params?.negativePrompt,
   };
 
@@ -154,6 +256,30 @@ const KLING_PROVIDER: ProviderConfig = {
   versions: KLING_VIDEO_MODELS.map((model) => buildModelVersion(model, 'kling')),
 };
 
+const SEEDANCE_PROVIDER: ProviderConfig = {
+  provider: 'seedance',
+  name: 'Seedance',
+  versions: SEEDANCE_VIDEO_MODELS.map((model) => buildModelVersion(model, 'seedance')),
+};
+
+const FLUX_PROVIDER: ProviderConfig = {
+  provider: 'flux',
+  name: 'FLUX',
+  versions: FLUX_VIDEO_MODELS.map((model) => buildModelVersion(model, 'flux')),
+};
+
+const MINIMAX_PROVIDER: ProviderConfig = {
+  provider: 'minimax',
+  name: 'MiniMax',
+  versions: MINIMAX_VIDEO_MODELS.map((model) => buildModelVersion(model, 'minimax')),
+};
+
+const HAPPYHORSE_PROVIDER: ProviderConfig = {
+  provider: 'happyhorse',
+  name: 'Happy Horse',
+  versions: HAPPYHORSE_VIDEO_MODELS.map((model) => buildModelVersion(model, 'happyhorse')),
+};
+
 const VIDU_PROVIDER: ProviderConfig = {
   provider: 'vidu',
   name: 'Vidu',
@@ -173,12 +299,20 @@ const WAN_PROVIDER: ProviderConfig = {
 };
 
 const KLING_ALL_MODELS: VideoModel[] = KLING_PROVIDER.versions.flatMap((version) => version.models);
+const SEEDANCE_ALL_MODELS: VideoModel[] = SEEDANCE_PROVIDER.versions.flatMap((version) => version.models);
+const FLUX_ALL_MODELS: VideoModel[] = FLUX_PROVIDER.versions.flatMap((version) => version.models);
+const MINIMAX_ALL_MODELS: VideoModel[] = MINIMAX_PROVIDER.versions.flatMap((version) => version.models);
+const HAPPYHORSE_ALL_MODELS: VideoModel[] = HAPPYHORSE_PROVIDER.versions.flatMap((version) => version.models);
 const VIDU_ALL_MODELS: VideoModel[] = VIDU_PROVIDER.versions.flatMap((version) => version.models);
 const VEO_ALL_MODELS: VideoModel[] = VEO_PROVIDER.versions.flatMap((version) => version.models);
 const WAN_ALL_MODELS: VideoModel[] = WAN_PROVIDER.versions.flatMap((version) => version.models);
 
 const ALL_PROVIDERS_INTERNAL: ProviderConfig[] = [
   KLING_PROVIDER,
+  SEEDANCE_PROVIDER,
+  FLUX_PROVIDER,
+  MINIMAX_PROVIDER,
+  HAPPYHORSE_PROVIDER,
   VEO_PROVIDER,
   VIDU_PROVIDER,
   WAN_PROVIDER,
@@ -187,8 +321,12 @@ const ALL_PROVIDERS_INTERNAL: ProviderConfig[] = [
 const ALL_PROVIDERS: ProviderConfig[] = ALL_PROVIDERS_INTERNAL;
 const VISIBLE_VIDEO_PROVIDERS_INTERNAL: ProviderConfig[] = ALL_PROVIDERS_INTERNAL;
 
-const ALL_VIDEO_MODELS: VideoModel[] = [
+export const ALL_VIDEO_MODELS: VideoModel[] = [
   ...KLING_ALL_MODELS,
+  ...SEEDANCE_ALL_MODELS,
+  ...FLUX_ALL_MODELS,
+  ...MINIMAX_ALL_MODELS,
+  ...HAPPYHORSE_ALL_MODELS,
   ...VEO_ALL_MODELS,
   ...VIDU_ALL_MODELS,
   ...WAN_ALL_MODELS,
@@ -226,6 +364,10 @@ export function versionSupportsTextToVideo(version: ModelVersionConfig): boolean
   return version.models.some((model) => model.generationType === 'text-to-video');
 }
 
+export function versionSupportsReferenceToVideo(version: ModelVersionConfig): boolean {
+  return version.models.some((model) => model.generationType === 'reference-to-video');
+}
+
 export function getVersionConfig(modelVersion: string): ModelVersionConfig | undefined {
   return ALL_PROVIDERS_INTERNAL.flatMap((provider) => provider.versions).find((version) => version.modelVersion === modelVersion);
 }
@@ -242,16 +384,19 @@ export function selectVideoModelByGenerationType(
   duration?: string,
   resolution?: string,
   _enableAudio?: boolean,
+  requestedType?: VideoGenerationType,
 ): VideoModel | null {
   if (!version) return null;
 
-  let targetType: 'text-to-video' | 'image-to-video' = hasImages ? 'image-to-video' : 'text-to-video';
+  let targetType: VideoGenerationType = requestedType || (hasImages ? 'image-to-video' : 'text-to-video');
 
   const supportsT2V = versionSupportsTextToVideo(version);
   const supportsI2V = versionSupportsImageToVideo(version);
 
-  if (supportsI2V && !supportsT2V) targetType = 'image-to-video';
-  if (supportsT2V && !supportsI2V) targetType = 'text-to-video';
+  if (!requestedType) {
+    if (supportsI2V && !supportsT2V) targetType = 'image-to-video';
+    if (supportsT2V && !supportsI2V) targetType = 'text-to-video';
+  }
 
   const matchedModel = version.models.find((model) => model.generationType === targetType) || version.models[0];
   if (!matchedModel) return null;

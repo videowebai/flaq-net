@@ -72,6 +72,7 @@ export interface ImageModelOptions {
   resolution?: ResolutionOption[];
   ratio?: RatioOption[];
   quality?: Array<{ name: string; value: string }>;
+  seed?: boolean;
 
   // Preset prompt
   prompt?: string;
@@ -93,6 +94,7 @@ export interface ImageModelVersionConfig {
     resolution?: ResolutionOption[];
     ratio?: RatioOption[];
     quality?: Array<{ name: string; value: string }>;
+    seed?: boolean;
   };
   models: ImageModel[];
 }
