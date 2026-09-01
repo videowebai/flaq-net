@@ -402,6 +402,9 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-din), sans-serif;
+    font-family: var(--font-noto-sans), 'Inter', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }

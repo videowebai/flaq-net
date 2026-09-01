@@ -25,6 +25,33 @@ const din = localFont({
   variable: '--font-din',
 });
 
+const notoSans = localFont({
+  src: [
+    {
+      path: '../../public/fonts/noto-sans-v42-latin-regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/noto-sans-v42-latin-500.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/noto-sans-v42-latin-600.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/noto-sans-v42-latin-700.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-noto-sans',
+  display: 'swap',
+});
+
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const params = await props.params;
 
@@ -91,7 +118,7 @@ export default async function RootLayout(props: { children: React.ReactNode; par
       <head>
         <JsonLdScript />
       </head>
-      <body className={`${din.variable} relative mx-auto flex min-h-screen flex-col bg-black text-white`}>
+      <body className={`${notoSans.className} ${din.variable} ${notoSans.variable} relative mx-auto flex min-h-screen flex-col bg-black text-white`}>
         <NavigationGuardProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Toaster
