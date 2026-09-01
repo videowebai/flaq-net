@@ -3,7 +3,7 @@
 import { useMemo, useEffect, useRef } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { cn } from '@/lib/utils';
-import { getModelIcon } from '@/lib/utils/modelIcons';
+import { getModelIconConfig } from '@/lib/utils/modelIcons';
 
 import { FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import {
@@ -39,6 +39,9 @@ export default function ModelSelect({
 }: ModelSelectProps) {
   const { control, watch, setValue } = useFormContext();
   const selectedModelVersion = watch(name);
+  const selectedModelIcon = selectedModelVersion
+    ? getModelIconConfig(selectedModelVersion)
+    : null;
 
   // Track previous hasImages state to detect changes
   const prevHasImages = useRef<boolean>(hasImages);
@@ -209,12 +212,19 @@ export default function ModelSelect({
               {/* Model version list, selector trigger button */}
               <SelectTrigger className='w-full border border-[#303030] rounded-xl text-sm bg-[#1f1f1f] text-white'>
                 <div className='flex items-center gap-2'>
-                  {selectedModelVersion && getModelIcon(selectedModelVersion) ? (
-                    <img
-                      src={getModelIcon(selectedModelVersion)}
-                      alt={selectedModelVersion}
-                      className='size-4 text-purple-600'
-                    />
+                  {selectedModelVersion && selectedModelIcon?.src ? (
+                    <span
+                      className={cn(
+                        'flex size-4 items-center justify-center overflow-hidden rounded',
+                        selectedModelIcon.background === 'light' && 'bg-white p-0.5',
+                      )}
+                    >
+                      <img
+                        src={selectedModelIcon.src}
+                        alt={selectedModelVersion}
+                        className='size-full object-contain'
+                      />
+                    </span>
                   ) : (
                     <div className='size-4' />
                   )}

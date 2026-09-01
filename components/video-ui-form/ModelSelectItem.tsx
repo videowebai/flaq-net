@@ -2,7 +2,7 @@
 
 import { Clock3, Scaling, Mic, ImageIcon, Music4, Palette } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { getModelIcon } from '@/lib/utils/modelIcons';
+import { getModelIconConfig } from '@/lib/utils/modelIcons';
 
 interface ModelFeature {
   icon: 'duration' | 'resolution' | 'audio' | 'sound' | 'bgm' | 'style' | 'endFrame';
@@ -28,6 +28,8 @@ export default function ModelSelectItem({
   showComingSoon = false,
   onClick,
 }: ModelSelectItemProps) {
+  const modelIcon = getModelIconConfig(value);
+
   // Render corresponding icon based on feature type
   const renderFeatureIcon = (iconType: string) => {
     switch (iconType) {
@@ -74,12 +76,19 @@ export default function ModelSelectItem({
           <div className='flex items-center justify-between mb-1'>
             <div className='flex items-center gap-2'>
               {/* Model icon */}
-              {getModelIcon(value) ? (
-                <img
-                  src={getModelIcon(value)}
-                  alt={value}
-                  className='w-5 h-5 flex-shrink-0'
-                />
+              {modelIcon.src ? (
+                <span
+                  className={cn(
+                    'flex size-5 flex-shrink-0 items-center justify-center overflow-hidden rounded',
+                    modelIcon.background === 'light' && 'bg-white p-0.5',
+                  )}
+                >
+                  <img
+                    src={modelIcon.src}
+                    alt={value}
+                    className='size-full object-contain'
+                  />
+                </span>
               ) : (
                 <div className='w-5 h-5 flex-shrink-0' />
               )}

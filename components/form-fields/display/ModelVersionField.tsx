@@ -8,7 +8,7 @@ import { ImageIcon, Scaling } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 import type { ImageModelVersionConfig } from '@/lib/constants/image/types';
-import { getModelIcon } from '@/lib/utils/modelIcons';
+import { getModelIconConfig } from '@/lib/utils/modelIcons';
 import { FormField, FormItem, FormControl } from '@/components/ui/form';
 import SubHeading from '@/components/form/SubHeading';
 import { useTranslations } from 'next-intl';
@@ -60,6 +60,9 @@ export default function ModelVersionField({
   }, [versions, selectedModelVersion]);
 
   const selectedVersion = sortedVersions.find((version) => version.modelVersion === selectedModelVersion);
+  const selectedIcon = selectedVersion
+    ? getModelIconConfig(selectedVersion.modelVersion)
+    : null;
 
   const getDisplayText = (version: ImageModelVersionConfig) => {
     if (displayMode === 'label') return version.name;
@@ -125,14 +128,21 @@ export default function ModelVersionField({
             >
               <SelectTrigger className='h-11 w-full rounded-xl border border-[#303030] bg-[#1f1f1f] text-sm font-medium text-white'>
                 <div className='flex min-w-0 items-center gap-2'>
-                  {selectedVersion && getModelIcon(selectedVersion.modelVersion) ? (
-                    <Image
-                      src={getModelIcon(selectedVersion.modelVersion)}
-                      alt={selectedVersion.name}
-                      width={16}
-                      height={16}
-                      className='shrink-0'
-                    />
+                  {selectedVersion && selectedIcon?.src ? (
+                    <span
+                      className={cn(
+                        'flex size-4 shrink-0 items-center justify-center overflow-hidden rounded',
+                        selectedIcon.background === 'light' && 'bg-white p-0.5',
+                      )}
+                    >
+                      <Image
+                        src={selectedIcon.src}
+                        alt={selectedVersion.name}
+                        width={16}
+                        height={16}
+                        className='size-full object-contain'
+                      />
+                    </span>
                   ) : (
                     <div className='h-4 w-4 shrink-0' />
                   )}
@@ -143,7 +153,7 @@ export default function ModelVersionField({
               </SelectTrigger>
               <SelectContent className='w-[var(--radix-select-trigger-width)] min-w-[var(--radix-select-trigger-width)] max-w-[var(--radix-select-trigger-width)] rounded-xl border border-[#303030] bg-[#1f1f1f]'>
                 {sortedVersions.map((version) => {
-                  const iconSrc = getModelIcon(version.modelVersion);
+                  const icon = getModelIconConfig(version.modelVersion);
                   const isDisabled = version.isComingSoon;
                   const isSelected = field.value === version.modelVersion;
                   const tags = getVersionTags(version);
@@ -165,14 +175,21 @@ export default function ModelVersionField({
                       >
                         <div className='flex items-start justify-between gap-3'>
                           <div className='flex min-w-0 flex-1 items-center gap-2'>
-                            {iconSrc ? (
-                              <Image
-                                src={iconSrc}
-                                alt={version.name}
-                                width={20}
-                                height={20}
-                                className='shrink-0'
-                              />
+                            {icon.src ? (
+                              <span
+                                className={cn(
+                                  'flex size-5 shrink-0 items-center justify-center overflow-hidden rounded',
+                                  icon.background === 'light' && 'bg-white p-0.5',
+                                )}
+                              >
+                                <Image
+                                  src={icon.src}
+                                  alt={version.name}
+                                  width={20}
+                                  height={20}
+                                  className='size-full object-contain'
+                                />
+                              </span>
                             ) : (
                               <div className='h-5 w-5 shrink-0' />
                             )}
