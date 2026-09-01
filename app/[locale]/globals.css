@@ -51,9 +51,6 @@
 
 @utility container-py {
   padding-block: 60px;
-  @media (width >= 1024px) {
-    padding-block: 100px;
-  }
 }
 
 @utility container-gap {

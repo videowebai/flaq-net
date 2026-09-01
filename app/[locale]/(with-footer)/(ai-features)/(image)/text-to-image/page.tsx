@@ -7,6 +7,7 @@ import CoreFeaturesCards from '@/components/home/newSections2/CoreFeaturesCards'
 import ExampleShowcaseSection from '@/components/home/new-section/ExampleShowcaseSection';
 import ImageForm from '@/components/image-ui-form/image-form';
 import Heading from '@/components/internal-page/heading';
+import ResourceEntrySections from '@/components/resource-entry/ResourceEntrySections';
 
 const DEFAULT_PRIORITY = {
   aspectRatio: ['16:9', '1:1'],
@@ -112,6 +113,7 @@ export default async function Page() {
           };
         })}
       />
+      <ResourceEntrySections />
       <CoreFeaturesCards
         title={t('advantage.title')}
         description={t('advantage.description')}

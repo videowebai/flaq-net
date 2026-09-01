@@ -7,6 +7,7 @@ import ExampleSection from '@/components/home/ExampleSection';
 import CoreFeaturesCards from '@/components/home/CoreFeaturesCards';
 import HomeCarousel from '@/components/home/HomeCarousel';
 import type { CarouselCard } from '@/components/home/HomeCarousel';
+import ResourceEntrySections from '@/components/resource-entry/ResourceEntrySections';
 
 const exampleVideos = [
   {
@@ -148,6 +149,7 @@ export default async function Page() {
           description: t(`use-cases.${num}.description`),
         }))}
       />
+      <ResourceEntrySections includeAgentGuides />
       <Faq
         title={t('faq.title')}
         faqList={numberList(8).map((num) => ({

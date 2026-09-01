@@ -6,6 +6,7 @@ import Faq from '@/components/Faq';
 import ImageShowcaseSection from '@/components/home/newSections/image-showcase-section';
 import CoreFeaturesCards from '@/components/home/newSections2/CoreFeaturesCards';
 import Heading from '@/components/internal-page/heading';
+import ResourceEntrySections from '@/components/resource-entry/ResourceEntrySections';
 
 import Form from './form';
 
@@ -120,6 +121,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           })),
         }))}
       />
+      <ResourceEntrySections />
       <CoreFeaturesCards
         iconType='useCase'
         title={t('advantage.title')}

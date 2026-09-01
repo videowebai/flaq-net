@@ -4,6 +4,7 @@ import { numberList } from '@/lib/utils/arrayUtils';
 import Faq from '@/components/Faq';
 import CoreFeaturesCards from '@/components/home/newSections2/CoreFeaturesCards';
 import Heading from '@/components/internal-page/heading';
+import ResourceEntrySections from '@/components/resource-entry/ResourceEntrySections';
 
 export default async function ReferenceToVideoPublicSections() {
   const t = await getTranslations('reference-to-video');
@@ -13,6 +14,7 @@ export default async function ReferenceToVideoPublicSections() {
       <div className='container-centered container-py'>
         <Heading title={t('heading.title')} description={t('heading.description')} />
       </div>
+      <ResourceEntrySections />
       <CoreFeaturesCards
         iconType='example'
         cardStyle='square'

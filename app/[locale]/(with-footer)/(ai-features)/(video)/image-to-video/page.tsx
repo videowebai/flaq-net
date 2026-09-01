@@ -6,6 +6,7 @@ import Faq from '@/components/Faq';
 import CoreFeaturesCards from '@/components/home/newSections2/CoreFeaturesCards';
 import VideoCarousel from '@/components/home/video-carousel';
 import Heading from '@/components/internal-page/heading';
+import ResourceEntrySections from '@/components/resource-entry/ResourceEntrySections';
 
 import Form from './form';
 
@@ -47,6 +48,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           videoSrc: `/flaqai_saas_asserts/image_to_video/example/${num}.mp4`,
         }))}
       />
+      <ResourceEntrySections />
       <CoreFeaturesCards
         iconType='example'
         cardStyle='square'
