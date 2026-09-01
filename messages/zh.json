@@ -14,7 +14,8 @@
       "title": "版权：",
       "content": "用户拥有其创作作品的权益。"
     },
-    "images": "图片"
+    "images": "图片",
+    "panel": "面板"
   },
   "cookie": {
     "content": "我们使用Cookie提升您的使用体验。详见隐私政策。",
@@ -30,7 +31,56 @@
     "hero-form": {
       "image-video": {
         "format-hint": "支持格式：jpg, webp, png",
-        "image-count": "图片数量"
+        "image-count": "图片数量",
+        "prompt-placeholder": "描述您想要创作的内容"
+      },
+      "reference-upload": {
+        "upload": "上传",
+        "history": "历史记录",
+        "uploadFromDevice": "从设备上传",
+        "noCompletedHistory": "暂无已完成的历史记录",
+        "addImage": "添加图片",
+        "addVideo": "添加视频",
+        "addAudio": "添加音频",
+        "addMore": "继续添加",
+        "remove": "移除",
+        "noLocalUploads": "暂无最近上传",
+        "deleteLocalImage": "删除最近上传的内容",
+        "durationMin": "文件时长不得少于 {value} 秒。",
+        "metadataError": "无法读取文件元数据。",
+        "maxFiles": "最多可添加 {count} 个文件。",
+        "unsupportedFormat": "不支持此文件格式。",
+        "imageCropCount": "裁剪图片 {current}/{total}",
+        "imagePreviewCount": "图片 {current}/{total}",
+        "selectImage": "选择第 {index} 张图片",
+        "cropFailed": "无法裁剪此图片。",
+        "deleteImage": "删除图片",
+        "cropImage": "裁剪图片",
+        "videoPreview": "视频预览",
+        "audioPreview": "音频预览",
+        "mention": "参考媒体",
+        "mediaDuration": "{type}时长必须介于 {min} 到 {max} 秒之间。",
+        "video": "视频",
+        "audio": "音频",
+        "imageDimensionMin": "图片宽度和高度均不得小于 {value}px。",
+        "imageDimensionMax": "图片宽度和高度均不得超过 {value}px。",
+        "cancelTrim": "取消裁剪",
+        "confirmTrim": "确认裁剪",
+        "videoDimensionRange": "视频宽度和高度均须介于 {min}px 到 {max}px 之间。"
+      },
+      "unified-upload": {
+        "formats": "JPG、JPEG、PNG、WEBP、MP3、WAV、M4A",
+        "hints": {
+          "video": "上传所选视频模型支持的输入素材。",
+          "image": "上传所选图片模型支持的参考图片。"
+        },
+        "slots": {
+          "firstFrame": "首帧",
+          "endFrame": "尾帧",
+          "image": "图片",
+          "audio": "音频",
+          "optional": "可选"
+        }
       }
     },
     "video-carousel": {
@@ -111,7 +161,27 @@
         "prompt": "提示词",
         "videoDetail": "查看详情"
       },
-      "audio": "音频",
+      "audio": {
+        "title": "音频",
+        "upload-audio": "上传音频",
+        "audio-support": "此模型包含内建音频",
+        "supported-formats": "支持：MP3、WAV（最大 15MB）",
+        "unsupported-format": "不支持此音频格式，仅支持 MP3 和 WAV",
+        "file-too-large": "文件大小超过 15MB",
+        "show-trim": "显示裁剪",
+        "hide-trim": "隐藏裁剪",
+        "start-time": "开始",
+        "end-time": "结束",
+        "duration": "时长",
+        "audio-too-short": "音频过短，至少需要 3 秒",
+        "audio-auto-trimmed": "音频时长为 {duration} 秒，已自动截取前 30 秒。您可以拖动裁剪手柄调整范围",
+        "audio-duration-requirement": "音频时长必须为 3–30 秒",
+        "drag-region": "拖动选区",
+        "dragging-region": "拖动中...",
+        "audio-duration-error": "音频时长必须介于 3–30 秒，当前时长为",
+        "audio-load-failed": "音频文件加载失败",
+        "audio-trim-failed": "音频裁剪失败，将使用完整音频"
+      },
       "enable-audio": "开启声音",
       "enable-audio-tip": "开启后将生成带有声音的视频，部分模型（如 SeeDance 1.5）会产生额外额度消耗。",
       "audio-support": "此模型包含内建音频",
@@ -131,6 +201,39 @@
       "keep-original-sound-tip": "模型支持时，保留上传视频的原始声音。",
       "error": {
         "image-required": "请上传图片以继续"
+      },
+      "reference-source": {
+        "file-title": "参考文件",
+        "file-formats": "上传一个参考文件。支持格式：{formats}。",
+        "page-limit": "PDF、文档、演示文稿、Keynote 和 Pages 文件最多支持 {count} 页。",
+        "remove-file": "移除参考文件",
+        "unsupported-file": "支持的参考文件格式：{formats}。",
+        "link-title": "参考网页链接",
+        "link-tip": "请使用无需登录即可打开的公开网页。",
+        "link-placeholder": "https://example.com/article",
+        "invalid-link": "请输入有效的公开 HTTP 或 HTTPS 网页链接。",
+        "mutually-exclusive": "参考文件和网页链接不能同时使用。"
+      },
+      "video-upload": {
+        "label": "上传视频或在上方粘贴 URL",
+        "duration-minimum": "上传的视频时长不得少于 {duration} 秒",
+        "duration-range-error": "裁剪后的视频时长必须介于 {min} 到 {max} 秒之间",
+        "duration-limit": "上传的视频时长不得超过 {duration} 秒",
+        "auto-trimmed": "原视频时长为 {duration} 秒，已默认截取前 {max} 秒，您可以调整范围",
+        "load-failed": "视频文件加载失败",
+        "play-failed": "视频播放失败",
+        "trim-failed": "视频裁剪失败，请调整范围后重试",
+        "selected-range": "已选范围：{start} - {end}，总时长 {duration}",
+        "range-tip": "请选择 {min} 到 {max} 秒的视频片段",
+        "trim-start": "开始时间",
+        "trim-end": "结束时间",
+        "reset-trim": "重置",
+        "show-trim": "显示裁剪",
+        "hide-trim": "隐藏裁剪",
+        "play": "播放",
+        "pause": "暂停",
+        "delete": "删除",
+        "playback-progress": "播放进度"
       }
     },
     "video-image-upload-form": {
@@ -278,7 +381,10 @@
       "content": "是否切换为您的浏览器语言？",
       "cancel": "保持当前",
       "confirm": "切换"
-    }
+    },
+    "ai-create": "AI 创作",
+    "reference-to-video": "参考素材转视频",
+    "reference-to-video-content": "基于图片、视频、音频、文档或链接等参考素材创建视频"
   },
   "Footer": {
     "title": "Flaq SaaS Template",
@@ -297,7 +403,9 @@
       "image-to-video": "图片转视频",
       "image-to-image": "图像转图像生成器",
       "text-to-image": "文本转图像生成器",
-      "virtual-try-on": "虚拟试穿 AI"
+      "virtual-try-on": "虚拟试穿 AI",
+      "reference-to-video": "参考素材转视频",
+      "ai-create": "AI 创作"
     }
   },
   "FooterNavigation": {
@@ -1138,6 +1246,14 @@
     "virtual-try-on": {
       "title": "虚拟试穿 AI - 逼真服装预览",
       "description": "使用虚拟试穿 AI，逼真预览服装效果。上传照片即可即时查看衣服穿在身上的效果。基于 Flaq API 技术驱动，提供专业的虚拟试穿体验。"
+    },
+    "reference-to-video": {
+      "title": "支持多媒体输入的参考素材转视频 AI 生成器",
+      "description": "通过参考图片、视频、音频、文档和链接创作 AI 视频。在灵活的一站式生成工作区中引导主体、动态、风格和声音。"
+    },
+    "ai-media-creator": {
+      "title": "在同一工作区生成图片和视频的 AI 创作工具",
+      "description": "在同一工作区创作 AI 图片和视频。选择文本、图片或参考素材工作流，对比支持的模型，调整设置并查看历史记录。"
     }
   },
   "Profile": {
@@ -1177,6 +1293,329 @@
       },
       "delete-success": "视频删除成功",
       "delete-fail": "视频删除失败"
+    }
+  },
+  "UnifiedGenerator": {
+    "media-type": {
+      "image": "图片",
+      "video": "视频"
+    },
+    "video-type": {
+      "text-to-video": "文生视频",
+      "image-to-video": "图生视频",
+      "reference-to-video": "参考素材转视频"
+    },
+    "reset": "重置",
+    "prompt": "提示词",
+    "prompt-placeholder": "描述您想要创作的内容",
+    "model": "模型",
+    "ratio": "宽高比",
+    "resolution": "分辨率",
+    "duration": "时长",
+    "sound": "生成声音",
+    "seed": "随机种子",
+    "guidance": "引导强度",
+    "negative-prompt": "反向提示词",
+    "optional": "可选",
+    "start-image": "首尾帧图片",
+    "reference-images": "参考图片",
+    "reference-videos": "参考视频",
+    "reference-audios": "参考音频",
+    "reference-files": "参考文件",
+    "reference-links": "参考链接",
+    "reference-link-placeholder": "粘贴公开的参考 URL",
+    "no-reference-input": "当前模型未配置参考输入。",
+    "generate": "生成",
+    "submitted": "任务已提交。",
+    "errors": {
+      "prompt": "请先输入提示词再生成。",
+      "model": "请选择可用的模型。",
+      "reference-required": "请添加必需的参考素材。",
+      "max-files": "参考文件数量已达上限。",
+      "reference-source-exclusive": "参考文件和参考链接只能选择一种。",
+      "reference-file-format": "一个或多个参考文件使用了不支持的格式。",
+      "reference-link": "请输入有效的公开 HTTP 或 HTTPS 参考 URL。",
+      "missing-references": "请移除或替换提示词中缺失的参考素材：{references}。",
+      "media-duration": "每个参考素材的时长必须介于 {min} 到 {max} 秒之间。",
+      "total-duration": "参考素材的总时长不得超过 {max} 秒。",
+      "media-metadata": "无法读取所选媒体文件。"
+    },
+    "image-type": {
+      "text-to-image": "文生图",
+      "image-to-image": "图生图"
+    },
+    "mention-reference": "在提示词中提及参考素材",
+    "quality": "图片质量",
+    "end-frame": "尾帧",
+    "model-select": {
+      "all-providers": "全部",
+      "all-types": "全部",
+      "text-type": "文本",
+      "image-type": "图片",
+      "reference-type": "参考素材",
+      "scroll-up": "向上滚动",
+      "scroll-down": "向下滚动",
+      "ratio": "宽高比",
+      "image": "图片",
+      "end-frame": "尾帧",
+      "sound": "声音",
+      "seed": "随机种子",
+      "duration": "{value}"
+    }
+  },
+  "CreatorHistory": {
+    "title": "生成历史",
+    "description": "您的图片和视频任务会存储在此浏览器本地。",
+    "image": "图片",
+    "video": "视频",
+    "no-preview": "暂无预览",
+    "empty": "暂无生成历史。",
+    "loading-more": "正在加载更多...",
+    "end": "没有更多结果"
+  },
+  "reference-to-video": {
+    "heading": {
+      "title": "Flaq AI 参考素材转视频生成器",
+      "description": "使用所选模型支持的图片、视频、音频、文档或链接等参考素材创作 AI 视频。通过每项参考素材引导主体、动作、镜头运动、声音、场景和视觉风格。"
+    },
+    "core-feature": {
+      "title": "参考素材转视频 AI 生成器的核心功能",
+      "description": "通过兼容的媒体上传、素材提及、模型专属控制和多种生成模型，构建以参考素材为引导的视频创作需求。",
+      "1": {
+        "title": "灵活的参考素材",
+        "description": "当所选模型支持时，可添加图片、视频片段、音频、文档或链接。可用的上传控件会根据您选择的模型自动更新。"
+      },
+      "2": {
+        "title": "使用 @ 提及功能引导每项素材",
+        "description": "在提示词中提及已上传的媒体，并说明每项素材应如何引导角色、产品、动作、镜头运动、声音、背景或风格。"
+      },
+      "3": {
+        "title": "多种参考素材转视频模型",
+        "description": "从支持的 Seedance、MiniMax、Wan 和 Happy Horse 参考素材工作流中进行选择，并根据项目所需的输入类型和输出控制匹配模型。"
+      }
+    },
+    "advantage": {
+      "title": "参考素材转视频 AI 生成器的优势",
+      "description": "参考素材转视频可帮助创作者、营销人员、电商团队、设计师、故事创作者、代理机构和社交媒体制作人员利用现有参考素材开发 AI 视频。",
+      "try-now": "立即体验",
+      "1": {
+        "title": "减少重拍和修改",
+        "description": "从现有参考素材开始，无需为每个版本重新拍摄。以源素材作为视觉引导，创作全新场景、产品片段、角色动作和口播视频。"
+      },
+      "2": {
+        "title": "更一致的视觉方向",
+        "description": "使用参考素材引导生成视频中的人物、虚拟形象、产品、道具、服装、背景和场景细节。"
+      },
+      "3": {
+        "title": "简单的创作流程",
+        "description": "上传支持的参考素材，在提示词中提及素材，描述动作和风格，选择可用的视频设置，然后在同一表单中启动任务。"
+      },
+      "4": {
+        "title": "灵活的视频成果",
+        "description": "创作由参考素材引导的角色视频、产品场景、社交内容、品牌短片、UGC 风格广告、电影感创意、动画预览和视觉实验。"
+      }
+    },
+    "manual": {
+      "title": "如何使用参考素材转视频 AI 生成器",
+      "content": "只需三个步骤，即可创作由参考素材引导的 AI 视频。",
+      "1": {
+        "title": "第 1 步：选择参考素材转视频模型",
+        "description": "根据项目所需的参考素材和输出控制选择模型。"
+      },
+      "2": {
+        "title": "第 2 步：上传并提及参考素材",
+        "description": "添加支持的参考素材，然后使用提及控件说明每项素材应如何引导生成结果。"
+      },
+      "3": {
+        "title": "第 3 步：设置输出选项并生成",
+        "description": "检查可用的宽高比、分辨率、时长和声音设置，然后生成视频。"
+      }
+    },
+    "faq": {
+      "title": "参考素材转视频 AI 生成器常见问题",
+      "1": {
+        "question": "什么是参考素材转视频？",
+        "answer": "参考素材转视频是一种 AI 生成工作流，它使用上传的媒体来引导新视频中的主体、物体、动作、声音、场景和视觉风格。"
+      },
+      "2": {
+        "question": "参考素材如何帮助保持角色一致性？",
+        "answer": "清晰的人像或角色图片可为模型提供面部特征、发型、服装和造型方面的视觉引导。生成结果仍可能因模型、提示词、源素材质量和指定动作而有所不同。"
+      },
+      "3": {
+        "question": "我可以上传哪些参考素材？",
+        "answer": "支持的输入取决于所选模型。表单只会显示当前工作流接受的图片、视频、音频、文档和链接控件。"
+      },
+      "4": {
+        "question": "我可以添加多少项参考素材？",
+        "answer": "参考素材限制因模型和媒体类型而异。上传区域会采用当前模型配置的数量上限，并阻止添加超出限制的文件。"
+      },
+      "5": {
+        "question": "我可以使用多种类型的参考素材吗？",
+        "answer": "可以，前提是所选模型支持多种输入类型。模型配置决定图片、视频、音频、文档和链接能否组合使用。"
+      },
+      "6": {
+        "question": "在哪里可以找到生成的视频？",
+        "answer": "生成任务会显示在 AI 创作的视频历史记录中。没有单独封面图时，历史记录可以使用生成的视频本身作为预览。"
+      }
+    }
+  },
+  "ai-media-creator": {
+    "heading": {
+      "title": "AI 媒体创作工具：在同一工作区创作 AI 图片和视频",
+      "description": "通过 Flaq API 将提示词和参考素材转化为创意资产。选择图片或视频工作流，选择支持的 AI 模型，调整可用设置，无需在不同工具之间切换即可完成创作。"
+    },
+    "core-feature": {
+      "title": "满足每个创意的一站式 AI 媒体创作工作区",
+      "description": "从初步构想到生成媒体，只需使用一个统一表单；它会根据所选创作类型自动调整模型、上传选项和设置。",
+      "1": {
+        "title": "图片和视频创作",
+        "description": "在图片和视频工作流之间切换，同时保持熟悉一致的创作体验。"
+      },
+      "2": {
+        "title": "支持的 AI 模型",
+        "description": "从 Flaq API 提供的图片和视频模型中进行选择，并在一处查看每个模型支持的设置。"
+      },
+      "3": {
+        "title": "灵活的参考素材上传",
+        "description": "当所选模型接受参考素材时，可上传支持的图片、视频片段、音频、文档或链接。"
+      },
+      "4": {
+        "title": "统一的本地历史记录",
+        "description": "查看保存在此浏览器中的近期图片和视频任务；没有单独封面图时，也可使用视频进行预览。"
+      }
+    },
+    "use-cases": {
+      "title": "使用 AI 创作可以生成哪些内容",
+      "description": "使用统一工作区完成日常创意制作，从快速视觉草稿到精致的营销素材均可创作。",
+      "button-text": "立即创作",
+      "1": {
+        "title": "营销与广告",
+        "description": "为数字营销创作营销活动图片、产品视觉素材、宣传视频和创意概念。"
+      },
+      "2": {
+        "title": "社交媒体内容",
+        "description": "为社交帖子、创作者频道和品牌账号生成图片和短视频。"
+      },
+      "3": {
+        "title": "设计探索",
+        "description": "在投入最终制作前，探索视觉方向、构图、风格和动态创意。"
+      },
+      "4": {
+        "title": "产品与故事创意",
+        "description": "将文字创意和参考素材转化为产品场景、故事板、动态概念和可复用资产。"
+      }
+    },
+    "manual": {
+      "title": "如何使用 AI 创作生成媒体",
+      "description": "只需三个步骤，即可开始新的图片或视频创作。",
+      "button-text": "开始创作",
+      "1": {
+        "title": "第 1 步：选择创作类型和模型",
+        "description": "选择图片或视频，然后选择符合您目标的 AI 模型。"
+      },
+      "2": {
+        "title": "第 2 步：添加提示词和参考素材",
+        "description": "描述您想要的结果，并上传支持的图片、视频、音频、文档或链接等参考素材。"
+      },
+      "3": {
+        "title": "第 3 步：调整设置并生成",
+        "description": "检查可用的宽高比、分辨率、时长和模型选项，然后开始生成。"
+      }
+    },
+    "faq": {
+      "title": "AI 创作常见问题",
+      "1": {
+        "question": "AI 创作页面可以生成哪些内容？",
+        "answer": "您可以通过一个统一表单启动支持的图片、文生视频、图生视频和参考素材转视频工作流。"
+      },
+      "2": {
+        "question": "生成前可以上传参考素材吗？",
+        "answer": "可以。当所选模型支持参考输入时，表单会显示兼容的图片、视频、音频、文档或链接控件。"
+      },
+      "3": {
+        "question": "有哪些可用的 AI 模型？",
+        "answer": "模型选择器使用此模板中配置的图片和视频模型。每个模型只会显示其接受的设置和输入。"
+      },
+      "4": {
+        "question": "在哪里可以找到生成的图片和视频？",
+        "answer": "AI 创作页面会在不同标签页中显示本地图片和视频历史记录，方便您跟踪处理中的任务并打开已完成的结果。"
+      },
+      "5": {
+        "question": "可以更改宽高比和分辨率吗？",
+        "answer": "可以。可用的宽高比、分辨率、时长和其他控件取决于所选模型和生成类型。"
+      },
+      "6": {
+        "question": "生成前需要做哪些准备？",
+        "answer": "提交包含本地文件的任务前，请先在 Open API 设置中配置 Flaq Client Key 和 R2 上传设置。"
+      }
+    }
+  },
+  "ResourceEntrySections": {
+    "affiliate": {
+      "eyebrow": "免费创作 · 推广赚取佣金",
+      "title": "免费加入，分享 Flaq.ai，立即开始赚取收益！",
+      "description": "加入 Flaq.ai 联盟计划，与需要可靠 AI 工具的创作者分享您的推荐链接，并通过推荐赚取佣金。",
+      "button": "加入联盟计划"
+    },
+    "modelMarket": {
+      "eyebrow": "Flaq AI 模型市场",
+      "title": "在一处探索更多 AI 创作模型",
+      "description": "前往 Flaq AI 模型市场，探索更多图片、视频、语言和创意 AI 选项，并查看每种支持工作流的文档。",
+      "button": "访问模型市场"
+    },
+    "promptLibrary": {
+      "title": "探索开箱即用的 AI 提示词合集",
+      "description": "打开热门图片和视频模型的精选提示词库，并根据自己的创作工作流调整完整示例。",
+      "viewPrompts": "查看提示词",
+      "repository": "GitHub",
+      "items": {
+        "seedance-2-5": {
+          "title": "Seedance 2.5 提示词库",
+          "description": "探索可直接用于制作的提示词，适用于电影感场景、品牌视频、社交内容和参考素材引导的动态效果。"
+        },
+        "minimax-h3": {
+          "title": "MiniMax H3 提示词库",
+          "description": "浏览适用于生动角色、产品故事、电影感序列和快节奏视频创意的详细提示词。"
+        },
+        "wan-3-0": {
+          "title": "Wan 3.0 提示词库",
+          "description": "查找可灵活调整的提示词创意，适用于真实动态、视觉叙事、广告和创意视频生成。"
+        },
+        "qwen-image-3-0": {
+          "title": "Qwen Image 3.0 提示词库",
+          "description": "探索适用于设计探索、插画、营销视觉和精准创意指导的结构化图片提示词。"
+        }
+      }
+    },
+    "agentGuides": {
+      "title": "将 Flaq AI 接入编程和 Agent 工作流",
+      "description": "按照实用设置指南，在热门编程 Agent、助手和 MCP 客户端中使用 Flaq AI 模型与工具。",
+      "items": {
+        "claude-code": {
+          "title": "Claude Code 指南",
+          "description": "为 Claude Code 工作流配置 Flaq AI 模型访问。"
+        },
+        "openai-codex": {
+          "title": "OpenAI Codex 指南",
+          "description": "在 OpenAI Codex 环境中使用 Flaq AI 生成模型。"
+        },
+        "hermes": {
+          "title": "Hermes Agent 指南",
+          "description": "将 Hermes Agent 连接至支持的 Flaq AI 语言模型。"
+        },
+        "zcode": {
+          "title": "Zcode 指南",
+          "description": "为 Zcode 开发工作流设置 Flaq AI 模型访问。"
+        },
+        "deepseek": {
+          "title": "DeepSeek Harness 指南",
+          "description": "为 DeepSeek Harness 配置 Flaq AI 端点和支持的模型。"
+        },
+        "mcp": {
+          "title": "Flaq MCP 服务器",
+          "description": "通过 MCP 将兼容的 AI 客户端连接至 Flaq 图片和视频工具。"
+        }
+      }
     }
   }
 }
