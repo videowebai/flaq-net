@@ -1246,6 +1246,14 @@
     "virtual-try-on": {
       "title": "Virtual Try On AI - Realistic Outfit Preview",
       "description": "Preview outfits realistically with Virtual Try On AI. Upload your photos and see how clothes look on you instantly. Powered by Flaq API technology."
+    },
+    "reference-to-video": {
+      "title": "Reference to Video AI Generator with Multi-Media Inputs",
+      "description": "Create AI videos from reference images, videos, audio, documents, and links. Guide subjects, motion, style, and sound in one flexible generation workspace."
+    },
+    "ai-media-creator": {
+      "title": "AI Creator for Image and Video Generation in One Workspace",
+      "description": "Create AI images and videos in one workspace. Choose text, image, or reference workflows, compare supported models, adjust settings, and review history."
     }
   },
   "Profile": {
