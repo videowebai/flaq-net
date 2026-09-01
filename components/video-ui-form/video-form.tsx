@@ -56,7 +56,7 @@ import VideoHistorySection from './VideoHistorySection';
  */
 interface VideoFormBaseProps {
   submitBtnId: string;
-  videoType: VideoHistoryRequest['videoType'];
+  videoType: Exclude<VideoHistoryRequest['videoType'], 'Reference-to-video'>;
   defaultValues?: Partial<VideoFormData>;
   formTitle?: string;
   uploadImageTitle?: string;

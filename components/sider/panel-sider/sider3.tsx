@@ -1,6 +1,6 @@
 'use client';
 
-import { Image, Video } from 'lucide-react';
+import { Image, Sparkles, Video } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { NAV_LINKS } from '@/lib/constants/navigation';
@@ -35,7 +35,17 @@ export default function PanelSider() {
 
   return (
     <div className='no-scrollbar sticky top-16 hidden h-[calc(100dvh-64px)] w-[272px] shrink-0 overflow-y-auto border-r border-r-white/10 bg-black/20 lg:block'>
-      <TreeSider group={group} />
+      <TreeSider
+        group={group}
+        primaryItems={[
+          {
+            id: 'ai-create',
+            icon: <Sparkles className='size-4' />,
+            title: t('ai-create'),
+            href: '/ai-media-creator',
+          },
+        ]}
+      />
     </div>
   );
 }

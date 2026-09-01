@@ -278,7 +278,10 @@
       "content": "Switch to your browser's language?",
       "cancel": "Keep Current",
       "confirm": "Switch"
-    }
+    },
+    "ai-create": "AI Create",
+    "reference-to-video": "Reference to Video",
+    "reference-to-video-content": "Create video from image, video, audio, document, or link references"
   },
   "Footer": {
     "title": "Flaq SaaS Template",
@@ -297,7 +300,8 @@
       "image-to-video": "Image to Video",
       "image-to-image": "Image to Image Generator",
       "text-to-image": "Text to Image Generator",
-      "virtual-try-on": "Virtual Try On AI"
+      "virtual-try-on": "Virtual Try On AI",
+      "reference-to-video": "Reference to Video"
     }
   },
   "FooterNavigation": {
@@ -1177,6 +1181,244 @@
       },
       "delete-success": "Video deleted successfully",
       "delete-fail": "Failed to delete video"
+    }
+  },
+  "UnifiedGenerator": {
+    "media-type": {
+      "image": "Image",
+      "video": "Video"
+    },
+    "video-type": {
+      "text-to-video": "Text to Video",
+      "image-to-video": "Image to Video",
+      "reference-to-video": "Reference to Video"
+    },
+    "reset": "Reset",
+    "prompt": "Prompt",
+    "prompt-placeholder": "Describe what you want to create",
+    "model": "Model",
+    "ratio": "Aspect Ratio",
+    "resolution": "Resolution",
+    "duration": "Duration",
+    "sound": "Generate Sound",
+    "seed": "Seed",
+    "guidance": "Guidance Scale",
+    "negative-prompt": "Negative Prompt",
+    "optional": "Optional",
+    "start-image": "Start and End Images",
+    "reference-images": "Reference Images",
+    "reference-videos": "Reference Videos",
+    "reference-audios": "Reference Audios",
+    "reference-files": "Reference Files",
+    "reference-links": "Reference Links",
+    "reference-link-placeholder": "Paste a public reference URL",
+    "no-reference-input": "This model has no reference input configuration.",
+    "generate": "Generate",
+    "submitted": "Task submitted.",
+    "errors": {
+      "prompt": "Enter a prompt before generating.",
+      "model": "Select an available model.",
+      "reference-required": "Add the required reference media.",
+      "max-files": "The maximum number of reference files has been reached.",
+      "reference-source-exclusive": "Use reference files or reference links, not both.",
+      "reference-file-format": "One or more reference files use an unsupported format.",
+      "reference-link": "Enter a valid public HTTP or HTTPS reference URL.",
+      "missing-references": "Remove or replace missing prompt references: {references}.",
+      "media-duration": "Each reference must be between {min} and {max} seconds.",
+      "total-duration": "The total reference duration cannot exceed {max} seconds.",
+      "media-metadata": "The selected media file could not be read."
+    },
+    "image-type": {
+      "text-to-image": "Text to Image",
+      "image-to-image": "Image to Image"
+    },
+    "mention-reference": "Mention a reference in the prompt"
+  },
+  "CreatorHistory": {
+    "title": "Generation History",
+    "description": "Your image and video tasks are stored locally in this browser.",
+    "image": "Images",
+    "video": "Videos",
+    "no-preview": "No preview",
+    "empty": "No generation history yet.",
+    "loading-more": "Loading more...",
+    "end": "No more results"
+  },
+  "reference-to-video": {
+    "heading": {
+      "title": "Flaq AI Reference to Video Generator",
+      "description": "Create AI videos with the image, video, audio, document, or link references supported by your selected model. Use each reference to direct the subject, action, camera movement, sound, scene, and visual style."
+    },
+    "core-feature": {
+      "title": "Core Features of Reference to Video AI Generator",
+      "description": "Build a reference-guided video brief with compatible media uploads, asset mentions, model-specific controls, and multiple generation models.",
+      "1": {
+        "title": "Flexible Reference Media",
+        "description": "Add images, video clips, audio, documents, or links when the selected model supports them. Available upload controls update automatically with your model choice."
+      },
+      "2": {
+        "title": "Direct Each Asset with @ Mentions",
+        "description": "Mention uploaded media inside the prompt and explain whether each asset should guide a character, product, action, camera move, sound, background, or style."
+      },
+      "3": {
+        "title": "Multiple Reference-to-Video Models",
+        "description": "Choose from supported Seedance, MiniMax, Wan, and Happy Horse reference workflows, then match the model to the input types and output controls your project needs."
+      }
+    },
+    "advantage": {
+      "title": "Advantages of Reference to Video AI Generator",
+      "description": "Reference to Video helps creators, marketers, ecommerce teams, designers, storytellers, agencies, and social media producers develop AI videos from existing reference media.",
+      "try-now": "Try Now",
+      "1": {
+        "title": "Fewer Reshoots and Revisions",
+        "description": "Start from existing reference media instead of filming every variation again. Create fresh scenes, product moments, character actions, and talking clips while using source assets as visual guidance."
+      },
+      "2": {
+        "title": "More Consistent Visual Direction",
+        "description": "Use references to guide people, avatars, products, props, outfits, backgrounds, and scene details across the generated clip."
+      },
+      "3": {
+        "title": "Simple Creative Workflow",
+        "description": "Upload supported reference media, mention assets in the prompt, describe the action and style, choose the available video settings, and start the task from the same form."
+      },
+      "4": {
+        "title": "Flexible Video Results",
+        "description": "Create reference-guided character videos, product scenes, social content, brand clips, UGC-style ads, cinematic concepts, animation previews, and visual experiments."
+      }
+    },
+    "manual": {
+      "title": "How to Use Reference to Video AI Generator",
+      "content": "Create a reference-guided AI video in three steps.",
+      "1": {
+        "title": "Step 1: Choose a Reference-to-Video Model",
+        "description": "Select a model based on the reference media and output controls your project requires."
+      },
+      "2": {
+        "title": "Step 2: Upload References and Mention Them",
+        "description": "Add supported references, then use the mention controls to describe how each asset should guide the result."
+      },
+      "3": {
+        "title": "Step 3: Set Output Options and Generate",
+        "description": "Review the available ratio, resolution, duration, and sound settings, then generate your video."
+      }
+    },
+    "faq": {
+      "title": "Reference to Video AI Generator FAQ",
+      "1": {
+        "question": "What is Reference to Video?",
+        "answer": "Reference to Video is an AI generation workflow that uses uploaded media to guide the subjects, objects, motion, sound, scenes, and visual style of a new video."
+      },
+      "2": {
+        "question": "How can references help with character consistency?",
+        "answer": "A clear portrait or character image gives the model visual guidance for facial features, hair, clothing, and styling. Results can still vary by model, prompt, source quality, and requested motion."
+      },
+      "3": {
+        "question": "Which reference media can I upload?",
+        "answer": "Supported inputs depend on the selected model. The form only displays image, video, audio, document, and link controls accepted by the active workflow."
+      },
+      "4": {
+        "question": "How many references can I add?",
+        "answer": "Reference limits vary by model and media type. The upload area uses the configured limit for the current model and prevents extra files from being added."
+      },
+      "5": {
+        "question": "Can I use more than one type of reference?",
+        "answer": "Yes, when the selected model supports multiple input types. Its configuration determines whether images, videos, audio, documents, and links can be combined."
+      },
+      "6": {
+        "question": "Where do I find my generated video?",
+        "answer": "Generated tasks appear in the AI Create video history. The history can use the generated video itself when a separate cover image is unavailable."
+      }
+    }
+  },
+  "ai-media-creator": {
+    "heading": {
+      "title": "AI Media Creator: Create AI Images and Videos in One Workspace",
+      "description": "Turn prompts and reference media into creative assets with the Flaq API. Choose an image or video workflow, select a supported AI model, adjust the available settings, and create without switching between separate tools."
+    },
+    "core-feature": {
+      "title": "One AI Media Creation Workspace for Every Idea",
+      "description": "Move from an initial concept to generated media with a unified form that adapts its models, uploads, and settings to the selected creation type.",
+      "1": {
+        "title": "Image and Video Creation",
+        "description": "Switch between image and video workflows while keeping the same familiar creation experience."
+      },
+      "2": {
+        "title": "Supported AI Models",
+        "description": "Choose from the image and video models available through the Flaq API and view each model's supported settings in one place."
+      },
+      "3": {
+        "title": "Flexible Reference Uploads",
+        "description": "Upload supported images, video clips, audio, documents, or links when the selected model accepts reference media."
+      },
+      "4": {
+        "title": "Unified Local History",
+        "description": "Review recent image and video tasks saved in this browser, including video previews when a separate cover image is unavailable."
+      }
+    },
+    "use-cases": {
+      "title": "What You Can Create with AI Create",
+      "description": "Use the unified workspace for everyday creative production, from fast visual drafts to polished campaign assets.",
+      "button-text": "Create Now",
+      "1": {
+        "title": "Marketing and Advertising",
+        "description": "Create campaign images, product visuals, promotional videos, and creative concepts for digital marketing."
+      },
+      "2": {
+        "title": "Social Media Content",
+        "description": "Generate images and short videos for social posts, creator channels, and brand accounts."
+      },
+      "3": {
+        "title": "Design Exploration",
+        "description": "Explore visual directions, compositions, styles, and motion concepts before committing to final production."
+      },
+      "4": {
+        "title": "Product and Story Concepts",
+        "description": "Turn written ideas and reference media into product scenes, storyboards, motion concepts, and reusable assets."
+      }
+    },
+    "manual": {
+      "title": "How to Create Media with AI Create",
+      "description": "Start a new image or video creation in three steps.",
+      "button-text": "Start Creating",
+      "1": {
+        "title": "Step 1: Choose a Creation Type and Model",
+        "description": "Select Image or Video, then choose the AI model that fits your goal."
+      },
+      "2": {
+        "title": "Step 2: Add a Prompt and References",
+        "description": "Describe the result you want and upload any supported image, video, audio, document, or link references."
+      },
+      "3": {
+        "title": "Step 3: Adjust Settings and Generate",
+        "description": "Review the available ratio, resolution, duration, and model options, then start your generation."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions About AI Create",
+      "1": {
+        "question": "What can I generate on the AI Create page?",
+        "answer": "You can start supported image, text-to-video, image-to-video, and reference-to-video workflows from one unified form."
+      },
+      "2": {
+        "question": "Can I upload reference media before generating?",
+        "answer": "Yes. When the selected model supports reference input, the form displays the compatible image, video, audio, document, or link controls."
+      },
+      "3": {
+        "question": "Which AI models are available?",
+        "answer": "The model selector uses the image and video models configured in this template. Each model only displays the settings and inputs it accepts."
+      },
+      "4": {
+        "question": "Where can I find generated images and videos?",
+        "answer": "The AI Create page displays local image and video history in separate tabs so you can follow processing tasks and open completed results."
+      },
+      "5": {
+        "question": "Can I change the aspect ratio and resolution?",
+        "answer": "Yes. Available aspect ratios, resolutions, durations, and other controls depend on the selected model and generation type."
+      },
+      "6": {
+        "question": "What do I need before generating?",
+        "answer": "Configure your Flaq Client Key and R2 upload settings in Open API Settings before submitting tasks that include local files."
+      }
     }
   }
 }

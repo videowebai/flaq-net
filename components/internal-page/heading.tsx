@@ -2,13 +2,15 @@ export default function Heading({
   title,
   description,
   showComingSoon = false,
+  align = 'center',
 }: {
   title: string;
   description: string;
   showComingSoon?: boolean;
+  align?: 'left' | 'center';
 }) {
   return (
-    <div className='mx-auto flex max-w-5xl flex-col items-center gap-2 text-center'>
+    <div className={`mx-auto flex max-w-5xl flex-col gap-2 ${align === 'left' ? 'items-start text-left' : 'items-center text-center'}`}>
       <div className='flex items-center gap-3'>
         <h1 className='text-balance text-color-main text-4xl font-semibold lg:text-5xl'>{title}</h1>
         {showComingSoon && (

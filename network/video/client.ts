@@ -22,6 +22,10 @@ export interface CreateVideoTaskRequest {
   video_url?: string;
   audio_setting?: string;
   images?: string[];
+  videos?: string[];
+  audios?: string[];
+  files?: string[];
+  links?: string[];
   guidance_scale?: number;
   negative_prompt?: string;
   seed?: number;

@@ -23,10 +23,8 @@ function SiderItem({ title, icon, href, isActive }: SiderGroupType['items'][numb
         isActive && 'bg-white/10 font-medium',
       )}
     >
-      <div className={cn(isActive && 'text-color-main')}>
-        {icon && <span>{icon}</span>}
-        <div>{title}</div>
-      </div>
+      {icon && <span className={cn('shrink-0', isActive && 'text-color-main')}>{icon}</span>}
+      <div className={cn('min-w-0 truncate', isActive && 'text-color-main')}>{title}</div>
     </Link>
   );
 }
@@ -84,9 +82,23 @@ function SiderGroup({ title, items, icon }: SiderGroupType) {
   );
 }
 
-export default function TreeSider({ group }: { group: SiderGroupType[] }) {
+export default function TreeSider({
+  group,
+  primaryItems = [],
+}: {
+  group: SiderGroupType[];
+  primaryItems?: SiderGroupType['items'];
+}) {
+  const matchRoute = useMatchRoute();
+
   return (
     <div className='flex flex-col gap-0.5 pb-32 text-sm'>
+      {primaryItems.map((item) => (
+        <div key={item.id} className='mx-1'>
+          <SiderItem {...item} isActive={matchRoute(item.href)} />
+        </div>
+      ))}
+      {primaryItems.length > 0 && <div className='border-color-b1 mx-3 my-1 border-t' />}
       {group.map((item) => (
         <SiderGroup key={item.id} {...item} />
       ))}

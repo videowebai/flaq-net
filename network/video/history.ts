@@ -20,7 +20,7 @@ function migrateOldVideoData() {
 export type VideoHistoryRequest = {
   pageNum: number;
   pageSize: number;
-  videoType?: 'Image-to-video' | 'Text-to-video';
+  videoType?: 'Image-to-video' | 'Text-to-video' | 'Reference-to-video';
 };
 
 export type VideoHistoryItem = {
