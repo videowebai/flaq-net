@@ -54,7 +54,7 @@ function InfoList({
 export default function Footer() {
   const t = useTranslations('Footer');
 
-  const FEATURE_LINK = [...VIDEO_CHILDREN_LIST, ...IMAGE_CHILDREN_LIST]
+  const FEATURE_LINK = [{ code: 'ai-create', href: '/ai-media-creator' }, ...VIDEO_CHILDREN_LIST, ...IMAGE_CHILDREN_LIST]
     .filter((r) => !r.hideInFooter)
     .map((r) => ({ title: t(`feature.${r.code}`), href: r.href }));
 

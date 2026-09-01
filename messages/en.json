@@ -405,7 +405,8 @@
       "image-to-image": "Image to Image Generator",
       "text-to-image": "Text to Image Generator",
       "virtual-try-on": "Virtual Try On AI",
-      "reference-to-video": "Reference to Video"
+      "reference-to-video": "Reference to Video",
+      "ai-create": "AI Create"
     }
   },
   "FooterNavigation": {
