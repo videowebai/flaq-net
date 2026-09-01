@@ -6,13 +6,11 @@ import UnifiedGeneratorForm from '@/components/unified-generator/UnifiedGenerato
 import useUnifiedGeneratorStore from '@/store/unified-generator/useUnifiedGeneratorStore';
 
 export default function ReferenceToVideoForm() {
-  const setMediaType = useUnifiedGeneratorStore((state) => state.setMediaType);
-  const setVideoType = useUnifiedGeneratorStore((state) => state.setVideoType);
+  const openReferenceDraft = useUnifiedGeneratorStore((state) => state.openReferenceDraft);
 
   useEffect(() => {
-    setMediaType('video');
-    setVideoType('reference-to-video');
-  }, [setMediaType, setVideoType]);
+    openReferenceDraft();
+  }, [openReferenceDraft]);
 
   return <UnifiedGeneratorForm submitMode='transfer' />;
 }

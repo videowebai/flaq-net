@@ -148,10 +148,24 @@ function toModelOptions(
     resolution,
     ratio: toRatioOptions(model.params?.ratio),
     startFrame: model.inputs.startFrame
-      ? { isSupported: model.inputs.startFrame.supported, required: model.inputs.startFrame.required }
+      ? {
+          isSupported: model.inputs.startFrame.supported,
+          required: model.inputs.startFrame.required,
+          minSidePx: model.inputs.startFrame.minSidePx,
+          maxSidePx: model.inputs.startFrame.maxSidePx,
+          acceptedFormats: model.inputs.startFrame.acceptedFormats,
+          allowAlphaChannel: model.inputs.startFrame.allowAlphaChannel,
+        }
       : { isSupported: false, required: false },
     endFrame: model.inputs.endFrame
-      ? { isSupported: model.inputs.endFrame.supported, required: model.inputs.endFrame.required }
+      ? {
+          isSupported: model.inputs.endFrame.supported,
+          required: model.inputs.endFrame.required,
+          minSidePx: model.inputs.endFrame.minSidePx,
+          maxSidePx: model.inputs.endFrame.maxSidePx,
+          acceptedFormats: model.inputs.endFrame.acceptedFormats,
+          allowAlphaChannel: model.inputs.endFrame.allowAlphaChannel,
+        }
       : { isSupported: false, required: false },
     multiImage: toMultiImageOptions(model),
     multiVideo: toMultiVideoOptions(model),
@@ -209,10 +223,24 @@ function buildModelVersion(model: TemplateModelConfig, provider: string): ModelV
     resolution: model.params?.resolution,
     ratio: toRatioOptions(model.params?.ratio),
     startFrame: model.inputs.startFrame
-      ? { isSupported: model.inputs.startFrame.supported, required: model.inputs.startFrame.required }
+      ? {
+          isSupported: model.inputs.startFrame.supported,
+          required: model.inputs.startFrame.required,
+          minSidePx: model.inputs.startFrame.minSidePx,
+          maxSidePx: model.inputs.startFrame.maxSidePx,
+          acceptedFormats: model.inputs.startFrame.acceptedFormats,
+          allowAlphaChannel: model.inputs.startFrame.allowAlphaChannel,
+        }
       : { isSupported: false, required: false },
     endFrame: model.inputs.endFrame
-      ? { isSupported: model.inputs.endFrame.supported, required: model.inputs.endFrame.required }
+      ? {
+          isSupported: model.inputs.endFrame.supported,
+          required: model.inputs.endFrame.required,
+          minSidePx: model.inputs.endFrame.minSidePx,
+          maxSidePx: model.inputs.endFrame.maxSidePx,
+          acceptedFormats: model.inputs.endFrame.acceptedFormats,
+          allowAlphaChannel: model.inputs.endFrame.allowAlphaChannel,
+        }
       : { isSupported: false, required: false },
     multiImage: toMultiImageOptions(model),
     multiVideo: toMultiVideoOptions(model),

@@ -9,12 +9,21 @@ interface ParameterLabels {
   resolution: string;
   ratio: string;
   duration: string;
+  quality: string;
   seed: string;
   negativePrompt: string;
   optional: string;
 }
 
 function RatioIcon({ value, active }: { value: string; active: boolean }) {
+  if (value === '-' || value === 'Auto') {
+    return (
+      <span className='relative flex h-5 w-5 items-center justify-center'>
+        <span className={cn('absolute h-4 w-4 rounded-[2px] border-[1.25px]', active ? 'border-color-main' : 'border-color-t3')} />
+        <span className={cn('absolute h-3 w-3 rounded-[1.5px] border-[1.25px]', active ? 'border-color-main' : 'border-color-t3')} />
+      </span>
+    );
+  }
   const [width, height] = value.split(':').map(Number);
   const safeWidth = width || 1;
   const safeHeight = height || 1;
@@ -32,18 +41,23 @@ export default function ParameterPopover({
   ratios,
   durations,
   durationRange,
+  qualityOptions,
   resolution,
   ratio,
   duration,
+  quality,
   seed,
   seedRange,
   supportsSeed,
   negativePrompt,
   supportsNegativePrompt,
   labels,
+  open,
+  onOpenChange,
   onResolutionChange,
   onRatioChange,
   onDurationChange,
+  onQualityChange,
   onSeedChange,
   onNegativePromptChange,
 }: {
@@ -51,28 +65,41 @@ export default function ParameterPopover({
   ratios: string[];
   durations: number[];
   durationRange?: { min: number; max: number };
+  qualityOptions: Array<{ name: string; value: string }>;
   resolution: string;
   ratio: string;
   duration?: number;
+  quality: string;
   seed?: number;
   seedRange?: { min: number; max: number };
   supportsSeed: boolean;
   negativePrompt: string;
   supportsNegativePrompt: boolean;
   labels: ParameterLabels;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
   onResolutionChange: (value: string) => void;
   onRatioChange: (value: string) => void;
   onDurationChange: (value: number) => void;
+  onQualityChange: (value: string) => void;
   onSeedChange: (value?: number) => void;
   onNegativePromptChange: (value: string) => void;
 }) {
-  const summary = [resolution?.toUpperCase(), ratio, duration ? `${duration}s` : ''].filter(Boolean);
+  const summary = [
+    resolution?.toUpperCase(),
+    ratio === '-' ? 'Auto' : ratio,
+    qualityOptions.find((item) => item.value === quality)?.name || quality,
+    duration ? `${duration}s` : '',
+  ].filter(Boolean);
   if (!summary.length && !supportsSeed && !supportsNegativePrompt) return null;
+  const durationValues = durationRange
+    ? (durationRange.min <= 3 ? [3, 6, 10] : [4, 8, 12]).filter((value) => value >= durationRange.min && value <= durationRange.max)
+    : durations;
 
   return (
-    <Popover modal={false}>
+    <Popover open={open} onOpenChange={onOpenChange} modal={false}>
       <PopoverTrigger asChild>
-        <ToolbarButton>
+        <ToolbarButton active={open}>
           {summary.map((item, index) => (
             <span key={item} className='inline-flex items-center gap-1'>
               {index > 0 ? <span className='bg-color-b1 h-[19px] w-px' /> : null}
@@ -124,20 +151,39 @@ export default function ParameterPopover({
                     onClick={() => onRatioChange(value)}
                   >
                     <RatioIcon value={value} active={ratio === value} />
-                    {value}
+                    {value === '-' ? 'Auto' : value}
                   </button>
                 ))}
               </div>
             </div>
           ) : null}
-          {(resolutions.length || ratios.length) && (durationRange || durations.length) ? <div className='border-color-b1 border-t' /> : null}
+          {ratios.length && qualityOptions.length ? <div className='border-color-b1 border-t' /> : null}
+          {qualityOptions.length ? (
+            <div className='space-y-2'>
+              <div className='text-color-t2 text-sm'>{labels.quality}</div>
+              <div className='flex items-center gap-2'>
+                {qualityOptions.map((option) => (
+                  <button
+                    key={option.value}
+                    type='button'
+                    className={cn(
+                      'flex h-[30px] min-w-16 flex-1 items-center justify-center rounded px-3 py-1 text-sm leading-[22px] transition-colors',
+                      quality === option.value ? 'bg-color-c4 text-color-main' : 'text-color-t3 hover:bg-color-c4 hover:text-color-t1',
+                    )}
+                    onClick={() => onQualityChange(option.value)}
+                  >
+                    {option.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : null}
+          {(resolutions.length || ratios.length || qualityOptions.length) && (durationRange || durations.length) ? <div className='border-color-b1 border-t' /> : null}
           {durationRange || durations.length ? (
             <div className='space-y-2'>
               <div className='text-color-t2 text-sm'>{labels.duration}</div>
               <div className='flex flex-wrap items-center gap-2'>
-                {(durationRange
-                  ? [durationRange.min, Math.round((durationRange.min + durationRange.max) / 2), durationRange.max]
-                  : durations).filter((value, index, values) => values.indexOf(value) === index).map((value) => (
+                {durationValues.filter((value, index, values) => values.indexOf(value) === index).map((value) => (
                     <button
                       key={value}
                       type='button'
@@ -160,6 +206,12 @@ export default function ParameterPopover({
                       onChange={(event) => {
                         const value = Number(event.target.value);
                         if (Number.isFinite(value)) onDurationChange(value);
+                      }}
+                      onBlur={(event) => {
+                        const value = Number(event.target.value);
+                        onDurationChange(Number.isFinite(value)
+                          ? Math.min(Math.max(value, durationRange.min), durationRange.max)
+                          : durationRange.min);
                       }}
                       className='text-color-t1 min-w-0 flex-1 bg-transparent outline-none'
                     />

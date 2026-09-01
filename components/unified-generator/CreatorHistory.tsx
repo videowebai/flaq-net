@@ -7,6 +7,8 @@ import { useTranslations } from 'next-intl';
 import useImageHistory from '@/network/image/history';
 import useVideoHistory from '@/network/video/history';
 
+import CreatorVideoPreview from './CreatorVideoPreview';
+
 type HistoryType = 'image' | 'video';
 
 const PAGE_SIZE = 16;
@@ -83,31 +85,9 @@ export default function CreatorHistory() {
               ) : <div key={item.id}>{card}</div>;
             })
             : videoHistory.data.map((item) => {
-              const cover = item.coverImage || item.videoThumbnailUrl || item.imageUrl;
               const card = (
                 <div className='group relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-white/5'>
-                  {cover ? (
-                    <img src={cover} alt={item.prompt} loading='lazy' className='h-full w-full object-cover' />
-                  ) : item.videoUrl ? (
-                    <video
-                      src={item.videoUrl}
-                      muted
-                      playsInline
-                      preload='metadata'
-                      className='h-full w-full object-cover'
-                      onMouseEnter={(event) => void event.currentTarget.play()}
-                      onMouseLeave={(event) => {
-                        event.currentTarget.pause();
-                        event.currentTarget.currentTime = 0;
-                      }}
-                    />
-                  ) : (
-                    <div className='flex h-full items-center justify-center text-white/30'>
-                      {item.status === 'processing' || item.status === 'pending'
-                        ? <Loader2 className='animate-spin' />
-                        : t('no-preview')}
-                    </div>
-                  )}
+                  <CreatorVideoPreview item={item} noPreviewLabel={t('no-preview')} />
                   <div className='absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-3 pt-10'>
                     <p className='line-clamp-2 text-xs text-white/80'>{item.prompt}</p>
                   </div>

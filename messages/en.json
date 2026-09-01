@@ -14,7 +14,8 @@
       "title": "Copyright:",
       "content": "Users own the rights to their creations."
     },
-    "images": "images"
+    "images": "images",
+    "panel": "Panel"
   },
   "cookie": {
     "content": "We use cookies to enhance your experience. Learn more in our Privacy Policy.",
@@ -30,7 +31,56 @@
     "hero-form": {
       "image-video": {
         "format-hint": "Supported Formats",
-        "image-count": "Images"
+        "image-count": "Images",
+        "prompt-placeholder": "Describe what you want to create"
+      },
+      "reference-upload": {
+        "upload": "Upload",
+        "history": "History",
+        "uploadFromDevice": "Upload from device",
+        "noCompletedHistory": "No completed history yet",
+        "addImage": "Add image",
+        "addVideo": "Add video",
+        "addAudio": "Add audio",
+        "addMore": "Add more",
+        "remove": "Remove",
+        "noLocalUploads": "No recent uploads yet",
+        "deleteLocalImage": "Delete recent upload",
+        "durationMin": "The file must be at least {value} seconds long.",
+        "metadataError": "Unable to read the file metadata.",
+        "maxFiles": "You can add up to {count} files.",
+        "unsupportedFormat": "This file format is not supported.",
+        "imageCropCount": "Crop image {current} of {total}",
+        "imagePreviewCount": "Image {current} of {total}",
+        "selectImage": "Select image {index}",
+        "cropFailed": "Unable to crop this image.",
+        "deleteImage": "Delete image",
+        "cropImage": "Crop image",
+        "videoPreview": "Video preview",
+        "audioPreview": "Audio preview",
+        "mention": "Reference media",
+        "mediaDuration": "{type} duration must be between {min} and {max} seconds.",
+        "video": "Video",
+        "audio": "Audio",
+        "imageDimensionMin": "Image width and height must be at least {value}px.",
+        "imageDimensionMax": "Image width and height must not exceed {value}px.",
+        "cancelTrim": "Cancel trimming",
+        "confirmTrim": "Confirm trimming",
+        "videoDimensionRange": "Video width and height must each be between {min} and {max}px."
+      },
+      "unified-upload": {
+        "formats": "JPG, JPEG, PNG, WEBP, MP3, WAV, M4A",
+        "hints": {
+          "video": "Upload inputs supported by the selected video model.",
+          "image": "Upload reference images supported by the selected image model."
+        },
+        "slots": {
+          "firstFrame": "First Frame",
+          "endFrame": "End Frame",
+          "image": "Image",
+          "audio": "Audio",
+          "optional": "Optional"
+        }
       }
     },
     "video-carousel": {
@@ -131,6 +181,60 @@
       "keep-original-sound-tip": "Preserve the uploaded video's original audio when supported.",
       "error": {
         "image-required": "Please upload an image to continue"
+      },
+      "reference-source": {
+        "file-title": "Reference File",
+        "file-formats": "Upload one reference file. Supported formats: {formats}.",
+        "page-limit": "PDF, document, presentation, Keynote, and Pages files support up to {count} pages.",
+        "remove-file": "Remove reference file",
+        "unsupported-file": "Supported reference file formats: {formats}.",
+        "link-title": "Reference Web Link",
+        "link-tip": "Use a public webpage that can be opened without signing in.",
+        "link-placeholder": "https://example.com/article",
+        "invalid-link": "Enter a valid public HTTP or HTTPS webpage link.",
+        "mutually-exclusive": "Reference files and webpage links cannot be used together."
+      },
+      "audio": {
+        "title": "Audio",
+        "upload-audio": "Upload Audio",
+        "audio-support": "This model includes built-in audio",
+        "supported-formats": "Supported: MP3, WAV (Max 15MB)",
+        "unsupported-format": "Unsupported audio format. Only MP3 and WAV are supported",
+        "file-too-large": "File size exceeds 15MB",
+        "show-trim": "Show Trim",
+        "hide-trim": "Hide Trim",
+        "start-time": "Start",
+        "end-time": "End",
+        "duration": "Duration",
+        "audio-too-short": "Audio is too short. Minimum 3 seconds required",
+        "audio-auto-trimmed": "Audio duration is {duration}s. Auto-trimmed to first 30 seconds. You can adjust by dragging the trim handles",
+        "audio-duration-requirement": "Audio must be 3-30 seconds",
+        "drag-region": "Drag Region",
+        "dragging-region": "Dragging...",
+        "audio-duration-error": "Audio duration must be between 3-30 seconds, current",
+        "audio-load-failed": "Failed to load audio file",
+        "audio-trim-failed": "Failed to trim audio, will use full audio"
+      },
+      "video-upload": {
+        "label": "Upload video or paste URL above",
+        "duration-minimum": "Uploaded video must be at least {duration} seconds",
+        "duration-range-error": "Trimmed video duration must be between {min}-{max} seconds",
+        "duration-limit": "Uploaded video must not exceed {duration} seconds",
+        "auto-trimmed": "Original video duration is {duration}s. Defaulted to the first {max} seconds, and you can adjust the range",
+        "load-failed": "Failed to load video file",
+        "play-failed": "Failed to play video",
+        "trim-failed": "Failed to trim video. Please adjust the range and try again",
+        "selected-range": "Selected range: {start} - {end}, total {duration}",
+        "range-tip": "Pick a video segment between {min}-{max} seconds",
+        "trim-start": "Start time",
+        "trim-end": "End time",
+        "reset-trim": "Reset",
+        "show-trim": "Show trim",
+        "hide-trim": "Hide trim",
+        "play": "Play",
+        "pause": "Pause",
+        "delete": "Delete",
+        "playback-progress": "Playback progress"
       }
     },
     "video-image-upload-form": {
@@ -1232,7 +1336,24 @@
       "text-to-image": "Text to Image",
       "image-to-image": "Image to Image"
     },
-    "mention-reference": "Mention a reference in the prompt"
+    "mention-reference": "Mention a reference in the prompt",
+    "quality": "Image Quality",
+    "end-frame": "End Frame",
+    "model-select": {
+      "all-providers": "All",
+      "all-types": "All",
+      "text-type": "Text",
+      "image-type": "Image",
+      "reference-type": "Reference",
+      "scroll-up": "Scroll up",
+      "scroll-down": "Scroll down",
+      "ratio": "Ratio",
+      "image": "Image",
+      "end-frame": "End Frame",
+      "sound": "Sound",
+      "seed": "Seed",
+      "duration": "{value}"
+    }
   },
   "CreatorHistory": {
     "title": "Generation History",

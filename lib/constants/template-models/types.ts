@@ -37,8 +37,8 @@ export type TemplateModelConfig = {
   inputs: {
     prompt?: { supported: boolean; required: boolean };
     image?: TemplateMediaInputConfig;
-    startFrame?: { supported: boolean; required: boolean };
-    endFrame?: { supported: boolean; required: boolean };
+    startFrame?: TemplateMediaInputConfig;
+    endFrame?: TemplateMediaInputConfig;
     video?: TemplateMediaInputConfig;
     audio?: TemplateMediaInputConfig;
     file?: {

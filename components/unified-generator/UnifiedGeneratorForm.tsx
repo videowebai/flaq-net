@@ -1,8 +1,7 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
-import { AudioLines, Loader2, RefreshCcw } from 'lucide-react';
-import { toast } from 'sonner';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { Loader2, RefreshCcw } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { Link } from '@/i18n/navigation';
@@ -12,16 +11,26 @@ import {
   getVersionConfig,
   type VideoGenerationType,
 } from '@/lib/constants/video';
+import {
+  buildReferenceMentionAssets,
+  EMPTY_REFERENCE_PROMPT_DOC,
+  serializeReferencePrompt,
+} from '@/lib/utils/reference-video-prompt';
 import useUnifiedGeneratorStore from '@/store/unified-generator/useUnifiedGeneratorStore';
 
+import EndFrameToggle from './EndFrameToggle';
 import GenerationTypeTabs from './GenerationTypeTabs';
 import ModelPopover from './ModelPopover';
 import ParameterPopover from './ParameterPopover';
-import ReferenceLinkField from './ReferenceLinkField';
-import ReferenceMediaField from './ReferenceMediaField';
-import ReferenceMentionBar from './ReferenceMentionBar';
-import ToolbarButton from './ToolbarButton';
+import ReferenceFileLinkInputs from './reference-upload/ReferenceFileLinkInputs';
+import ReferenceMediaUploads from './reference-upload/ReferenceMediaUploads';
+import ReferencePromptEditor, {
+  ReferenceMentionPickerPopover,
+  type ReferenceMentionInsertRequest,
+} from './reference-upload/ReferencePromptEditor';
+import SwitchPopover from './SwitchPopover';
 import TypeTabs from './TypeTabs';
+import UploadSlots from './UploadSlots';
 import useUnifiedGeneratorSubmit from './useUnifiedGeneratorSubmit';
 
 type SupportedVideoType = Exclude<VideoGenerationType, 'video-edit'>;
@@ -36,12 +45,10 @@ export default function UnifiedGeneratorForm({
   const t = useTranslations('UnifiedGenerator');
   const store = useUnifiedGeneratorStore();
   const { submit, isSubmitting } = useUnifiedGeneratorSubmit();
-  const [ratio, setRatio] = useState('');
-  const [resolution, setResolution] = useState('');
-  const [duration, setDuration] = useState<number | undefined>();
-  const [sound, setSound] = useState(false);
-  const [seed, setSeed] = useState<number | undefined>();
-  const [negativePrompt, setNegativePrompt] = useState('');
+  const [openPopover, setOpenPopover] = useState<'parameters' | 'panel' | null>(null);
+  const mentionInsertRequestKeyRef = useRef(0);
+  const pendingSubmitHandledRef = useRef(false);
+  const [mentionInsertRequest, setMentionInsertRequest] = useState<ReferenceMentionInsertRequest | null>(null);
 
   const mediaType = store.mediaType;
   const videoType = store.videoType;
@@ -60,18 +67,45 @@ export default function UnifiedGeneratorForm({
   const selectedVideoModel = availableVideoModels.find((model) => model.model === store.videoModels[videoType])
     || availableVideoModels[0];
   const videoVersion = selectedVideoModel ? getVersionConfig(selectedVideoModel.modelVersion) : undefined;
+  const videoModelsForPopover = useMemo(() => availableVideoModels.map((model) => ({
+    ...model,
+    options: {
+      ...model.options,
+      resolution: getVersionConfig(model.modelVersion)?.options.resolution || (model.options.resolution ? [model.options.resolution] : []),
+    },
+  })), [availableVideoModels]);
+  const selectedVideoPopoverModel = videoModelsForPopover.find((model) => model.model === selectedVideoModel?.model);
+  const parameters = mediaType === 'image' ? store.imageParameters : store.videoParameters[videoType];
 
   useEffect(() => {
     if (selectedImageModel && selectedImageModel.model !== store.imageModel) {
       store.setImageModel(selectedImageModel.model);
+      store.setImageParameters({
+        ratio: selectedImageModel.options.ratio?.find((item) => item.value === '-')?.value
+          || selectedImageModel.options.ratio?.[0]?.value || '',
+        resolution: selectedImageModel.options.resolution?.find((item) => item.value === '2k')?.value
+          || selectedImageModel.options.resolution?.[0]?.value || '',
+        quality: selectedImageModel.options.quality?.[0]?.value || '',
+      });
     }
-  }, [selectedImageModel, store.imageModel, store.setImageModel]);
+  }, [selectedImageModel, store.imageModel, store.setImageModel, store.setImageParameters]);
 
   useEffect(() => {
     if (selectedVideoModel && selectedVideoModel.model !== store.videoModels[videoType]) {
       store.setVideoModel(videoType, selectedVideoModel.model);
+      store.setVideoParameters(videoType, {
+        ratio: selectedVideoModel.options.ratio?.[0]?.value || '',
+        resolution: videoVersion?.options.resolution?.[0] || '',
+        duration: videoVersion?.options.duration?.[0]
+          ? Number(videoVersion.options.duration[0].replace('s', ''))
+          : selectedVideoModel.options.duration,
+        sound: Boolean(selectedVideoModel.options.defaultSound),
+        enableEndFrame: Boolean(selectedVideoModel.options.endFrame?.isSupported),
+        seed: undefined,
+        negativePrompt: '',
+      });
     }
-  }, [selectedVideoModel, store.videoModels, store.setVideoModel, videoType]);
+  }, [selectedVideoModel, store.setVideoModel, store.setVideoParameters, store.videoModels, videoType, videoVersion]);
 
   useEffect(() => {
     const ratios = mediaType === 'image'
@@ -81,22 +115,25 @@ export default function UnifiedGeneratorForm({
       ? selectedImageModel?.options.resolution?.map((item) => item.value)
       : videoVersion?.options.resolution;
     const durations = videoVersion?.options.duration?.map((value) => Number(value.replace('s', '')));
-    setRatio(ratios?.[0] || '');
-    setResolution(resolutions?.[0] || '');
-    setDuration(durations?.[0] ?? selectedVideoModel?.options.duration);
-    setSound(!!selectedVideoModel?.options.defaultSound);
-    setSeed(undefined);
-    setNegativePrompt('');
-  }, [mediaType, selectedImageModel?.model, selectedVideoModel?.model, videoVersion]);
+    const qualities = selectedImageModel?.options.quality?.map((item) => item.value) || [];
+    if (ratios?.length && !ratios.includes(parameters.ratio)) {
+      const ratio = mediaType === 'image' && ratios.includes('-') ? '-' : ratios[0];
+      if (mediaType === 'image') store.setImageParameters({ ratio });
+      else store.setVideoParameters(videoType, { ratio });
+    }
+    if (resolutions?.length && !resolutions.includes(parameters.resolution)) {
+      const resolution = mediaType === 'image' && resolutions.includes('2k') ? '2k' : resolutions[0];
+      if (mediaType === 'image') store.setImageParameters({ resolution });
+      else store.setVideoParameters(videoType, { resolution });
+    }
+    if (durations?.length && (parameters.duration === undefined || !durations.includes(parameters.duration))) {
+      store.setVideoParameters(videoType, { duration: durations[0] });
+    }
+    if (qualities.length && !qualities.includes(parameters.quality)) {
+      store.setImageParameters({ quality: qualities[0] });
+    }
+  }, [mediaType, parameters.duration, parameters.quality, parameters.ratio, parameters.resolution, selectedImageModel?.model, selectedVideoModel?.model, store.setImageParameters, store.setVideoParameters, videoType, videoVersion]);
 
-  const imageLimit = mediaType === 'image'
-    ? selectedImageModel?.options.imageInput?.max || 1
-    : videoType === 'image-to-video'
-      ? selectedVideoModel?.options.endFrame?.isSupported ? 2 : 1
-      : selectedVideoModel?.options.multiImage?.maxImages || 0;
-  const showImageInput = mediaType === 'image'
-    ? !!selectedImageModel?.options.imageInput?.isSupported
-    : videoType === 'image-to-video' || !!selectedVideoModel?.options.multiImage?.isSupported;
   const ratioOptions = mediaType === 'image'
     ? selectedImageModel?.options.ratio?.map((item) => item.value) || []
     : selectedVideoModel?.options.ratio?.map((item) => item.value) || [];
@@ -105,9 +142,17 @@ export default function UnifiedGeneratorForm({
     : videoVersion?.options.resolution || [];
   const durationOptions = videoVersion?.options.duration?.map((value) => Number(value.replace('s', ''))) || [];
   const seedConfig = mediaType === 'image' ? selectedImageModel?.options.seed : selectedVideoModel?.options.seed;
-  const supportsSeed = !!seedConfig;
-  const seedRange = typeof seedConfig === 'object' ? seedConfig : undefined;
   const isReferenceVideo = mediaType === 'video' && videoType === 'reference-to-video';
+  const seedRange = isReferenceVideo
+    ? typeof seedConfig === 'object' ? seedConfig : seedConfig ? { min: 0, max: 2147483647 } : undefined
+    : undefined;
+  const supportsSeed = Boolean(seedRange);
+  const standardPrompt = mediaType === 'image' ? store.imagePrompt : store.videoPrompt;
+  const referenceAssets = useMemo(() => buildReferenceMentionAssets(
+    store.referenceImages,
+    store.referenceVideos,
+    store.referenceAudios,
+  ), [store.referenceAudios, store.referenceImages, store.referenceVideos]);
 
   const handleSubmit = async () => {
     await submit({
@@ -115,35 +160,212 @@ export default function UnifiedGeneratorForm({
       videoType,
       imageModel: selectedImageModel,
       videoModel: selectedVideoModel,
-      prompt: store.prompt,
-      images: store.referenceImages,
+      prompt: isReferenceVideo
+        ? serializeReferencePrompt(store.referencePromptDoc, store.referenceImages, store.referenceVideos, store.referenceAudios)
+        : standardPrompt,
+      promptDoc: isReferenceVideo ? store.referencePromptDoc : undefined,
+      images: isReferenceVideo
+        ? store.referenceImages
+        : mediaType === 'image' ? store.imageInputs : [],
+      startImage: !isReferenceVideo && mediaType === 'video' ? store.videoStartInput : null,
+      endImage: !isReferenceVideo && mediaType === 'video' ? store.videoEndInput : null,
       videos: store.referenceVideos,
-      audios: store.referenceAudios,
+      audios: isReferenceVideo
+        ? store.referenceAudios
+        : store.videoAudioInput
+          ? [{
+              id: `audio-${store.videoAudioInput.name}-${store.videoAudioInput.lastModified}`,
+              kind: 'audio',
+              source: store.videoAudioInput,
+              originalFile: store.videoAudioInput,
+              name: store.videoAudioInput.name,
+            }]
+          : [],
       files: store.referenceFiles,
       links: store.referenceLinks,
-      ratio: ratio || undefined,
-      resolution: resolution || undefined,
-      duration,
-      sound,
-      seed,
-      negativePrompt,
+      ratio: parameters.ratio || undefined,
+      resolution: parameters.resolution || undefined,
+      duration: parameters.duration,
+      quality: parameters.quality || undefined,
+      sound: parameters.sound,
+      enableEndFrame: parameters.enableEndFrame,
+      seed: parameters.seed,
+      negativePrompt: parameters.negativePrompt,
     });
   };
 
+  useEffect(() => {
+    if (submitMode !== 'generate' || !store.pendingCreatorSubmit || pendingSubmitHandledRef.current) return;
+    pendingSubmitHandledRef.current = true;
+    store.clearPendingCreatorSubmit();
+    void handleSubmit();
+  }, [store.pendingCreatorSubmit, submitMode]);
+
   const handleReset = () => {
-    store.reset();
-    setRatio('');
-    setResolution('');
-    setDuration(undefined);
-    setSound(false);
-    setSeed(undefined);
-    setNegativePrompt('');
+    if (isReferenceVideo) {
+      store.setPrompt('');
+      store.setReferencePromptDoc(EMPTY_REFERENCE_PROMPT_DOC);
+      store.setReferenceImages([]);
+      store.setReferenceVideos([]);
+      store.setReferenceAudios([]);
+      store.setReferenceFiles([]);
+      store.setReferenceLinks([]);
+      store.setVideoParameters('reference-to-video', {
+        ratio: selectedVideoModel?.options.ratio?.[0]?.value || '',
+        resolution: videoVersion?.options.resolution?.[0] || '',
+        duration: videoVersion?.options.duration?.[0]
+          ? Number(videoVersion.options.duration[0].replace('s', ''))
+          : selectedVideoModel?.options.duration,
+        sound: Boolean(selectedVideoModel?.options.defaultSound),
+        seed: undefined,
+        negativePrompt: '',
+      });
+      setOpenPopover(null);
+      return;
+    }
+    if (mediaType === 'image') {
+      const defaultModel = ALL_IMAGE_MODELS.find((model) => model.model === 'gpt-image-2-edit');
+      store.setImageType('image-to-image');
+      store.setImageModel('gpt-image-2-edit');
+      store.setImagePrompt('');
+      store.setImageInputs([]);
+      store.setImageParameters({
+        ratio: defaultModel?.options.ratio?.find((item) => item.value === '-')?.value
+          || defaultModel?.options.ratio?.[0]?.value || '',
+        resolution: defaultModel?.options.resolution?.find((item) => item.value === '2k')?.value
+          || defaultModel?.options.resolution?.[0]?.value || '',
+        quality: defaultModel?.options.quality?.[0]?.value || '',
+        seed: undefined,
+        negativePrompt: '',
+      });
+      setOpenPopover(null);
+      return;
+    }
+    const defaultModel = ALL_VIDEO_MODELS.find((model) => model.model === 'seedance-v2.0-image-to-video');
+    const defaultVersion = defaultModel ? getVersionConfig(defaultModel.modelVersion) : undefined;
+    store.setVideoType('image-to-video');
+    store.setVideoModel('image-to-video', 'seedance-v2.0-image-to-video');
+    store.setVideoPrompt('');
+    store.setVideoStartInput(null);
+    store.setVideoEndInput(null);
+    store.setVideoAudioInput(null);
+    store.setVideoParameters('image-to-video', {
+      enableEndFrame: true,
+      ratio: defaultModel?.options.ratio?.[0]?.value || '',
+      resolution: defaultVersion?.options.resolution?.[0] || '',
+      duration: defaultVersion?.options.duration?.[0]
+        ? Number(defaultVersion.options.duration[0].replace('s', ''))
+        : defaultModel?.options.duration,
+      sound: Boolean(defaultModel?.options.defaultSound),
+      seed: undefined,
+      negativePrompt: '',
+    });
+    setOpenPopover(null);
   };
-  const appendMention = (mention: string) => {
-    const separator = store.prompt && !/\s$/.test(store.prompt) ? ' ' : '';
-    store.setPrompt(`${store.prompt}${separator}${mention} `);
+  const handleReferencePromptChange = (promptDoc: typeof store.referencePromptDoc) => {
+    store.setReferencePromptDoc(promptDoc);
+    store.setPrompt(serializeReferencePrompt(
+      promptDoc,
+      store.referenceImages,
+      store.referenceVideos,
+      store.referenceAudios,
+    ));
   };
-  const limitReached = () => toast.error(t('errors.max-files'));
+  const handleSelectMentionAsset = (asset: ReferenceMentionInsertRequest['asset']) => {
+    mentionInsertRequestKeyRef.current += 1;
+    setMentionInsertRequest({ asset, key: mentionInsertRequestKeyRef.current });
+  };
+  const handleVideoModelChange = (model: string) => {
+    const nextModel = availableVideoModels.find((item) => item.model === model);
+    if (!nextModel) return;
+    const nextVersion = getVersionConfig(nextModel.modelVersion);
+    store.setVideoModel(videoType, model);
+    store.setVideoParameters(videoType, {
+      ratio: nextModel.options.ratio?.[0]?.value || '',
+      resolution: nextVersion?.options.resolution?.[0] || '',
+      duration: nextVersion?.options.duration?.[0]
+        ? Number(nextVersion.options.duration[0].replace('s', ''))
+        : nextModel.options.duration,
+      sound: Boolean(nextModel.options.defaultSound),
+      enableEndFrame: Boolean(nextModel.options.endFrame?.isSupported),
+      seed: undefined,
+      negativePrompt: '',
+    });
+    if (videoType === 'reference-to-video') {
+      store.setReferenceImages(store.referenceImages.slice(0, nextModel.options.multiImage?.maxImages || 0));
+      store.setReferenceVideos(store.referenceVideos.slice(0, nextModel.options.multiVideo?.maxVideos || 0));
+      store.setReferenceAudios(store.referenceAudios.slice(0, nextModel.options.multiAudio?.maxAudios || 0));
+    } else {
+      if (videoType !== 'image-to-video') {
+        store.setVideoStartInput(null);
+        store.setVideoEndInput(null);
+      } else if (!nextModel.options.endFrame?.isSupported) {
+        store.setVideoEndInput(null);
+      }
+      if (!nextModel.options.audioUrl) store.setVideoAudioInput(null);
+    }
+    setOpenPopover(null);
+  };
+  const handleImageModelChange = (model: string) => {
+    const nextModel = availableImageModels.find((item) => item.model === model);
+    if (!nextModel) return;
+    store.setImageModel(model);
+    store.setImageParameters({
+      ratio: nextModel.options.ratio?.find((item) => item.value === '-')?.value
+        || nextModel.options.ratio?.[0]?.value || '',
+      resolution: nextModel.options.resolution?.find((item) => item.value === '2k')?.value
+        || nextModel.options.resolution?.[0]?.value || '',
+      quality: nextModel.options.quality?.[0]?.value || '',
+      seed: undefined,
+    });
+    store.setImageInputs(store.imageInputs.slice(0, nextModel.options.imageInput?.max || 0));
+    setOpenPopover(null);
+  };
+  const handleVideoTypeChange = (nextType: SupportedVideoType) => {
+    const currentFamily = selectedVideoModel?.model.replace(/-(?:text|image|reference)-to-video$/, '');
+    const nextModel = ALL_VIDEO_MODELS.find((model) =>
+      !model.disabled
+      && model.generationType === nextType
+      && model.model.replace(/-(?:text|image|reference)-to-video$/, '') === currentFamily)
+      || ALL_VIDEO_MODELS.find((model) => !model.disabled && model.generationType === nextType);
+    store.setVideoType(nextType);
+    if (!nextModel) return;
+    const nextVersion = getVersionConfig(nextModel.modelVersion);
+    store.setVideoModel(nextType, nextModel.model);
+    store.setVideoParameters(nextType, {
+      ratio: nextModel.options.ratio?.[0]?.value || '',
+      resolution: nextVersion?.options.resolution?.[0] || '',
+      duration: nextVersion?.options.duration?.[0]
+        ? Number(nextVersion.options.duration[0].replace('s', ''))
+        : nextModel.options.duration,
+      sound: Boolean(nextModel.options.defaultSound),
+      enableEndFrame: Boolean(nextModel.options.endFrame?.isSupported),
+      seed: undefined,
+      negativePrompt: '',
+    });
+    setOpenPopover(null);
+  };
+  const handleImageTypeChange = (nextType: 'text-to-image' | 'image-to-image') => {
+    const nextModels = ALL_IMAGE_MODELS.filter((model) => nextType === 'image-to-image'
+      ? Boolean(model.options.imageInput?.isSupported)
+      : !model.options.imageInput?.isSupported);
+    const currentFamily = selectedImageModel?.model.replace(/-edit(?:-client)?$/, '').replace(/-client$/, '');
+    const nextModel = nextModels.find((model) =>
+      model.model.replace(/-edit(?:-client)?$/, '').replace(/-client$/, '') === currentFamily)
+      || nextModels[0];
+    store.setImageType(nextType);
+    if (!nextModel) return;
+    store.setImageModel(nextModel.model);
+    store.setImageParameters({
+      ratio: nextModel.options.ratio?.find((item) => item.value === '-')?.value
+        || nextModel.options.ratio?.[0]?.value || '',
+      resolution: nextModel.options.resolution?.find((item) => item.value === '2k')?.value
+        || nextModel.options.resolution?.[0]?.value || '',
+      quality: nextModel.options.quality?.[0]?.value || '',
+    });
+    store.setImageInputs(store.imageInputs.slice(0, nextModel.options.imageInput?.max || 0));
+    setOpenPopover(null);
+  };
 
   return (
     <section className='flex w-full flex-col gap-3'>
@@ -168,8 +390,8 @@ export default function UnifiedGeneratorForm({
               'image-to-video': t('video-type.image-to-video'),
               'reference-to-video': t('video-type.reference-to-video'),
             }}
-            onImageTypeChange={store.setImageType}
-            onVideoTypeChange={store.setVideoType}
+            onImageTypeChange={handleImageTypeChange}
+            onVideoTypeChange={handleVideoTypeChange}
           />
           <button
             type='button'
@@ -184,91 +406,69 @@ export default function UnifiedGeneratorForm({
         <div className='bg-color-bg0 flex h-[clamp(360px,calc(100dvh-200px),470px)] flex-col gap-2 p-3 sm:h-[400px] sm:gap-3 lg:h-[355px]'>
           <div className='flex min-h-[140px] flex-1 flex-col gap-3 sm:min-h-[190px] sm:flex-row'>
             <div className='empty:hidden sm:w-fit sm:max-w-[240px] sm:shrink-0'>
-              <div className='custom-scrollbar flex max-h-full flex-col gap-3 overflow-y-auto pr-1'>
-                <div className='flex flex-wrap items-center gap-2'>
-                  {showImageInput && imageLimit > 0 ? (
-                    <ReferenceMediaField
-                      kind='image'
-                      label={videoType === 'image-to-video' ? t('start-image') : t('reference-images')}
-                      files={store.referenceImages}
-                      max={imageLimit}
-                      accept={selectedVideoModel?.options.multiImage?.acceptedFormats}
-                      onChange={store.setReferenceImages}
-                      onLimitReached={limitReached}
-                    />
-                  ) : null}
-                  {isReferenceVideo && selectedVideoModel?.options.multiVideo?.isSupported ? (
-                    <ReferenceMediaField
-                      kind='video'
-                      label={t('reference-videos')}
-                      files={store.referenceVideos}
-                      max={selectedVideoModel.options.multiVideo.maxVideos}
-                      accept={selectedVideoModel.options.multiVideo.acceptedFormats}
-                      onChange={store.setReferenceVideos}
-                      onLimitReached={limitReached}
-                    />
-                  ) : null}
-                  {isReferenceVideo && selectedVideoModel?.options.multiAudio?.isSupported ? (
-                    <ReferenceMediaField
-                      kind='audio'
-                      label={t('reference-audios')}
-                      files={store.referenceAudios}
-                      max={selectedVideoModel.options.multiAudio.maxAudios}
-                      accept={selectedVideoModel.options.multiAudio.acceptedFormats}
-                      onChange={store.setReferenceAudios}
-                      onLimitReached={limitReached}
-                    />
-                  ) : null}
-                  {isReferenceVideo && selectedVideoModel?.options.referenceFile?.isSupported ? (
-                    <ReferenceMediaField
-                      kind='file'
-                      label={t('reference-files')}
-                      files={store.referenceFiles}
-                      max={selectedVideoModel.options.referenceFile.maxFiles}
-                      accept={selectedVideoModel.options.referenceFile.acceptedFormats}
-                      onChange={(files) => {
-                        store.setReferenceFiles(files);
-                        if (files.length) store.setReferenceLinks([]);
-                      }}
-                      onLimitReached={limitReached}
-                    />
-                  ) : null}
-                </div>
-                {isReferenceVideo && selectedVideoModel?.options.referenceLink?.isSupported ? (
-                  <ReferenceLinkField
-                    label={t('reference-links')}
-                    placeholder={t('reference-link-placeholder')}
-                    links={store.referenceLinks}
-                    max={selectedVideoModel.options.referenceLink.maxLinks}
-                    onChange={(links) => {
-                      store.setReferenceLinks(links);
-                      if (links.some(Boolean)) store.setReferenceFiles([]);
-                    }}
+              {isReferenceVideo && selectedVideoModel ? (
+                <div className='custom-scrollbar flex max-h-full w-full flex-col gap-3 overflow-y-auto pr-1 sm:w-[240px]'>
+                  <ReferenceMediaUploads
+                    model={selectedVideoModel}
+                    images={store.referenceImages}
+                    videos={store.referenceVideos}
+                    audios={store.referenceAudios}
+                    onImagesChange={store.setReferenceImages}
+                    onVideosChange={store.setReferenceVideos}
+                    onAudiosChange={store.setReferenceAudios}
                   />
-                ) : null}
-              </div>
+                  <ReferenceFileLinkInputs
+                    model={selectedVideoModel}
+                    files={store.referenceFiles}
+                    links={store.referenceLinks}
+                    onFilesChange={store.setReferenceFiles}
+                    onLinksChange={store.setReferenceLinks}
+                  />
+                </div>
+              ) : (
+                <UploadSlots
+                  mediaType={mediaType}
+                  imageModel={selectedImageModel}
+                  videoModel={selectedVideoModel}
+                  enableEndFrame={parameters.enableEndFrame}
+                  imageInputs={store.imageInputs}
+                  startFrame={store.videoStartInput}
+                  endFrame={store.videoEndInput}
+                  audioFile={store.videoAudioInput}
+                  onImageInputsChange={store.setImageInputs}
+                  onStartFrameChange={store.setVideoStartInput}
+                  onEndFrameChange={store.setVideoEndInput}
+                  onAudioFileChange={store.setVideoAudioInput}
+                />
+              )}
             </div>
 
             <div className='relative flex min-h-[140px] min-w-0 flex-1 flex-col overflow-hidden rounded-md bg-transparent sm:min-h-[190px]'>
               {isReferenceVideo ? (
-                <ReferenceMentionBar
-                  label={t('mention-reference')}
-                  imageCount={store.referenceImages.length}
-                  videoCount={store.referenceVideos.length}
-                  audioCount={store.referenceAudios.length}
-                  onInsert={appendMention}
+                <ReferencePromptEditor
+                  value={store.referencePromptDoc}
+                  assets={referenceAssets}
+                  insertMentionRequest={mentionInsertRequest}
+                  maxLength={2000}
+                  onChange={handleReferencePromptChange}
                 />
-              ) : null}
-              <textarea
-                value={store.prompt}
-                maxLength={2000}
-                onChange={(event) => store.setPrompt(event.target.value)}
-                placeholder={t('prompt-placeholder')}
-                className='custom-scrollbar text-color-t1 placeholder:text-color-t3 min-h-0 w-full flex-1 resize-none overflow-y-auto bg-transparent px-0 py-0 pr-24 text-[15px] leading-7 outline-none'
-              />
-              <div className='text-color-t3 pointer-events-none absolute right-3 bottom-3 text-sm'>
-                {store.prompt.length} / 2000
-              </div>
+              ) : (
+                <>
+                  <textarea
+                    value={standardPrompt}
+                    maxLength={2000}
+                    onChange={(event) => {
+                      if (mediaType === 'image') store.setImagePrompt(event.target.value);
+                      else store.setVideoPrompt(event.target.value);
+                    }}
+                    placeholder={t('prompt-placeholder')}
+                    className='custom-scrollbar text-color-t1 placeholder:text-color-t3 min-h-0 w-full flex-1 resize-none overflow-y-auto bg-transparent px-0 py-0 pr-24 text-[15px] leading-7 outline-none'
+                  />
+                  <div className='text-color-t3 pointer-events-none absolute right-3 bottom-3 text-sm'>
+                    {standardPrompt.length} / 2000
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
@@ -279,56 +479,88 @@ export default function UnifiedGeneratorForm({
                 ratios={ratioOptions}
                 durations={mediaType === 'video' ? durationOptions : []}
                 durationRange={mediaType === 'video' ? videoVersion?.options.durationRange : undefined}
-                resolution={resolution}
-                ratio={ratio}
-                duration={duration}
-                seed={seed}
+                qualityOptions={mediaType === 'image' ? selectedImageModel?.options.quality || [] : []}
+                resolution={parameters.resolution}
+                ratio={parameters.ratio}
+                duration={parameters.duration}
+                quality={parameters.quality}
+                seed={parameters.seed}
                 seedRange={seedRange}
                 supportsSeed={supportsSeed}
-                negativePrompt={negativePrompt}
-                supportsNegativePrompt={mediaType === 'video' && !!selectedVideoModel?.options.negativePrompt}
+                negativePrompt={parameters.negativePrompt}
+                supportsNegativePrompt={isReferenceVideo && !!selectedVideoModel?.options.negativePrompt}
                 labels={{
                   resolution: t('resolution'),
                   ratio: t('ratio'),
                   duration: t('duration'),
+                  quality: t('quality'),
                   seed: t('seed'),
                   negativePrompt: t('negative-prompt'),
                   optional: t('optional'),
                 }}
-                onResolutionChange={setResolution}
-                onRatioChange={setRatio}
-                onDurationChange={setDuration}
-                onSeedChange={setSeed}
-                onNegativePromptChange={setNegativePrompt}
+                open={openPopover === 'parameters'}
+                onOpenChange={(open) => setOpenPopover(open ? 'parameters' : null)}
+                onResolutionChange={(resolution) => {
+                  if (mediaType === 'image') store.setImageParameters({ resolution });
+                  else store.setVideoParameters(videoType, { resolution });
+                }}
+                onRatioChange={(ratio) => {
+                  if (mediaType === 'image') store.setImageParameters({ ratio });
+                  else store.setVideoParameters(videoType, { ratio });
+                }}
+                onDurationChange={(duration) => store.setVideoParameters(videoType, { duration })}
+                onQualityChange={(quality) => store.setImageParameters({ quality })}
+                onSeedChange={(seed) => store.setVideoParameters(videoType, { seed })}
+                onNegativePromptChange={(negativePrompt) => store.setVideoParameters(videoType, { negativePrompt })}
               />
               {mediaType === 'image' && selectedImageModel ? (
                 <ModelPopover
                   models={availableImageModels}
                   selectedModel={selectedImageModel}
                   label={t('model')}
-                  onChange={store.setImageModel}
+                  onChange={handleImageModelChange}
                 />
               ) : null}
-              {mediaType === 'video' && selectedVideoModel ? (
+              {mediaType === 'video' && selectedVideoModel && selectedVideoPopoverModel ? (
                 <ModelPopover
-                  models={availableVideoModels}
-                  selectedModel={selectedVideoModel}
+                  models={videoModelsForPopover}
+                  selectedModel={selectedVideoPopoverModel}
                   label={t('model')}
-                  onChange={(model) => store.setVideoModel(videoType, model)}
+                  onChange={handleVideoModelChange}
+                />
+              ) : null}
+              {mediaType === 'video' && videoType === 'image-to-video' && selectedVideoModel?.options.endFrame?.isSupported ? (
+                <EndFrameToggle
+                  checked={parameters.enableEndFrame}
+                  label={t('end-frame')}
+                  onCheckedChange={(checked) => {
+                    store.setVideoParameters(videoType, { enableEndFrame: checked });
+                    if (!checked) store.setVideoEndInput(null);
+                  }}
                 />
               ) : null}
               {mediaType === 'video' && selectedVideoModel?.options.sound ? (
-                <ToolbarButton active={sound} onClick={() => setSound((value) => !value)}>
-                  <AudioLines className='size-4' />
-                  {t('sound')}
-                </ToolbarButton>
+                <SwitchPopover
+                  items={[{ key: 'enableAudio', label: t('sound'), checked: parameters.sound }]}
+                  open={openPopover === 'panel'}
+                  onOpenChange={(open) => setOpenPopover(open ? 'panel' : null)}
+                  onToggle={(_, checked) => store.setVideoParameters(videoType, { sound: checked })}
+                />
+              ) : null}
+              {isReferenceVideo ? (
+                <ReferenceMentionPickerPopover
+                  assets={referenceAssets}
+                  disabled={referenceAssets.length === 0}
+                  onSelect={handleSelectMentionAsset}
+                />
               ) : null}
             </div>
 
             {submitMode === 'transfer' ? (
               <Link
                 href='/ai-media-creator'
-                className='bg-color-main inline-flex h-9 w-full min-w-[120px] shrink-0 items-center justify-center gap-2 rounded-md px-4 text-base leading-none font-medium whitespace-nowrap text-white transition-opacity hover:opacity-90 sm:w-auto'
+                onClick={store.requestCreatorSubmit}
+                className='bg-color-main inline-flex h-9 w-full min-w-[120px] shrink-0 items-center justify-center gap-2 rounded-md px-4 py-0 text-base leading-none font-medium whitespace-nowrap text-white transition-opacity hover:text-white hover:opacity-90 sm:w-auto'
               >
                 {t('generate')}
               </Link>
@@ -337,7 +569,7 @@ export default function UnifiedGeneratorForm({
                 type='button'
                 onClick={() => void handleSubmit()}
                 disabled={isSubmitting || (mediaType === 'video' && !selectedVideoModel)}
-                className='bg-color-main inline-flex h-9 w-full min-w-[120px] shrink-0 items-center justify-center gap-2 rounded-md px-4 text-base leading-none font-medium whitespace-nowrap text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto'
+                className='bg-color-main inline-flex h-9 w-full min-w-[120px] shrink-0 items-center justify-center gap-2 rounded-md px-4 py-0 text-base leading-none font-medium whitespace-nowrap text-white transition-opacity hover:text-white hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto'
               >
                 {t('generate')}
                 {isSubmitting ? <Loader2 className='size-4 animate-spin' /> : null}
