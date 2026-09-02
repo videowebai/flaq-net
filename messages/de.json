@@ -387,8 +387,8 @@
     "reference-to-video-content": "Create video from image, video, audio, document, or link references"
   },
   "Footer": {
-    "title": "Flaq AI",
-    "subTitle": "Weltweit führende KI-Modellaggregation & Inferenz-Beschleunigungsplattform",
+    "title": "KI-Bilder und -Videos — Kostenlos & Open Source · Keine Anmeldung",
+    "subTitle": "Nutze und hoste dieses kostenlose Open-Source-KI-Bilder und -Videos-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig.",
     "support": "Support",
     "docs": "Docs",
     "business": "Geschäftlich",
@@ -497,7 +497,6 @@
       "29-p": "Kontaktinformationen: Bei Fragen oder Anliegen zu diesen Bedingungen wenden Sie sich bitte an contact@flaq.ai. Unsere Firmendetails: FLAQ AI PTE. LTD., 112 ROBINSON ROAD, #03-01, ROBINSON 112, SINGAPUR. Wir verpflichten uns, Ihre Anliegen zu bearbeiten und werden uns bemühen, so schnell wie möglich zu antworten."
     },
     "refundPolicy": {
-      "title": "Rückerstattungsrichtlinie für flaq.ai",
       "1": {
         "title": "1. Anspruch auf Rückerstattung",
         "description": "Aufgrund unserer Abhängigkeit von Partnerplattformen und der erheblichen Rechenkosten der KI-Verarbeitung müssen Rückerstattungsanträge innerhalb von 3 Tagen nach Ihrem Kauf eingereicht werden. Nach Ablauf dieser Frist sind Rückerstattungen nicht möglich. Für weitere Informationen kontaktieren Sie uns bitte unter contact@flaq.ai."
@@ -521,13 +520,14 @@
       "6": {
         "title": "6. Änderungen dieser Richtlinie",
         "description": "1. Wir behalten uns das Recht vor, diese Rückerstattungsrichtlinie jederzeit zu ändern. \n2. Alle Änderungen werden sofort wirksam und auf dieser Seite veröffentlicht. \n3. Wir empfehlen, diese Richtlinie regelmäßig zu überprüfen. \n4. Für Richtlinienaktualisierungen oder Anfragen kontaktieren Sie uns bitte unter contact@flaq.ai."
-      }
+      },
+      "title": "Rückerstattungsrichtlinie für flaq.ai"
     }
   },
   "Home": {
     "heading": {
-      "title": "Flaq AI: Einheitliche und erschwingliche KI-Agenten-APIs für Topmodelle",
-      "description": "Teste die weltweit besten Video-, Bild-, Musik- und LLM-Modelle über eine API – mit besseren Preisen und höherer Kosteneffizienz als bei den offiziellen APIs.",
+      "title": "KI-Bilder und -Videos — Kostenlos & Open Source · Keine Anmeldung",
+      "description": "Nutze und hoste dieses kostenlose Open-Source-KI-Bilder und -Videos-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig.",
       "try-now": "Try Now",
       "try-now-video": "Video-API ausprobieren",
       "try-now-image": "Bild-API ausprobieren"
@@ -546,9 +546,6 @@
       }
     },
     "unique-features": {
-      "title": "Key Features of Flaq SaaS Template",
-      "description": "A complete open source template with essential features for building your own AI generation platform.",
-      "button-text": "Try Now",
       "1": {
         "title": "Flaq AI Integration",
         "description": "Built-in integration with Flaq AI's open API for seamless image and video generation capabilities."
@@ -564,12 +561,12 @@
       "4": {
         "title": "Open Source & Customizable",
         "description": "Fully open source with clean code structure. Easy to customize and extend for your specific needs."
-      }
+      },
+      "title": "Key Features of Flaq SaaS Template",
+      "description": "A complete open source template with essential features for building your own AI generation platform.",
+      "button-text": "Try Now"
     },
     "use-cases": {
-      "title": "Typische Anwendungsszenarien bei Flaq AI",
-      "description": "Flaq AIs leistungsstarker API-Cluster ist mehr als eine Sammlung von Tools – er ist die treibende Kraft für Innovation in der Industrie. Von kreativen Workflows bis zur Automatisierung im Unternehmen bieten wir umfassenden technischen Support.",
-      "button-text": "Try Now",
       "1": {
         "title": "Vollautomatisierte Content-Marketing-Plattform",
         "description": "Erstelle markenkonforme Visuals stapelweise mit der Nano Banana Pro API und generiere automatisch Beiträge mit LLMs – für sofortigen Output von Text zu Bild."
@@ -585,7 +582,10 @@
       "4": {
         "title": "Prototyping & Wachstum für Entwickler",
         "description": "Teste verschiedene Modellkombinationen schnell mit einem einheitlichen API-Key und wechsle jederzeit den Kernalgorithmus je nach Marktrückmeldung, ganz ohne Codeänderungen."
-      }
+      },
+      "title": "Typische Anwendungsszenarien bei Flaq AI",
+      "description": "Flaq AIs leistungsstarker API-Cluster ist mehr als eine Sammlung von Tools – er ist die treibende Kraft für Innovation in der Industrie. Von kreativen Workflows bis zur Automatisierung im Unternehmen bieten wir umfassenden technischen Support.",
+      "button-text": "Try Now"
     },
     "exampleSection": {
       "title": "Examples Generated via Flaq API",
@@ -601,7 +601,6 @@
       }
     },
     "faq": {
-      "title": "Häufig gestellte Fragen zu Flaq AI",
       "1": {
         "question": "Was unterscheidet Flaq AI von den offiziellen APIs der Modellanbieter?",
         "answer": "Flaq AI bietet standardisierte Datenformate, intelligentes Failover-Routing und hervorragende Netzwerkoptimierung – das reduziert die Latenz deutlich und spart den Aufwand, mehrere API-Konten zu verwalten."
@@ -633,51 +632,50 @@
       "8": {
         "question": "Wie lautet der Haftungsausschluss bei Verletzungen geistigen Eigentums?",
         "answer": "Flaq AI bietet KI-Tools, mit denen Nutzer ihrer Vorstellungskraft entsprechend gewünschte Bildinhalte generieren können. Wenn Nutzer Inhalte zu Prominenten oder anderem geistigen Eigentum einbinden und diese auf eine Weise verbreiten, die zu Rechtsverletzungen führt, liegt die rechtliche Verantwortung beim Nutzer."
-      }
+      },
+      "title": "Häufig gestellte Fragen zu Flaq AI"
     }
   },
   "image-to-image": {
     "heading": {
-      "title": "KI-Image-to-Image-Generator: Bilder mit Referenzbildern bearbeiten",
-      "description": "Lade ein Referenzbild hoch und transformiere es mit dem Flaq AI Image-to-Image-Generator. Starte mit kostenlosen Credits, nutze Prompts in natuerlicher Sprache, um Fotos neu zu gestalten, Motive und Komposition zu erhalten, visuelle Details zu bearbeiten und hochwertige Visuals fuer Design, Marketing, Produkt- und Kreativablaeufe zu erstellen."
+      "title": "Bild zu Bild — Kostenlos & Open Source · Keine Anmeldung",
+      "description": "Nutze und hoste dieses kostenlose Open-Source-Bild zu Bild-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig."
     },
     "form": {
       "title": "Bild zu Bild"
     },
     "examples": {
-      "title": "Kernfunktionen des KI-Image-to-Image-Generators",
-      "description": "Ein flexibler KI-Erstellungsablauf fuer Bilder aus Bildern, ausgelegt auf starkes Prompt-Verstaendnis, flexible Modellauswahl, saubere Komposition und schnelle kreative Iteration.",
       "1": {
-        "title": "The AI image-to-image converter enables high-quality style conversion and reconstruction while maintaining original characteristics and details.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "A girl with a backpack, standing relaxed near a bookshelf and behind a chair. Keep every other detail in the scene completely unchanged."
-        }
+        },
+        "title": "The AI image-to-image converter enables high-quality style conversion and reconstruction while maintaining original characteristics and details."
       },
       "2": {
-        "title": "The AI image-to-image converter supports fine-grained control of style transfer while preserving the source image's complete content.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "Convert a realistic image into retro, grid-style pixel video game art."
-        }
+        },
+        "title": "The AI image-to-image converter supports fine-grained control of style transfer while preserving the source image's complete content."
       },
       "3": {
-        "title": "The AI image-to-image converter preserves the original structure and layout during transformation, enabling creators to achieve more accurate composition control and generate high-quality, stable output images.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "Ultra-realistic 8K overhead photo in strict knolling style. Take the object from the reference image and fully disassemble it into 8 to 12 main parts, arranging them neatly in a grid or radial layout on a minimalist wood or matte gray tabletop. Use uniform spacing and perfect alignment, no overlap or extraneous items. The scene is softly and diffusely lit by multiple light sources, casting subtle shadows and balancing neutral colors, with all elements in perfect focus. Show highly detailed real-world materials (metal, plastic, rubber grips, circuit boards, screws). For each part, add a slim white rectangular border, and place a short, clear English label next to it in a simple sans-serif font, not covering the part; annotations must be legible and not intrusive."
-        }
-      }
+        },
+        "title": "The AI image-to-image converter preserves the original structure and layout during transformation, enabling creators to achieve more accurate composition control and generate high-quality, stable output images."
+      },
+      "title": "Kernfunktionen des KI-Image-to-Image-Generators",
+      "description": "Ein flexibler KI-Erstellungsablauf fuer Bilder aus Bildern, ausgelegt auf starkes Prompt-Verstaendnis, flexible Modellauswahl, saubere Komposition und schnelle kreative Iteration."
     },
     "core-feature": {
-      "title": "Core Advantages of Image-to-Image Converter",
-      "description": "A professional AI image-to-image tool offering high-resolution outputs and a streamlined, user-friendly interface. Easily generate high-quality works from reference images. Diverse settings provide creative freedom, making image editing, design, and art creation more efficient and flexible.",
       "1": {
         "title": "Realistic and Delicate Visual Presentation",
         "description": "Outstanding in rendering textures, lighting, and composition, the system produces highly accurate, richly detailed, and realistic images for vivid results."
@@ -689,12 +687,11 @@
       "3": {
         "title": "Powerful Text Understanding and Parsing",
         "description": "Leveraging advanced natural language processing, the system accurately understands prompts and descriptions to quickly generate and optimize image content for smarter, more efficient creation."
-      }
+      },
+      "title": "Core Advantages of Image-to-Image Converter",
+      "description": "A professional AI image-to-image tool offering high-resolution outputs and a streamlined, user-friendly interface. Easily generate high-quality works from reference images. Diverse settings provide creative freedom, making image editing, design, and art creation more efficient and flexible."
     },
     "advantage": {
-      "title": "Applications of the AI Image-to-Image Converter",
-      "description": "The AI image-to-image converter is suitable for poster design, brand marketing, product showcases, and artistic creation. It enables precise image and text control, greatly improving creative efficiency and visual quality and providing powerful creative capabilities for designers, business teams, and educators.",
-      "try-now": "Try Now",
       "1": {
         "title": "Poster & Visual Design",
         "description": "Supports poster and various creative visual editing, with flexible adjustment of fonts, sizes, and styles—perfect for event promotion and brand marketing."
@@ -710,11 +707,12 @@
       "4": {
         "title": "Artistic Creation & Cultural Innovation",
         "description": "Empowers artists and designers with rich creative tools for style transformation, cross-domain inspiration, and maximized artistic possibilities."
-      }
+      },
+      "title": "Applications of the AI Image-to-Image Converter",
+      "description": "The AI image-to-image converter is suitable for poster design, brand marketing, product showcases, and artistic creation. It enables precise image and text control, greatly improving creative efficiency and visual quality and providing powerful creative capabilities for designers, business teams, and educators.",
+      "try-now": "Try Now"
     },
     "manual": {
-      "title": "So generierst du Bilder aus Bildern",
-      "content": "This step-by-step guide will help you get started and achieve the best results with the AI image-to-image conversion tool.",
       "1": {
         "title": "Referenzbild hochladen",
         "description": "Beginne mit einem Produktfoto, Portraet, einer Skizze, einem Designentwurf, einer Stilreferenz oder einem beliebigen Bild, das das generierte Ergebnis steuern soll."
@@ -726,10 +724,11 @@
       "3": {
         "title": "Generieren und verfeinern",
         "description": "Waehle ein unterstuetztes Modell und Einstellungen, generiere das Bild, sieh dir das Ergebnis an und lade das fertige Bild in unterstuetzten Formaten wie JPG, PNG oder WebP herunter."
-      }
+      },
+      "title": "So generierst du Bilder aus Bildern",
+      "content": "This step-by-step guide will help you get started and achieve the best results with the AI image-to-image conversion tool."
     },
     "faq": {
-      "title": "Image-to-Image-Generator FAQ",
       "1": {
         "question": "Was ist ein KI-Image-to-Image-Generator?",
         "answer": "Ein KI-Image-to-Image-Generator nutzt ein hochgeladenes Bild als visuellen Input und erstellt dann anhand deines Prompts ein neues Bild. Er kann helfen, ein vorhandenes Visual neu zu gestalten, zu bearbeiten, zu verbessern oder neu zu interpretieren."
@@ -753,30 +752,29 @@
       "6": {
         "question": "Kann ich Image-to-Image-Ergebnisse kommerziell nutzen?",
         "answer": "Die kommerzielle Nutzung haengt von deinen Rechten am hochgeladenen Bild, deinem Plan, den Plattformbedingungen, den Regeln des Modellanbieters und den generierten Inhalten ab. Pruefe die aktuellen Bedingungen, bevor du Ausgaben in bezahlter, Kunden- oder oeffentlicher Arbeit verwendest."
-      }
+      },
+      "title": "Image-to-Image-Generator FAQ"
     }
   },
   "image-to-video": {
     "heading": {
-      "title": "Image-to-Video-KI-Generator mit Audio",
-      "description": "Animiere Fotos und Referenzbilder zu kurzen KI-Videos auf flaq.ai. Starte mit kostenlosen Credits, lade ein Bild hoch, beschreibe die Bewegung, waehle ein unterstuetztes Image-to-Video-Modell und generiere fluessige Clips fuer Produkte, Portraets, Social Posts, Anzeigen und kreative Konzepte."
+      "title": "Bild zu Video — Kostenlos & Open Source · Keine Anmeldung",
+      "description": "Nutze und hoste dieses kostenlose Open-Source-Bild zu Video-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig."
     },
     "form": {
       "title": "Bild zu Video"
     },
     "example": {
-      "title": "Beispiele fuer den Image-to-Video-KI-Generator",
-      "description": "Image-to-Video-KI-Generator-Beispiele zeigen, wie Ideen mit klarer Bewegung, filmischer Bildgestaltung, realistischer Physik und optionalem Audio zu dynamischen Clips werden koennen, wenn das ausgewaehlte Modell dies unterstuetzt.",
       "1": {
         "prompt": "cutting the tomato"
       },
       "2": {
         "prompt": "The man is skiing"
-      }
+      },
+      "title": "Beispiele fuer den Image-to-Video-KI-Generator",
+      "description": "Image-to-Video-KI-Generator-Beispiele zeigen, wie Ideen mit klarer Bewegung, filmischer Bildgestaltung, realistischer Physik und optionalem Audio zu dynamischen Clips werden koennen, wenn das ausgewaehlte Modell dies unterstuetzt."
     },
     "core-feature": {
-      "title": "Advantages about the Image to Video AI Generator",
-      "description": "AI Video Generator not only generates content quickly but also focuses on visual hierarchy and narrative logic, making it an important productivity tool for content creators and business teams.",
       "1": {
         "title": "High-Quality Video Output",
         "description": "AI Video Generator produces high-quality videos with smooth motion and clear visuals, meeting professional video production standards."
@@ -788,12 +786,11 @@
       "3": {
         "title": "Natural Motion and Spatial Consistency",
         "description": "Character movements connect smoothly, scene transitions are seamless, both enhancing immersion and ensuring narrative continuity and logic."
-      }
+      },
+      "title": "Advantages about the Image to Video AI Generator",
+      "description": "AI Video Generator not only generates content quickly but also focuses on visual hierarchy and narrative logic, making it an important productivity tool for content creators and business teams."
     },
     "advantage": {
-      "title": "Use Cases about the Image to Video AI Generator",
-      "description": "With the Image to Video AI Generator, creators can unleash their imagination across various scenarios—from film shorts and social media content to brand advertising, educational training, and virtual reality experiences. This advanced tool can quickly transform text descriptions into high-quality, realistic and vivid video works, not only improving creative efficiency but also saving production costs, making creativity come to life faster.",
-      "try-now": "Try Now",
       "1": {
         "title": "Film and Video Creation",
         "description": "AI Video Generator can quickly transform text descriptions into cinematic short films. Whether it's dramatic segments, sci-fi scenes, or emotional narratives, it can present precise cinematography, character consistency, and style matching, significantly improving the creative efficiency of film and video content."
@@ -809,11 +806,12 @@
       "4": {
         "title": "Educational and Training Videos",
         "description": "Teachers and training personnel can use AI Video Generator to create instructional videos, teaching demonstrations, or animated courseware. With AI-generated visuals and audio coordination, abstract or complex knowledge becomes more intuitive and easier to understand."
-      }
+      },
+      "title": "Use Cases about the Image to Video AI Generator",
+      "description": "With the Image to Video AI Generator, creators can unleash their imagination across various scenarios—from film shorts and social media content to brand advertising, educational training, and virtual reality experiences. This advanced tool can quickly transform text descriptions into high-quality, realistic and vivid video works, not only improving creative efficiency but also saving production costs, making creativity come to life faster.",
+      "try-now": "Try Now"
     },
     "manual": {
-      "title": "So generierst du Videos aus Bildern",
-      "content": "",
       "1": {
         "title": "Referenzbild hochladen",
         "description": "Beginne mit dem Foto, Produktbild, Portraet, Design oder der visuellen Referenz, die du animieren moechtest. Einige Modelle unterstuetzen auch einen Endframe."
@@ -825,10 +823,11 @@
       "3": {
         "title": "Generieren und verfeinern",
         "description": "Waehle ein unterstuetztes Image-to-Video-Modell, generiere den Clip, sieh dir das Ergebnis an und verfeinere Prompt oder Einstellungen fuer eine bessere Version."
-      }
+      },
+      "title": "So generierst du Videos aus Bildern",
+      "content": ""
     },
     "faq": {
-      "title": "Image-to-Video-Generator FAQ",
       "1": {
         "question": "Was ist ein KI-Image-to-Video-Generator?",
         "answer": "Ein KI-Image-to-Video-Generator nutzt ein hochgeladenes Bild als visuellen Ausgangspunkt und erstellt dann auf Basis deines Bewegungs-Prompts und des gewaehlten Modells ein kurzes animiertes Video."
@@ -852,30 +851,29 @@
       "6": {
         "question": "Kann ich Image-to-Video-Ergebnisse kommerziell nutzen?",
         "answer": "Die kommerzielle Nutzung haengt von deinen Rechten am hochgeladenen Bild, deinem Plan, den Plattformbedingungen, den Regeln des Modellanbieters und den generierten Inhalten ab. Pruefe die aktuellen Bedingungen, bevor du Ausgaben in bezahlter, Kunden- oder oeffentlicher Arbeit verwendest."
-      }
+      },
+      "title": "Image-to-Video-Generator FAQ"
     }
   },
   "text-to-video": {
     "heading": {
-      "title": "Text-to-Video-KI-Generator mit Audio",
-      "description": "Erstelle KI-Videos aus Text-Prompts auf flaq.ai. Starte mit kostenlosen Credits, waehle fuehrende Text-to-Video-Modelle, beschreibe Szene, Bewegung, Kamera und Stil und generiere fluessige Kurzvideos fuer Anzeigen, Social Media, Storytelling, Bildung und kreative Produktion."
+      "title": "Text zu Video — Kostenlos & Open Source · Keine Anmeldung",
+      "description": "Nutze und hoste dieses kostenlose Open-Source-Text zu Video-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig."
     },
     "form": {
       "title": "Text zu Video"
     },
     "example": {
-      "title": "Beispiele fuer den Text-zu-Video-KI-Generator",
-      "description": "Text-zu-Video-KI-Generator-Beispiele zeigen, wie Ideen mit klarer Bewegung, filmischer Bildgestaltung, realistischer Physik und optionalem Audio zu dynamischen Clips werden koennen, wenn das ausgewaehlte Modell dies unterstuetzt.",
       "1": {
         "prompt": "A short hair beautiful European influencer is trying to sell to the camera a smooth cylindrical object, tapering slightly at one end, made of firm or flexible material with a polished, minimal design, recorded with an iPhone, smiling"
       },
       "2": {
         "prompt": "A man soaring gracefully through outer space as the camera orbits smoothly around him"
-      }
+      },
+      "title": "Beispiele fuer den Text-zu-Video-KI-Generator",
+      "description": "Text-zu-Video-KI-Generator-Beispiele zeigen, wie Ideen mit klarer Bewegung, filmischer Bildgestaltung, realistischer Physik und optionalem Audio zu dynamischen Clips werden koennen, wenn das ausgewaehlte Modell dies unterstuetzt."
     },
     "core-feature": {
-      "title": "Advantages about Text to Video AI Generator",
-      "description": "AI Video Generator not only generates content quickly but also focuses on visual hierarchy and narrative logic, making it an important productivity tool for content creators and business teams.",
       "1": {
         "title": "Cutting-Edge AI Technology",
         "description": "Based on advanced artificial intelligence models with deep semantic understanding and physics modeling capabilities, generating realistic and vivid video content from text or images."
@@ -887,12 +885,11 @@
       "3": {
         "title": "High-Quality Video Output",
         "description": "Generates high-quality videos with smooth motion and cinematic visual quality for various creative scenarios."
-      }
+      },
+      "title": "Advantages about Text to Video AI Generator",
+      "description": "AI Video Generator not only generates content quickly but also focuses on visual hierarchy and narrative logic, making it an important productivity tool for content creators and business teams."
     },
     "advantage": {
-      "title": "Application Scenarios about Text to Video AI Generator",
-      "description": "Text to Video AI Generator helps you quickly turn text into high-quality videos for short films, social media, marketing, training, and more—saving time and reducing costs.",
-      "try-now": "Try Now",
       "1": {
         "title": "Film and Video Creation",
         "description": "Text to Video AI Generator can rapidly transform text descriptions into cinematic short films. Whether dramatic segments, sci-fi scenes, or emotional narratives, it can precisely present cinematography, character consistency, and style matching, significantly improving film and video content creation efficiency."
@@ -908,11 +905,12 @@
       "4": {
         "title": "Educational and Training Videos",
         "description": "Teachers and training personnel can use AI Video Generator to create instructional videos, demonstrations, or animated courseware. AI-generated visuals combined with audio make abstract or complex knowledge more intuitive and understandable."
-      }
+      },
+      "title": "Application Scenarios about Text to Video AI Generator",
+      "description": "Text to Video AI Generator helps you quickly turn text into high-quality videos for short films, social media, marketing, training, and more—saving time and reducing costs.",
+      "try-now": "Try Now"
     },
     "manual": {
-      "title": "So generierst du Videos aus Text",
-      "content": "",
       "1": {
         "title": "Video-Prompt eingeben",
         "description": "Beschreibe Motiv, Umgebung, Handlung, Kamerawinkel, Bewegung, Licht, Emotion, visuellen Stil und den finalen Zweck des Videos."
@@ -924,10 +922,11 @@
       "3": {
         "title": "Generieren, Vorschau ansehen und verfeinern",
         "description": "Erstelle dein Video, pruefe das Ergebnis, passe Prompt oder Modelleinstellungen an und generiere eine weitere Version, bis die Bewegung zu deinem Ziel passt."
-      }
+      },
+      "title": "So generierst du Videos aus Text",
+      "content": ""
     },
     "faq": {
-      "title": "Text-zu-Video-Generator FAQ",
       "1": {
         "question": "Was ist ein KI-Text-to-Video-Generator?",
         "answer": "Ein KI-Text-to-Video-Generator erstellt kurze Videos aus geschriebenen Prompts. Du beschreibst Szene, Bewegung, Kamera und Stil, und das ausgewaehlte KI-Modell generiert ein Videoergebnis."
@@ -951,31 +950,29 @@
       "6": {
         "question": "Kann ich generierte Videos kommerziell nutzen?",
         "answer": "Die kommerzielle Nutzung haengt von deinem Plan, den Plattformbedingungen, den Regeln des Modellanbieters und den generierten Inhalten ab. Pruefe die aktuellen Bedingungen, bevor du Ausgaben in bezahlter, Kunden- oder oeffentlicher Arbeit verwendest."
-      }
+      },
+      "title": "Text-zu-Video-Generator FAQ"
     }
   },
   "text-to-image": {
     "heading": {
-      "title": "KI-Text-zu-Bild-Generator: Bilder aus Prompts erstellen",
-      "description": "Erstelle hochwertige Visuals aus einfachen Text-Prompts mit dem Flaq AI Text-zu-Bild-Generator. Starte mit kostenlosen Credits, waehle fuehrende Bildmodelle, passe Ausgabeeinstellungen an und generiere hochwertige Bilder fuer Design, Marketing, Storytelling, Bildung und kreative Produktion."
+      "title": "Text zu Bild — Kostenlos & Open Source · Keine Anmeldung",
+      "description": "Nutze und hoste dieses kostenlose Open-Source-Text zu Bild-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig."
     },
     "form": {
       "title": "Text zu Bild"
     },
     "examples": {
-      "title": "Kernfunktionen des KI-Text-zu-Bild-Generators",
-      "description": "Ein flexibler KI-Erstellungsablauf fuer Bilder aus Text, ausgelegt auf starkes Prompt-Verstaendnis, flexible Modellauswahl, saubere Komposition und schnelle kreative Iteration.",
       "1": {
         "title": "Enter product descriptions, scene details, or character features. The system will automatically interpret the semantics and generate a corresponding visual image."
       },
       "2": {
         "title": "The system deeply analyzes and interprets the text, outputting well-structured, detail-rich, and stylistically diverse image results."
-      }
+      },
+      "title": "Kernfunktionen des KI-Text-zu-Bild-Generators",
+      "description": "Ein flexibler KI-Erstellungsablauf fuer Bilder aus Text, ausgelegt auf starkes Prompt-Verstaendnis, flexible Modellauswahl, saubere Komposition und schnelle kreative Iteration."
     },
     "advantage": {
-      "title": "Advantages of Text to Image AI",
-      "description": "The core advantages of Text to Image AI lie in automating the traditionally complex, high-barrier image creation process, enabling users to rapidly obtain high-quality visual results while maintaining realism and creativity.",
-      "button-text": "Try Now",
       "1": {
         "title": "Efficient Generation, Greatly Saves Time",
         "description": "AI rapidly transforms text into images, dramatically reducing time costs for creators."
@@ -991,12 +988,12 @@
       "4": {
         "title": "Ideal for Personal and Business Use",
         "description": "Whether you're a designer, content creator, product team, developer, or brand owner, easily create ready-to-use image assets for a variety of applications."
-      }
+      },
+      "title": "Advantages of Text to Image AI",
+      "description": "The core advantages of Text to Image AI lie in automating the traditionally complex, high-barrier image creation process, enabling users to rapidly obtain high-quality visual results while maintaining realism and creativity.",
+      "button-text": "Try Now"
     },
     "use-cases": {
-      "title": "Text-zu-Bild-Anwendungsfaelle",
-      "description": "Nutze den Flaq AI Text-zu-Bild-Generator, wenn du originale Bilder aus Worten brauchst, ohne ein Referenzbild vorzubereiten oder einen komplexen Designablauf aufzubauen.",
-      "try-now": "Jetzt erstellen",
       "1": {
         "title": "Marketing- und Social-Visuals",
         "description": "Generiere Kampagnenkonzepte, Produktszenen, Launch-Grafiken, Social-Media-Posts, Thumbnail-Ideen und Anzeigenvarianten direkt aus einem schriftlichen Kreativbriefing."
@@ -1012,11 +1009,12 @@
       "4": {
         "title": "Storytelling und Concept Art",
         "description": "Entwickle Charaktere, filmische Frames, Umgebungen, Poster, Cover, Worldbuilding-Szenen und narrative Kunstwerke aus detaillierten Textbeschreibungen."
-      }
+      },
+      "title": "Text-zu-Bild-Anwendungsfaelle",
+      "description": "Nutze den Flaq AI Text-zu-Bild-Generator, wenn du originale Bilder aus Worten brauchst, ohne ein Referenzbild vorzubereiten oder einen komplexen Designablauf aufzubauen.",
+      "try-now": "Jetzt erstellen"
     },
     "manual": {
-      "title": "So generierst du Bilder aus Text",
-      "content": "Text to Image features a simple and intuitive workflow—no design experience required. Just enter your text description and the system automatically analyzes the semantics to generate the corresponding visual image.",
       "1": {
         "title": "Bild-Prompt eingeben",
         "description": "Beschreibe das gewuenschte Bild inklusive Motiv, Umgebung, Stil, Beleuchtung, Komposition, Stimmung, Farben, Kamerawinkel und Text, der erscheinen soll."
@@ -1028,10 +1026,11 @@
       "3": {
         "title": "Generieren, Vorschau ansehen und verfeinern",
         "description": "Klicke auf Generieren, pruefe das Bildergebnis, passe Prompt oder Einstellungen an und lade das fertige Bild in unterstuetzten Formaten wie JPG, PNG oder WebP herunter."
-      }
+      },
+      "title": "So generierst du Bilder aus Text",
+      "content": "Text to Image features a simple and intuitive workflow—no design experience required. Just enter your text description and the system automatically analyzes the semantics to generate the corresponding visual image."
     },
     "faq": {
-      "title": "Text-zu-Bild-Generator FAQ",
       "1": {
         "question": "Was ist ein KI-Text-zu-Bild-Generator?",
         "answer": "Ein KI-Text-zu-Bild-Generator erstellt Bilder aus geschriebenen Prompts. Du beschreibst Motiv, Szene, Stil und Ausgabeanforderungen, und das ausgewaehlte KI-Modell generiert ein visuelles Ergebnis."
@@ -1051,16 +1050,17 @@
       "5": {
         "question": "Wie werden die Credit-Kosten berechnet?",
         "answer": "Die Schaetzung wird aus dem gewaehlten Modell und unterstuetzten Parametern wie Aufloesung, Qualitaet, Anbieterpreisen, kostenlosen Credits und aktuellen Rabattregeln berechnet."
-      }
+      },
+      "title": "Text-zu-Bild-Generator FAQ"
     }
   },
   "virtual-try-on": {
     "heading": {
-      "title": "Virtual Try On AI: Realistic Outfit Preview in Seconds",
-      "description": "See yourself in any outfit instantly with Virtual Try On AI. Upload a person photo and one or more clothing images, select from our ready-made style hints, and generate photorealistic try-on results powered by Flaq API—no fitting room, no guesswork."
+      "title": "Virtuelle Anprobe — Kostenlos & Open Source · Keine Anmeldung",
+      "description": "Nutze und hoste dieses kostenlose Open-Source-Virtuelle Anprobe-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig."
     },
     "form": {
-      "title": "Virtual Try On",
+      "title": "Virtuelle Anprobe",
       "upload-images-title": "Upload Images",
       "upload-subject-label": "Upload [Person]",
       "upload-object-label": "Upload [Clothing]",
@@ -1070,40 +1070,37 @@
       "ai-generation-label": "AI Generation"
     },
     "examples": {
-      "title": "Core Features of Virtual Try On AI",
-      "description": "Virtual Try On AI accurately renders garments onto uploaded person photos, preserving body proportions, fabric texture, and design details across a wide range of clothing styles and model types.",
       "1": {
-        "title": "Upload a person photo and a clothing image. The AI maps the garment onto the body with natural drape, accurate fit, and full detail preservation.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "Generated"
-        }
+        },
+        "title": "Upload a person photo and a clothing image. The AI maps the garment onto the body with natural drape, accurate fit, and full detail preservation."
       },
       "2": {
-        "title": "Choose from curated style hint templates to get started instantly—no sourcing required. The AI generates a complete try-on result based on your selection.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "Generated"
-        }
+        },
+        "title": "Choose from curated style hint templates to get started instantly—no sourcing required. The AI generates a complete try-on result based on your selection."
       },
       "3": {
-        "title": "Switch between different AI models to control output style and detail level. Each model delivers consistent, high-quality virtual try-on results.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "Generated"
-        }
-      }
+        },
+        "title": "Switch between different AI models to control output style and detail level. Each model delivers consistent, high-quality virtual try-on results."
+      },
+      "title": "Core Features of Virtual Try On AI",
+      "description": "Virtual Try On AI accurately renders garments onto uploaded person photos, preserving body proportions, fabric texture, and design details across a wide range of clothing styles and model types."
     },
     "advantage": {
-      "title": "Core Advantages of Virtual Try On AI",
-      "description": "Virtual Try On AI combines multiple state-of-the-art generation models with a simple upload workflow, making realistic outfit visualization accessible to anyone—from individual shoppers to e-commerce teams.",
-      "try-now": "Try Now",
       "1": {
         "title": "Fast Generation, Instant Results",
         "description": "Get photorealistic try-on results quickly. Our AI is pre-trained on millions of garment and body reference images, requiring no complex setup—just upload and see instant output."
@@ -1119,12 +1116,12 @@
       "4": {
         "title": "Multiple Models, One Platform",
         "description": "Switch between different AI models based on your output preference. Each model is optimized for different generation styles and clothing complexities—all accessible without any technical setup."
-      }
+      },
+      "title": "Core Advantages of Virtual Try On AI",
+      "description": "Virtual Try On AI combines multiple state-of-the-art generation models with a simple upload workflow, making realistic outfit visualization accessible to anyone—from individual shoppers to e-commerce teams.",
+      "try-now": "Try Now"
     },
     "use-cases": {
-      "title": "Use Cases for Virtual Try On AI",
-      "description": "Virtual Try On AI supports a wide range of personal and professional applications—from online shopping decisions to high-volume e-commerce content production.",
-      "try-now": "Try Now",
       "1": {
         "title": "Online Shopping & Purchase Decisions",
         "description": "See exactly how a garment will look on your body before buying. Reduce return rates and purchase uncertainty by visualizing real outfit combinations on yourself."
@@ -1140,11 +1137,12 @@
       "4": {
         "title": "Marketing & Social Media Content",
         "description": "Produce high-quality outfit imagery for campaigns, lookbooks, social posts, or brand promotions—without models, studios, or post-production. Generate multiple variations quickly to test different looks."
-      }
+      },
+      "title": "Use Cases for Virtual Try On AI",
+      "description": "Virtual Try On AI supports a wide range of personal and professional applications—from online shopping decisions to high-volume e-commerce content production.",
+      "try-now": "Try Now"
     },
     "manual": {
-      "title": "How to Use Virtual Try On AI",
-      "content": "Virtual Try On AI requires no technical experience. Upload your images, select a model and style hint if needed, and receive a realistic try-on result quickly.",
       "1": {
         "title": "Step 1: Upload a Person Photo",
         "description": "Upload one clear photo of a person. This will serve as the base body reference for the virtual try-on."
@@ -1160,10 +1158,11 @@
       "4": {
         "title": "Step 4: Generate and Download",
         "description": "Click generate and receive your virtual try-on result. Preview the output and download it for personal use, product listings, or content creation."
-      }
+      },
+      "title": "How to Use Virtual Try On AI",
+      "content": "Virtual Try On AI requires no technical experience. Upload your images, select a model and style hint if needed, and receive a realistic try-on result quickly."
     },
     "faq": {
-      "title": "FAQs about Virtual Try On AI",
       "1": {
         "question": "What AI models are supported for Virtual Try On?",
         "answer": "Multiple AI models are available, each with different generation characteristics suited to different clothing types and output styles. You can select the model that best fits your use case before generating."
@@ -1195,7 +1194,8 @@
       "8": {
         "question": "What output resolution does Virtual Try On AI produce?",
         "answer": "Output resolution varies by model. Results are optimized for visual quality suitable for both personal styling and professional e-commerce or marketing use."
-      }
+      },
+      "title": "FAQs about Virtual Try On AI"
     }
   },
   "Pricing": {
@@ -1212,48 +1212,48 @@
       "creator": "Flaq AI"
     },
     "home": {
-      "title": "Flaq SaaS Template: AI Image & Video Generation Platform",
-      "description": "Free open source template for building AI generation platforms. Create stunning images and videos with Flaq AI's powerful API. Perfect for developers.",
-      "keywords": "Flaq SaaS Template, AI Generation, Open Source",
+      "title": "KI-Bilder und -Videos — Kostenlos & Open Source · Keine Anmeldung",
+      "description": "Nutze und hoste dieses kostenlose Open-Source-KI-Bilder und -Videos-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig.",
+      "keywords": "KI-Plattform für Bilder und Videos, Kostenlos & Open Source, Keine Anmeldung, no signup required, free AI generator, open source AI, free to use, Flaq API, AIGC",
       "openGraph": {
-        "title": "Flaq SaaS Template: AI Image & Video Generation Platform",
-        "description": "Free open source template for building AI generation platforms. Create stunning images and videos with Flaq AI's powerful API. Perfect for developers.",
+        "title": "KI-Bilder und -Videos — Kostenlos & Open Source · Keine Anmeldung",
+        "description": "Nutze und hoste dieses kostenlose Open-Source-KI-Bilder und -Videos-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig.",
         "siteName": "Flaq SaaS Template"
       },
       "twitter": {
-        "title": "Flaq SaaS Template: AI Image & Video Generation Platform",
-        "description": "Free open source template for building AI generation platforms. Create stunning images and videos with Flaq AI's powerful API. Perfect for developers.",
+        "title": "KI-Bilder und -Videos — Kostenlos & Open Source · Keine Anmeldung",
+        "description": "Nutze und hoste dieses kostenlose Open-Source-KI-Bilder und -Videos-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig.",
         "site": "flaq.ai",
         "creator": "Flaq AI"
       }
     },
     "image-to-video": {
-      "title": "Kostenloser KI-Image-to-Video-Generator fuer Animation | Kostenlos testen, bessere Ergebnisse & kreative Workflows",
-      "description": "Kostenlos hochgeladene Bilder mit Flaq AI Image-to-Video-Modellen animieren. Referenz hinzufuegen, Anbieter waehlen, Videooptionen setzen, Kosten pruefen und Bewegung erstellen."
+      "title": "Bild zu Video — Kostenlos & Open Source · Keine Anmeldung",
+      "description": "Nutze und hoste dieses kostenlose Open-Source-Bild zu Video-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig."
     },
     "text-to-video": {
-      "title": "Kostenloser KI-Text-zu-Video-Generator mit Top-Modellen | Kostenlos testen, bessere Ergebnisse & kreative Workflows",
-      "description": "Kostenlos KI-Videos aus Text-Prompts mit Flaq AI erstellen. Waehle Top-Videomodelle, setze Dauer und Aufloesung, pruefe Credit-Kosten und generiere schnell Clips. Ideal zum kostenlosen Testen und fuer stabile API-Workflows."
+      "title": "Text zu Video — Kostenlos & Open Source · Keine Anmeldung",
+      "description": "Nutze und hoste dieses kostenlose Open-Source-Text zu Video-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig."
     },
     "image-to-image": {
-      "title": "Kostenloser KI-Image-to-Image-Generator fuer Bildbearbeitung | Stabile API",
-      "description": "Kostenlos hochgeladene Bilder mit Flaq AI Image-to-Image-Modellen transformieren. Referenzen hinzufuegen, Anbieter waehlen, Optionen setzen, Credit-Kosten pruefen und hochwertige Edits erstellen."
+      "title": "Bild zu Bild — Kostenlos & Open Source · Keine Anmeldung",
+      "description": "Nutze und hoste dieses kostenlose Open-Source-Bild zu Bild-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig."
     },
     "text-to-image": {
-      "title": "Kostenloser KI-Text-zu-Bild-Generator mit Top-Modellen | Kostenlos testen, bessere Ergebnisse & kreative Workflows",
-      "description": "Kostenlos KI-Bilder aus Text-Prompts mit Flaq AI erstellen. Waehle Top-Bildmodelle, passe Format und Aufloesung an, pruefe Credit-Kosten und generiere schnell hochwertige Visuals."
+      "title": "Text zu Bild — Kostenlos & Open Source · Keine Anmeldung",
+      "description": "Nutze und hoste dieses kostenlose Open-Source-Text zu Bild-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig."
     },
     "virtual-try-on": {
-      "title": "Virtual Try On AI - Realistic Outfit Preview",
-      "description": "Preview outfits realistically with Virtual Try On AI. Upload your photos and see how clothes look on you instantly. Powered by Flaq API technology."
+      "title": "Virtuelle Anprobe — Kostenlos & Open Source · Keine Anmeldung",
+      "description": "Nutze und hoste dieses kostenlose Open-Source-Virtuelle Anprobe-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig."
     },
     "reference-to-video": {
-      "title": "Kostenloser Referenz-zu-Video-KI-Generator: konsistente Videos erstellen",
-      "description": "Testen Sie den Referenz-zu-Video-KI-Generator zur konsistenten Videoerstellung kostenlos. Erstellen Sie mit führenden Reference-to-Video-Modellen konsistente KI-Videos aus Referenzbildern, Videos und Audiodateien."
+      "title": "Referenz zu Video — Kostenlos & Open Source · Keine Anmeldung",
+      "description": "Nutze und hoste dieses kostenlose Open-Source-Referenz zu Video-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig."
     },
     "ai-media-creator": {
-      "title": "Kostenloser KI-Medien-Creator: Online-Bild- und Video-Generator",
-      "description": "Testen Sie den KI-Medien-Creator kostenlos: Online-Bild- und Video-Generator. Erstellen Sie auf Flaq AI KI-Bilder und -Videos in einem Arbeitsbereich mit Text- oder Medieneingaben, Generierung direkt auf der Seite sowie Bild- und Videoverlauf nach der Anmeldung."
+      "title": "KI-Medien — Kostenlos & Open Source · Keine Anmeldung",
+      "description": "Nutze und hoste dieses kostenlose Open-Source-KI-Medien-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig."
     }
   },
   "Profile": {
@@ -1375,12 +1375,10 @@
   },
   "reference-to-video": {
     "heading": {
-      "title": "Referenz-zu-Video-KI-Generator",
-      "description": "Verwandeln Sie kompatible Bild-, Video- und Audioreferenzen in kreative Vorgaben für KI-Videos. Steuern Sie Figuren, Produkte, Bewegungen, Szenen und Stil, bevor Sie im KI-Medien-Creator fortfahren."
+      "title": "Referenz zu Video — Kostenlos & Open Source · Keine Anmeldung",
+      "description": "Nutze und hoste dieses kostenlose Open-Source-Referenz zu Video-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig."
     },
     "core-feature": {
-      "title": "Core Features of Reference to Video AI Generator",
-      "description": "Build a reference-guided video brief with compatible media uploads, asset mentions, model-specific controls, and multiple generation models.",
       "1": {
         "title": "Flexible Reference Media",
         "description": "Add images, video clips, audio, documents, or links when the selected model supports them. Available upload controls update automatically with your model choice."
@@ -1392,12 +1390,11 @@
       "3": {
         "title": "Multiple Reference-to-Video Models",
         "description": "Choose from supported Seedance, MiniMax, Wan, and Happy Horse reference workflows, then match the model to the input types and output controls your project needs."
-      }
+      },
+      "title": "Core Features of Reference to Video AI Generator",
+      "description": "Build a reference-guided video brief with compatible media uploads, asset mentions, model-specific controls, and multiple generation models."
     },
     "advantage": {
-      "title": "Advantages of Reference to Video AI Generator",
-      "description": "Reference to Video helps creators, marketers, ecommerce teams, designers, storytellers, agencies, and social media producers develop AI videos from existing reference media.",
-      "try-now": "Try Now",
       "1": {
         "title": "Fewer Reshoots and Revisions",
         "description": "Start from existing reference media instead of filming every variation again. Create fresh scenes, product moments, character actions, and talking clips while using source assets as visual guidance."
@@ -1413,11 +1410,12 @@
       "4": {
         "title": "Flexible Video Results",
         "description": "Create reference-guided character videos, product scenes, social content, brand clips, UGC-style ads, cinematic concepts, animation previews, and visual experiments."
-      }
+      },
+      "title": "Advantages of Reference to Video AI Generator",
+      "description": "Reference to Video helps creators, marketers, ecommerce teams, designers, storytellers, agencies, and social media producers develop AI videos from existing reference media.",
+      "try-now": "Try Now"
     },
     "manual": {
-      "title": "So verwenden Sie Referenz zu Video",
-      "content": "Create a reference-guided AI video in three steps.",
       "1": {
         "title": "Referenzmodell auswählen",
         "description": "Wählen Sie Referenz zu Video und anschließend ein kompatibles Modell anhand der Eingabetypen, Ausgabeeinstellungen und Steuerelemente, die Ihr Projekt benötigt."
@@ -1429,10 +1427,11 @@
       "3": {
         "title": "Im KI-Medien-Creator fortfahren",
         "description": "Prüfen Sie Ihren Entwurf, fahren Sie im KI-Medien-Creator fort und starten Sie dort die Generierung, damit Sie die Aufgabe im Videoverlauf verfolgen können."
-      }
+      },
+      "title": "So verwenden Sie Referenz zu Video",
+      "content": "Create a reference-guided AI video in three steps."
     },
     "faq": {
-      "title": "FAQ zum Referenz-zu-Video-Generator",
       "1": {
         "question": "Was ist Referenz zu Video?",
         "answer": "Referenz zu Video ist ein KI-Generierungsworkflow, der hochgeladene Medien als Vorgabe für Figuren, Produkte, Objekte, Bewegung, Ton, Szenen und den visuellen Stil eines neuen Videos nutzt."
@@ -1456,17 +1455,16 @@
       "6": {
         "question": "Where do I find my generated video?",
         "answer": "Generated tasks appear in the AI Create video history. The history can use the generated video itself when a separate cover image is unavailable."
-      }
+      },
+      "title": "FAQ zum Referenz-zu-Video-Generator"
     }
   },
   "ai-media-creator": {
     "heading": {
-      "title": "KI-Medien-Creator: Bilder und Videos an einem Ort generieren",
-      "description": "Verwandeln Sie Prompts und kompatible Medieneingaben in einem einzigen Arbeitsbereich in KI-generierte Bilder oder Videos. Wählen Sie einen Erstellungsmodus und ein unterstütztes Modell, konfigurieren Sie dessen Steuerelemente und generieren Sie Inhalte, ohne Ihre Einstellungen auf einer separaten Tool-Seite neu einzurichten."
+      "title": "KI-Medien — Kostenlos & Open Source · Keine Anmeldung",
+      "description": "Nutze und hoste dieses kostenlose Open-Source-KI-Medien-Template ohne Anmeldung. Für die Generierung sind Flaq Client Key und API-Guthaben nötig."
     },
     "core-feature": {
-      "title": "One AI Media Creation Workspace for Every Idea",
-      "description": "Move from an initial concept to generated media with a unified form that adapts its models, uploads, and settings to the selected creation type.",
       "1": {
         "title": "Image and Video Creation",
         "description": "Switch between image and video workflows while keeping the same familiar creation experience."
@@ -1482,12 +1480,11 @@
       "4": {
         "title": "Unified Local History",
         "description": "Review recent image and video tasks saved in this browser, including video previews when a separate cover image is unavailable."
-      }
+      },
+      "title": "One AI Media Creation Workspace for Every Idea",
+      "description": "Move from an initial concept to generated media with a unified form that adapts its models, uploads, and settings to the selected creation type."
     },
     "use-cases": {
-      "title": "Einsatzmöglichkeiten des KI-Medien-Creators",
-      "description": "Nutzen Sie den KI-Medien-Creator für Marketingmaterialien, Social-Media-Inhalte, visuelle Entwicklung und Projekte, die Bild- und Videogenerierung verbinden.",
-      "button-text": "Create Now",
       "1": {
         "title": "Produkt- und Marketingmaterialien",
         "description": "Erstellen Sie Produktvisualisierungen, Kampagnenbilder, Werbeclips und Anzeigenvarianten, während Bild- und Videoproduktion in einer Arbeitsumgebung bleiben."
@@ -1503,12 +1500,12 @@
       "4": {
         "title": "Kreativprojekte mit gemischten Medien",
         "description": "Erstellen Sie Projekte, die sowohl statische als auch bewegte Inhalte benötigen, und nutzen Sie für jede Szene, Botschaft oder Produktionsphase das passende Format und die unterstützten Modelloptionen."
-      }
+      },
+      "title": "Einsatzmöglichkeiten des KI-Medien-Creators",
+      "description": "Nutzen Sie den KI-Medien-Creator für Marketingmaterialien, Social-Media-Inhalte, visuelle Entwicklung und Projekte, die Bild- und Videogenerierung verbinden.",
+      "button-text": "Create Now"
     },
     "manual": {
-      "title": "So verwenden Sie den KI-Medien-Creator",
-      "description": "Wählen Sie einen Medien-Workflow und ein kompatibles Modell, fügen Sie Prompt und unterstützte Eingaben hinzu und generieren und prüfen Sie anschließend das Ergebnis.",
-      "button-text": "Start Creating",
       "1": {
         "title": "Erstellungstyp und Modell auswählen",
         "description": "Wählen Sie den benötigten Bild- oder Video-Workflow und anschließend ein unterstütztes Modell anhand von Eingabemethode, Ausgabeformat und erforderlichen kreativen Steuerelementen."
@@ -1520,10 +1517,12 @@
       "3": {
         "title": "Generieren und prüfen",
         "description": "Starten Sie die Aufgabe im Arbeitsbereich, prüfen Sie anschließend die Ausgabe und verfolgen Sie nach der Anmeldung gespeicherte Generierungen in der Bild- oder Videoverlaufsansicht."
-      }
+      },
+      "title": "So verwenden Sie den KI-Medien-Creator",
+      "description": "Wählen Sie einen Medien-Workflow und ein kompatibles Modell, fügen Sie Prompt und unterstützte Eingaben hinzu und generieren und prüfen Sie anschließend das Ergebnis.",
+      "button-text": "Start Creating"
     },
     "faq": {
-      "title": "FAQ zum KI-Medien-Creator",
       "1": {
         "question": "Was ist der KI-Medien-Creator?",
         "answer": "Der KI-Medien-Creator ist der gemeinsame Arbeitsbereich von Flaq AI für die Bild- und Videogenerierung. Er vereint Workflow-Auswahl, unterstützte Modelle, Prompts, kompatible Medieneingaben, Generierungssteuerung und den Verlauf nach der Anmeldung auf einer Seite."
@@ -1547,7 +1546,8 @@
       "6": {
         "question": "Ändern sich die verfügbaren Steuerelemente je nach Modell?",
         "answer": "Ja. Seitenverhältnisse, Auflösungen, Dauern, Qualitätsoptionen, Upload-Plätze und weitere Steuerelemente werden entsprechend den konfigurierten Funktionen des ausgewählten Modells angezeigt."
-      }
+      },
+      "title": "FAQ zum KI-Medien-Creator"
     }
   },
   "ResourceEntrySections": {

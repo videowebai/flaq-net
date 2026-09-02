@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
+import { createLocalizedMetadata } from '@/lib/seo/metadata';
 import { numberList } from '@/lib/utils/arrayUtils';
 import Faq from '@/components/Faq';
 import ImageShowcaseSection from '@/components/home/newSections/image-showcase-section';
@@ -11,18 +12,9 @@ import ResourceEntrySections from '@/components/resource-entry/ResourceEntrySect
 import Form from './form';
 
 const exampleImageList = [
-  [
-    '/flaqai_saas_asserts/virtual_try_on/feature/1_1.webp',
-    '/flaqai_saas_asserts/virtual_try_on/feature/1_2.webp',
-  ],
-  [
-    '/flaqai_saas_asserts/virtual_try_on/feature/2_1.webp',
-    '/flaqai_saas_asserts/virtual_try_on/feature/2_2.webp',
-  ],
-  [
-    '/flaqai_saas_asserts/virtual_try_on/feature/3_1.webp',
-    '/flaqai_saas_asserts/virtual_try_on/feature/3_2.webp',
-  ],
+  ['/flaqai_saas_asserts/virtual_try_on/feature/1_1.webp', '/flaqai_saas_asserts/virtual_try_on/feature/1_2.webp'],
+  ['/flaqai_saas_asserts/virtual_try_on/feature/2_1.webp', '/flaqai_saas_asserts/virtual_try_on/feature/2_2.webp'],
+  ['/flaqai_saas_asserts/virtual_try_on/feature/3_1.webp', '/flaqai_saas_asserts/virtual_try_on/feature/3_2.webp'],
 ];
 
 const TRY_ON_PROMPT =
@@ -92,7 +84,12 @@ const HINTS_PRESETS = [
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Metadata.virtual-try-on' });
-  return { title: t('title'), description: t('description') };
+  return createLocalizedMetadata({
+    locale,
+    pathname: '/virtual-try-on',
+    title: t('title'),
+    description: t('description'),
+  });
 }
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {

@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
+import { createLocalizedMetadata } from '@/lib/seo/metadata';
 import { numberList } from '@/lib/utils/arrayUtils';
 import Faq from '@/components/Faq';
 import ImageShowcaseSection from '@/components/home/newSections/image-showcase-section';
@@ -25,27 +26,21 @@ const DEFAULT_VALUES = {
 };
 
 const EXAMPLE_IMAGE_LIST = [
-  [
-    '/flaqai_saas_asserts/image_to_image/feature/1_1.webp',
-    '/flaqai_saas_asserts/image_to_image/feature/1_2.webp',
-  ],
-  [
-    '/flaqai_saas_asserts/image_to_image/feature/2_1.webp',
-    '/flaqai_saas_asserts/image_to_image/feature/2_2.webp',
-  ],
-  [
-    '/flaqai_saas_asserts/image_to_image/feature/3_1.webp',
-    '/flaqai_saas_asserts/image_to_image/feature/3_2.webp',
-  ],
+  ['/flaqai_saas_asserts/image_to_image/feature/1_1.webp', '/flaqai_saas_asserts/image_to_image/feature/1_2.webp'],
+  ['/flaqai_saas_asserts/image_to_image/feature/2_1.webp', '/flaqai_saas_asserts/image_to_image/feature/2_2.webp'],
+  ['/flaqai_saas_asserts/image_to_image/feature/3_1.webp', '/flaqai_saas_asserts/image_to_image/feature/3_2.webp'],
 ];
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('Metadata.image-to-image');
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Metadata.image-to-image' });
 
-  return {
+  return createLocalizedMetadata({
+    locale,
+    pathname: '/image-to-image',
     title: t('title'),
     description: t('description'),
-  };
+  });
 }
 
 export default async function Page() {

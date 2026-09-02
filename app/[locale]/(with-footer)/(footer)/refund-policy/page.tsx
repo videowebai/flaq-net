@@ -1,23 +1,27 @@
+import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
+import { createLocalizedMetadata } from '@/lib/seo/metadata';
 import { numberList } from '@/lib/utils/arrayUtils';
 
-export const metadata = {
-  robots: {
-    index: false,
-    follow: false,
-    googleBot: {
-      index: false,
-      follow: false,
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'FooterNavigation.refundPolicy' });
+
+  return createLocalizedMetadata({
+    locale,
+    pathname: '/refund-policy',
+    title: t('title'),
+    description: t('1.description'),
+  });
+}
 
 export default function Page() {
   const t = useTranslations('FooterNavigation.refundPolicy');
 
   return (
-    <div className='prose mx-auto py-[60px] text-gray-200 prose-headings:text-gray-200 lg:py-[120px]'>
+    <div className='prose prose-headings:text-gray-200 mx-auto py-[60px] text-gray-200 lg:py-[120px]'>
       <h1>{t('title')}</h1>
       {numberList(6).map((num) => (
         <div key={num}>

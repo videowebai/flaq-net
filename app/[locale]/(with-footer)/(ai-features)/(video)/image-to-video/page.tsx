@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
+import { createLocalizedMetadata } from '@/lib/seo/metadata';
 import { numberList } from '@/lib/utils/arrayUtils';
 import Faq from '@/components/Faq';
 import CoreFeaturesCards from '@/components/home/newSections2/CoreFeaturesCards';
@@ -17,10 +18,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     namespace: 'Metadata.image-to-video',
   });
 
-  return {
+  return createLocalizedMetadata({
+    locale,
+    pathname: '/image-to-video',
     title: t('title'),
     description: t('description'),
-  };
+  });
 }
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {

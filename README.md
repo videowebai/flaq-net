@@ -5,9 +5,9 @@ Free and open-source SaaS template for building AI-powered image and video gener
 
 **Read this README in:** [English](./README.md) · [日本語](./README_ja.md) · [Bahasa Indonesia](./README_id.md) ·
 [Italiano](./README_it.md) · [Português (Brasil)](./README_pt.md) · [Español](./README_es.md) ·
-[Deutsch](./README_de.md) · [Русский](./README_ru.md) · [Français](./README_fr.md) ·
-[简体中文](./README_zh.md) · [繁體中文](./README_tw.md) · [한국어](./README_ko.md) · [ไทย](./README_th.md) ·
-[Tiếng Việt](./README_vi.md) · [العربية](./README_ar.md)
+[Deutsch](./README_de.md) · [Русский](./README_ru.md) · [Français](./README_fr.md) · [简体中文](./README_zh.md) ·
+[繁體中文](./README_tw.md) · [한국어](./README_ko.md) · [ไทย](./README_th.md) · [Tiếng Việt](./README_vi.md) ·
+[العربية](./README_ar.md)
 
 > The README language set mirrors `i18n/languages.ts`, so every UI locale has a matching project introduction.
 
@@ -30,6 +30,7 @@ Free and open-source SaaS template for building AI-powered image and video gener
   - [AIGC Capabilities](#aigc-capabilities)
   - [Flaq.ai Affiliate Program](#flaqai-affiliate-program)
   - [Internationalization (i18n)](#internationalization-i18n)
+  - [SEO and AI Crawler Discovery](#seo-and-ai-crawler-discovery)
   - [Project Structure](#project-structure)
   - [Deployment](#deployment)
   - [License](#license)
@@ -42,6 +43,7 @@ Free and open-source SaaS template for building AI-powered image and video gener
 - 📹 **Image-to-Video** — Animate static images into dynamic video content
 - 👗 **Virtual Try-On** — AI-powered virtual clothing try-on experience
 - 🌐 **Internationalization** — 15 locales aligned with Flaq.ai, with locale-aware routing and SEO alternates
+- 🚀 **No Signup Required** — Explore, modify, and self-host the template without creating an app account
 - 🤝 **Affiliate Promotion** — Responsive Flaq.ai affiliate callout with localized copy and destination links
 - 🔒 **Secure API Key Management** — Encrypted client-side storage for your Flaq.ai credentials
 - ☁️ **Cloudflare R2 Storage** — Built-in image hosting with Cloudflare's global CDN
@@ -49,6 +51,7 @@ Free and open-source SaaS template for building AI-powered image and video gener
 - 🌓 **Dark Mode** — Beautiful dark-themed UI out of the box
 - ⚡ **Fast Performance** — Powered by Next.js 16 with Turbopack support
 - 🔍 **SEO Optimized** — Dynamic metadata, Open Graph, sitemap, and structured data
+- 🤖 **AI Crawler Ready** — Curated `llms.txt`, expanded `llms-full.txt`, and public crawler access
 
 ## Tech Stack
 
@@ -241,6 +244,21 @@ To add more languages:
 2. Create a new translation file in `messages/`
 3. Add any new language-specific metadata in the layout files
 
+## SEO and AI Crawler Discovery
+
+Every public page has localized title and description copy, an absolute canonical URL, 15-language `hreflang`
+alternates, Open Graph metadata, a Twitter card, and index/follow directives. The generated `/sitemap.xml` includes
+every public route in every locale with matching language alternates.
+
+- `/robots.txt` allows search engines and AI assistants to crawl public content while blocking API and callback routes
+- `/llms.txt` provides a concise, structured map of the product, pages, languages, documentation, and policies
+- `/llms-full.txt` provides expanded project context, capabilities, setup instructions, architecture, and usage
+  boundaries
+- JSON-LD identifies the website and MIT-licensed open-source repository without unverifiable ratings
+
+Set `NEXT_PUBLIC_SITE_URL` to the production origin before deployment so canonical, sitemap, and LLM resource URLs use
+the correct domain.
+
 ## Project Structure
 
 ```
@@ -253,7 +271,9 @@ To add more languages:
 │   │   └── (without-footer)/ # Full-screen pages (e.g., +page)
 │   ├── api/                # API routes (proxy-image, upload)
 │   ├── robots.ts           # Robots.txt generation
-│   └── sitemap.ts          # Dynamic sitemap generation
+│   ├── sitemap.ts          # Dynamic sitemap generation
+│   ├── llms.txt/           # Concise AI-readable site map
+│   └── llms-full.txt/      # Expanded AI-readable project context
 ├── components/             # Reusable React components
 │   ├── ui/                 # shadcn/ui-style components (Radix-based)
 │   ├── dialog/             # Dialog components (API settings, etc.)
@@ -265,6 +285,7 @@ To add more languages:
 │   ├── request.ts          # next-intl request configuration
 │   └── routing.ts          # Locale routing configuration
 ├── lib/                    # Utility libraries
+│   ├── seo/                # Metadata, llms.txt, and crawler helpers
 │   ├── constants/          # App constants, model configs, navigation
 │   ├── utils/              # Utility functions
 │   └── env.ts              # Environment variable helpers

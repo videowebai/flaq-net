@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
+import { createLocalizedMetadata } from '@/lib/seo/metadata';
 import CreatorHistory from '@/components/unified-generator/CreatorHistory';
 import UnifiedGeneratorForm from '@/components/unified-generator/UnifiedGeneratorForm';
 
@@ -13,10 +14,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     namespace: 'Metadata.ai-media-creator',
   });
 
-  return {
+  return createLocalizedMetadata({
+    locale,
+    pathname: '/ai-media-creator',
     title: t('title'),
     description: t('description'),
-  };
+  });
 }
 
 export default function Page() {

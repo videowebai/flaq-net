@@ -4,9 +4,9 @@
 
 **选择 README 语言：** [English](./README.md) · [日本語](./README_ja.md) · [Bahasa Indonesia](./README_id.md) ·
 [Italiano](./README_it.md) · [Português (Brasil)](./README_pt.md) · [Español](./README_es.md) ·
-[Deutsch](./README_de.md) · [Русский](./README_ru.md) · [Français](./README_fr.md) ·
-[简体中文](./README_zh.md) · [繁體中文](./README_tw.md) · [한국어](./README_ko.md) · [ไทย](./README_th.md) ·
-[Tiếng Việt](./README_vi.md) · [العربية](./README_ar.md)
+[Deutsch](./README_de.md) · [Русский](./README_ru.md) · [Français](./README_fr.md) · [简体中文](./README_zh.md) ·
+[繁體中文](./README_tw.md) · [한국어](./README_ko.md) · [ไทย](./README_th.md) · [Tiếng Việt](./README_vi.md) ·
+[العربية](./README_ar.md)
 
 > README 的语言集合与 `i18n/languages.ts` 保持一致，每一种界面语言都有对应的项目介绍。
 
@@ -24,6 +24,7 @@
 - [AIGC 能力](#aigc-能力)
 - [Flaq.ai 联盟计划](#flaqai-联盟计划)
 - [国际化 (i18n)](#国际化-i18n)
+- [SEO 与 AI 爬虫发现](#seo-与-ai-爬虫发现)
 - [项目结构](#项目结构)
 - [部署](#部署)
 - [许可证](#许可证)
@@ -36,6 +37,7 @@
 - 📹 **图生视频** — 将静态图片动画化为动态视频内容
 - 👗 **虚拟试衣** — AI 驱动的虚拟服装试穿体验
 - 🌐 **国际化** — 内置与 Flaq.ai 对齐的 15 种语言、语言路由与 SEO 多语言链接
+- 🚀 **无需注册** — 无需创建应用账号即可浏览、修改和自行部署模板
 - 🤝 **联盟推广** — 内置响应式 Flaq.ai 联盟推荐区块，文案与跳转均随当前语言切换
 - 🔒 **安全密钥管理** — 加密的客户端存储保护您的 Flaq.ai 凭证
 - ☁️ **Cloudflare R2 存储** — 内置图片托管，享受 Cloudflare 全球 CDN 加速
@@ -43,6 +45,7 @@
 - 🌓 **深色模式** — 精美的深色主题 UI
 - ⚡ **极速性能** — 基于 Next.js 16，支持 Turbopack
 - 🔍 **SEO 优化** — 动态元数据、Open Graph、站点地图和结构化数据
+- 🤖 **AI 爬虫友好** — 提供精简的 `llms.txt`、完整的 `llms-full.txt` 与公开内容抓取规则
 
 ## 技术栈
 
@@ -220,6 +223,18 @@ pnpm ts-check
 2. 在 `messages/` 目录中创建新的翻译文件
 3. 在布局文件中添加新语言的相关元数据
 
+## SEO 与 AI 爬虫发现
+
+每个公开页面都包含本地化标题和描述、绝对 canonical URL、15 种语言的 `hreflang`、Open Graph、Twitter
+Card 以及 index/follow 指令。生成的 `/sitemap.xml` 会列出所有公开页面的全部语言版本，并声明对应的语言替代关系。
+
+- `/robots.txt` 允许搜索引擎和 AI 助手抓取公开内容，同时屏蔽 API、回调和错误页面
+- `/llms.txt` 以精简结构介绍产品、页面、语言、文档和政策入口
+- `/llms-full.txt` 提供项目能力、安装方式、技术架构和免费使用边界等完整上下文
+- JSON-LD 描述网站及 MIT 授权的开源代码仓库，不再使用无法验证的评分数据
+
+部署前请将 `NEXT_PUBLIC_SITE_URL` 设置为生产环境域名，确保 canonical、sitemap 和 LLM 资源链接指向正确站点。
+
 ## 项目结构
 
 ```
@@ -232,7 +247,9 @@ pnpm ts-check
 │   │   └── (without-footer)/ # 全屏页面（如功能页）
 │   ├── api/                # API 路由（图片代理、上传）
 │   ├── robots.ts           # Robots.txt 生成
-│   └── sitemap.ts          # 动态站点地图生成
+│   ├── sitemap.ts          # 动态站点地图生成
+│   ├── llms.txt/           # 精简的 AI 可读站点导航
+│   └── llms-full.txt/      # 完整的 AI 可读项目上下文
 ├── components/             # 可复用 React 组件
 │   ├── ui/                 # shadcn/ui 风格组件（基于 Radix）
 │   ├── dialog/             # 对话框组件（API 设置等）
@@ -244,6 +261,7 @@ pnpm ts-check
 │   ├── request.ts          # next-intl 请求配置
 │   └── routing.ts          # 语言路由配置
 ├── lib/                    # 工具库
+│   ├── seo/                # 元数据、llms.txt 与爬虫辅助工具
 │   ├── constants/          # 应用常量、模型配置、导航
 │   ├── utils/              # 工具函数
 │   └── env.ts              # 环境变量辅助函数

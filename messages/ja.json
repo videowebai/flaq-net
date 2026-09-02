@@ -387,8 +387,8 @@
     "reference-to-video-content": "Create video from image, video, audio, document, or link references"
   },
   "Footer": {
-    "title": "Flaq AI",
-    "subTitle": "世界最高峰AIモデル統合＆推論高速化プラットフォーム",
+    "title": "AI画像・動画 — 無料・オープンソース · 登録不要",
+    "subTitle": "登録不要で、この無料・オープンソースのAI画像・動画テンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。",
     "support": "サポート",
     "docs": "Docs",
     "business": "ビジネス",
@@ -497,7 +497,6 @@
       "29-p": "お問い合わせ先：本規約に関するご質問等は contact@flaq.ai までご連絡ください。会社情報：FLAQ AI PTE. LTD., 112 ROBINSON ROAD, #03-01, ROBINSON 112, SINGAPORE。皆様のお問い合わせには、できる限り迅速に対応いたします。"
     },
     "refundPolicy": {
-      "title": "flaq.ai 返金ポリシー",
       "1": {
         "title": "1. 返金の適用条件",
         "description": "当社はパートナープラットフォームへの依存性およびAI処理にかかる高額な計算コストのため、ご購入から3日以内に返金申請が必要です。これ以降の返金はお受けできません。詳細は contact@flaq.ai までご連絡ください。"
@@ -521,13 +520,14 @@
       "6": {
         "title": "6. 本ポリシーの変更",
         "description": "1. 当社は本返金ポリシーを随時変更する権利を有します。\n2. 変更は即時有効となり、本ページに反映されます。\n3. 定期的に本ポリシーをご確認ください。\n4. ポリシーの更新やご質問は contact@flaq.ai までご連絡ください。"
-      }
+      },
+      "title": "flaq.ai 返金ポリシー"
     }
   },
   "Home": {
     "heading": {
-      "title": "Flaq AI：最高峰モデルを統合した手頃なAIエージェントAPI",
-      "description": "世界トップクラスの動画、画像、音楽、LLMモデルを1つのAPIでお試しください。公式APIよりも優れた料金体系とコストパフォーマンスで利用できます。",
+      "title": "AI画像・動画 — 無料・オープンソース · 登録不要",
+      "description": "登録不要で、この無料・オープンソースのAI画像・動画テンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。",
       "try-now": "Try Now",
       "try-now-video": "ビデオAPIを試す",
       "try-now-image": "画像APIを試す"
@@ -546,9 +546,6 @@
       }
     },
     "unique-features": {
-      "title": "Key Features of Flaq SaaS Template",
-      "description": "A complete open source template with essential features for building your own AI generation platform.",
-      "button-text": "Try Now",
       "1": {
         "title": "Flaq AI Integration",
         "description": "Built-in integration with Flaq AI's open API for seamless image and video generation capabilities."
@@ -564,12 +561,12 @@
       "4": {
         "title": "Open Source & Customizable",
         "description": "Fully open source with clean code structure. Easy to customize and extend for your specific needs."
-      }
+      },
+      "title": "Key Features of Flaq SaaS Template",
+      "description": "A complete open source template with essential features for building your own AI generation platform.",
+      "button-text": "Try Now"
     },
     "use-cases": {
-      "title": "Flaq AIの主な利用シーン",
-      "description": "Flaq AIの高性能APIクラスタは単なるツール群ではなく、業界イノベーションを推進する原動力です。クリエイティブワークフローから企業の自動化まで、あらゆるシナリオを技術的にサポートします。",
-      "button-text": "Try Now",
       "1": {
         "title": "完全自動化コンテンツマーケティングプラットフォーム",
         "description": "Nano Banana Pro APIでブランドビジュアルを一括生成し、LLMで自動的に投稿を作成。コピー作成からビジュアル出力まで即時に実現できます。"
@@ -585,7 +582,10 @@
       "4": {
         "title": "開発者のプロトタイピング＆成長",
         "description": "統合APIキーで様々なモデル組合せを迅速に試せ、市場の反応でコアアルゴリズムも即切り替え可能、コーディング変更不要です。"
-      }
+      },
+      "title": "Flaq AIの主な利用シーン",
+      "description": "Flaq AIの高性能APIクラスタは単なるツール群ではなく、業界イノベーションを推進する原動力です。クリエイティブワークフローから企業の自動化まで、あらゆるシナリオを技術的にサポートします。",
+      "button-text": "Try Now"
     },
     "exampleSection": {
       "title": "Examples Generated via Flaq API",
@@ -601,7 +601,6 @@
       }
     },
     "faq": {
-      "title": "Flaq AIに関するよくある質問",
       "1": {
         "question": "Flaq AIと各モデル提供元の公式API直接利用の違いは？",
         "answer": "Flaq AIは標準化されたデータフォーマット、インテリジェントなフェイルオーバー、優れたネットワーク最適化を提供し、レイテンシーを大きく削減し複数APIアカウント管理の煩雑さを解消します。"
@@ -633,51 +632,50 @@
       "8": {
         "question": "知的財産権侵害に関する免責事項とは何ですか？",
         "answer": "Flaq AIは、ユーザーが想像力を活かして希望する画像コンテンツを生成できるAIツールを提供しています。ユーザーが著名人やその他の知的財産に関するコンテンツを取り入れて宣伝し、権利侵害の問題が生じた場合、法的責任はユーザーが負います。"
-      }
+      },
+      "title": "Flaq AIに関するよくある質問"
     }
   },
   "image-to-image": {
     "heading": {
-      "title": "AI画像から画像生成ツール: 参照画像で画像を編集",
-      "description": "参照画像をアップロードし、Flaq AI Image to Image Generatorで変換できます。無料クレジットから始め、自然言語プロンプトで写真のスタイル変更、被写体と構図の保持、ビジュアル詳細の編集を行い、デザイン、マーケティング、商品、クリエイティブワークフロー向けの洗練されたビジュアルを生成できます。"
+      "title": "画像から画像 — 無料・オープンソース · 登録不要",
+      "description": "登録不要で、この無料・オープンソースの画像から画像テンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。"
     },
     "form": {
       "title": "画像から画像"
     },
     "examples": {
-      "title": "AI画像から画像生成ツールの主な機能",
-      "description": "参照ガイド付き生成、ビジュアル編集、スタイル転送、商品モックアップ、重要なソース画像の詳細を保った高速な画像バリエーションに対応する、柔軟な画像から画像作成ツール。",
       "1": {
-        "title": "The AI image-to-image converter enables high-quality style conversion and reconstruction while maintaining original characteristics and details.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "A girl with a backpack, standing relaxed near a bookshelf and behind a chair. Keep every other detail in the scene completely unchanged."
-        }
+        },
+        "title": "The AI image-to-image converter enables high-quality style conversion and reconstruction while maintaining original characteristics and details."
       },
       "2": {
-        "title": "The AI image-to-image converter supports fine-grained control of style transfer while preserving the source image's complete content.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "Convert a realistic image into retro, grid-style pixel video game art."
-        }
+        },
+        "title": "The AI image-to-image converter supports fine-grained control of style transfer while preserving the source image's complete content."
       },
       "3": {
-        "title": "The AI image-to-image converter preserves the original structure and layout during transformation, enabling creators to achieve more accurate composition control and generate high-quality, stable output images.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "Ultra-realistic 8K overhead photo in strict knolling style. Take the object from the reference image and fully disassemble it into 8 to 12 main parts, arranging them neatly in a grid or radial layout on a minimalist wood or matte gray tabletop. Use uniform spacing and perfect alignment, no overlap or extraneous items. The scene is softly and diffusely lit by multiple light sources, casting subtle shadows and balancing neutral colors, with all elements in perfect focus. Show highly detailed real-world materials (metal, plastic, rubber grips, circuit boards, screws). For each part, add a slim white rectangular border, and place a short, clear English label next to it in a simple sans-serif font, not covering the part; annotations must be legible and not intrusive."
-        }
-      }
+        },
+        "title": "The AI image-to-image converter preserves the original structure and layout during transformation, enabling creators to achieve more accurate composition control and generate high-quality, stable output images."
+      },
+      "title": "AI画像から画像生成ツールの主な機能",
+      "description": "参照ガイド付き生成、ビジュアル編集、スタイル転送、商品モックアップ、重要なソース画像の詳細を保った高速な画像バリエーションに対応する、柔軟な画像から画像作成ツール。"
     },
     "core-feature": {
-      "title": "Core Advantages of Image-to-Image Converter",
-      "description": "A professional AI image-to-image tool offering high-resolution outputs and a streamlined, user-friendly interface. Easily generate high-quality works from reference images. Diverse settings provide creative freedom, making image editing, design, and art creation more efficient and flexible.",
       "1": {
         "title": "Realistic and Delicate Visual Presentation",
         "description": "Outstanding in rendering textures, lighting, and composition, the system produces highly accurate, richly detailed, and realistic images for vivid results."
@@ -689,12 +687,11 @@
       "3": {
         "title": "Powerful Text Understanding and Parsing",
         "description": "Leveraging advanced natural language processing, the system accurately understands prompts and descriptions to quickly generate and optimize image content for smarter, more efficient creation."
-      }
+      },
+      "title": "Core Advantages of Image-to-Image Converter",
+      "description": "A professional AI image-to-image tool offering high-resolution outputs and a streamlined, user-friendly interface. Easily generate high-quality works from reference images. Diverse settings provide creative freedom, making image editing, design, and art creation more efficient and flexible."
     },
     "advantage": {
-      "title": "Applications of the AI Image-to-Image Converter",
-      "description": "The AI image-to-image converter is suitable for poster design, brand marketing, product showcases, and artistic creation. It enables precise image and text control, greatly improving creative efficiency and visual quality and providing powerful creative capabilities for designers, business teams, and educators.",
-      "try-now": "Try Now",
       "1": {
         "title": "Poster & Visual Design",
         "description": "Supports poster and various creative visual editing, with flexible adjustment of fonts, sizes, and styles—perfect for event promotion and brand marketing."
@@ -710,11 +707,12 @@
       "4": {
         "title": "Artistic Creation & Cultural Innovation",
         "description": "Empowers artists and designers with rich creative tools for style transformation, cross-domain inspiration, and maximized artistic possibilities."
-      }
+      },
+      "title": "Applications of the AI Image-to-Image Converter",
+      "description": "The AI image-to-image converter is suitable for poster design, brand marketing, product showcases, and artistic creation. It enables precise image and text control, greatly improving creative efficiency and visual quality and providing powerful creative capabilities for designers, business teams, and educators.",
+      "try-now": "Try Now"
     },
     "manual": {
-      "title": "画像から画像を生成する方法",
-      "content": "This step-by-step guide will help you get started and achieve the best results with the AI image-to-image conversion tool.",
       "1": {
         "title": "参照画像をアップロード",
         "description": "生成結果をガイドしたい商品写真、ポートレート、スケッチ、デザイン下書き、スタイル参照、その他の画像から始めます。"
@@ -726,10 +724,11 @@
       "3": {
         "title": "生成して調整",
         "description": "対応モデルと設定を選び、画像を生成し、結果をプレビューしてから、完成した画像をJPG、PNG、WebPなどの対応形式でダウンロードします。"
-      }
+      },
+      "title": "画像から画像を生成する方法",
+      "content": "This step-by-step guide will help you get started and achieve the best results with the AI image-to-image conversion tool."
     },
     "faq": {
-      "title": "画像から画像生成ツールFAQ",
       "1": {
         "question": "AI画像から画像生成ツールとは何ですか？",
         "answer": "AI画像から画像生成ツールは、アップロードされた画像をビジュアル入力として使い、プロンプトに基づいて新しい画像を作成します。既存ビジュアルのスタイル変更、編集、強化、再解釈に役立ちます。"
@@ -753,30 +752,29 @@
       "6": {
         "question": "画像から画像の結果を商用利用できますか？",
         "answer": "商用利用は、アップロード画像に対する権利、ご利用のプラン、プラットフォーム規約、モデルプロバイダーのルール、生成コンテンツによって異なります。有償、クライアント向け、公開用途で出力を使う前に、最新の規約を確認してください。"
-      }
+      },
+      "title": "画像から画像生成ツールFAQ"
     }
   },
   "image-to-video": {
     "heading": {
-      "title": "音声対応画像から動画AI生成ツール",
-      "description": "flaq.aiで写真や参照画像を短いAI動画にアニメーション化できます。無料クレジットから始め、画像をアップロードし、モーションを説明し、対応画像から動画モデルを選んで、商品、ポートレート、SNS投稿、広告、クリエイティブコンセプト向けの滑らかなクリップを生成できます。"
+      "title": "画像から動画 — 無料・オープンソース · 登録不要",
+      "description": "登録不要で、この無料・オープンソースの画像から動画テンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。"
     },
     "form": {
       "title": "画像から動画"
     },
     "example": {
-      "title": "画像から動画AI生成ツールの例",
-      "description": "Image to Video AI Generatorの例では、選択したモデルが対応している場合、ソース画像がプロンプトに沿った動作、カメラの動き、ビジュアルの一貫性、任意の音声を備えた動くクリップになる様子を示します。",
       "1": {
         "prompt": "cutting the tomato"
       },
       "2": {
         "prompt": "The man is skiing"
-      }
+      },
+      "title": "画像から動画AI生成ツールの例",
+      "description": "Image to Video AI Generatorの例では、選択したモデルが対応している場合、ソース画像がプロンプトに沿った動作、カメラの動き、ビジュアルの一貫性、任意の音声を備えた動くクリップになる様子を示します。"
     },
     "core-feature": {
-      "title": "Advantages about the Image to Video AI Generator",
-      "description": "AI Video Generator not only generates content quickly but also focuses on visual hierarchy and narrative logic, making it an important productivity tool for content creators and business teams.",
       "1": {
         "title": "High-Quality Video Output",
         "description": "AI Video Generator produces high-quality videos with smooth motion and clear visuals, meeting professional video production standards."
@@ -788,12 +786,11 @@
       "3": {
         "title": "Natural Motion and Spatial Consistency",
         "description": "Character movements connect smoothly, scene transitions are seamless, both enhancing immersion and ensuring narrative continuity and logic."
-      }
+      },
+      "title": "Advantages about the Image to Video AI Generator",
+      "description": "AI Video Generator not only generates content quickly but also focuses on visual hierarchy and narrative logic, making it an important productivity tool for content creators and business teams."
     },
     "advantage": {
-      "title": "Use Cases about the Image to Video AI Generator",
-      "description": "With the Image to Video AI Generator, creators can unleash their imagination across various scenarios—from film shorts and social media content to brand advertising, educational training, and virtual reality experiences. This advanced tool can quickly transform text descriptions into high-quality, realistic and vivid video works, not only improving creative efficiency but also saving production costs, making creativity come to life faster.",
-      "try-now": "Try Now",
       "1": {
         "title": "Film and Video Creation",
         "description": "AI Video Generator can quickly transform text descriptions into cinematic short films. Whether it's dramatic segments, sci-fi scenes, or emotional narratives, it can present precise cinematography, character consistency, and style matching, significantly improving the creative efficiency of film and video content."
@@ -809,11 +806,12 @@
       "4": {
         "title": "Educational and Training Videos",
         "description": "Teachers and training personnel can use AI Video Generator to create instructional videos, teaching demonstrations, or animated courseware. With AI-generated visuals and audio coordination, abstract or complex knowledge becomes more intuitive and easier to understand."
-      }
+      },
+      "title": "Use Cases about the Image to Video AI Generator",
+      "description": "With the Image to Video AI Generator, creators can unleash their imagination across various scenarios—from film shorts and social media content to brand advertising, educational training, and virtual reality experiences. This advanced tool can quickly transform text descriptions into high-quality, realistic and vivid video works, not only improving creative efficiency but also saving production costs, making creativity come to life faster.",
+      "try-now": "Try Now"
     },
     "manual": {
-      "title": "画像から動画を生成する方法",
-      "content": "",
       "1": {
         "title": "参照画像をアップロード",
         "description": "アニメーション化したい写真、商品画像、ポートレート、デザイン、ビジュアル参照から始めます。一部のモデルは終了フレームにも対応しています。"
@@ -825,10 +823,11 @@
       "3": {
         "title": "生成、プレビュー、調整",
         "description": "対応画像から動画モデルを選び、クリップを生成し、結果をプレビューしてから、より良いバージョンのためにプロンプトや設定を調整します。"
-      }
+      },
+      "title": "画像から動画を生成する方法",
+      "content": ""
     },
     "faq": {
-      "title": "画像から動画生成ツールFAQ",
       "1": {
         "question": "AI画像から動画生成ツールとは何ですか？",
         "answer": "AI画像から動画生成ツールは、アップロードされた画像をビジュアルの開始点として使い、モーションプロンプトと選択したモデルに基づいて短いアニメーション動画を作成します。"
@@ -852,30 +851,29 @@
       "6": {
         "question": "画像から動画の結果を商用利用できますか？",
         "answer": "商用利用は、アップロード画像に対する権利、ご利用のプラン、プラットフォーム規約、モデルプロバイダーのルール、生成コンテンツによって異なります。有償、クライアント向け、公開用途で出力を使う前に、最新の規約を確認してください。"
-      }
+      },
+      "title": "画像から動画生成ツールFAQ"
     }
   },
   "text-to-video": {
     "heading": {
-      "title": "音声対応テキストから動画AI生成ツール",
-      "description": "flaq.aiでテキストプロンプトからAI動画を作成できます。無料クレジットから始め、主要なテキストから動画モデルを選び、シーン、モーション、カメラ、スタイルを説明して、広告、SNS、ストーリーテリング、教育、クリエイティブ制作向けの滑らかな短尺動画を生成できます。"
+      "title": "テキストから動画 — 無料・オープンソース · 登録不要",
+      "description": "登録不要で、この無料・オープンソースのテキストから動画テンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。"
     },
     "form": {
       "title": "テキストから動画"
     },
     "example": {
-      "title": "テキストから動画AI生成ツールの例",
-      "description": "Text to Video AI Generatorの例では、選択したモデルが対応している場合、プロンプトだけのアイデアが、明確なモーション、映画的なフレーミング、リアルな物理表現、任意の音声を備えた動的なクリップになる様子を示します。",
       "1": {
         "prompt": "A short hair beautiful European influencer is trying to sell to the camera a smooth cylindrical object, tapering slightly at one end, made of firm or flexible material with a polished, minimal design, recorded with an iPhone, smiling"
       },
       "2": {
         "prompt": "A man soaring gracefully through outer space as the camera orbits smoothly around him"
-      }
+      },
+      "title": "テキストから動画AI生成ツールの例",
+      "description": "Text to Video AI Generatorの例では、選択したモデルが対応している場合、プロンプトだけのアイデアが、明確なモーション、映画的なフレーミング、リアルな物理表現、任意の音声を備えた動的なクリップになる様子を示します。"
     },
     "core-feature": {
-      "title": "Advantages about Text to Video AI Generator",
-      "description": "AI Video Generator not only generates content quickly but also focuses on visual hierarchy and narrative logic, making it an important productivity tool for content creators and business teams.",
       "1": {
         "title": "Cutting-Edge AI Technology",
         "description": "Based on advanced artificial intelligence models with deep semantic understanding and physics modeling capabilities, generating realistic and vivid video content from text or images."
@@ -887,12 +885,11 @@
       "3": {
         "title": "High-Quality Video Output",
         "description": "Generates high-quality videos with smooth motion and cinematic visual quality for various creative scenarios."
-      }
+      },
+      "title": "Advantages about Text to Video AI Generator",
+      "description": "AI Video Generator not only generates content quickly but also focuses on visual hierarchy and narrative logic, making it an important productivity tool for content creators and business teams."
     },
     "advantage": {
-      "title": "Application Scenarios about Text to Video AI Generator",
-      "description": "Text to Video AI Generator helps you quickly turn text into high-quality videos for short films, social media, marketing, training, and more—saving time and reducing costs.",
-      "try-now": "Try Now",
       "1": {
         "title": "Film and Video Creation",
         "description": "Text to Video AI Generator can rapidly transform text descriptions into cinematic short films. Whether dramatic segments, sci-fi scenes, or emotional narratives, it can precisely present cinematography, character consistency, and style matching, significantly improving film and video content creation efficiency."
@@ -908,11 +905,12 @@
       "4": {
         "title": "Educational and Training Videos",
         "description": "Teachers and training personnel can use AI Video Generator to create instructional videos, demonstrations, or animated courseware. AI-generated visuals combined with audio make abstract or complex knowledge more intuitive and understandable."
-      }
+      },
+      "title": "Application Scenarios about Text to Video AI Generator",
+      "description": "Text to Video AI Generator helps you quickly turn text into high-quality videos for short films, social media, marketing, training, and more—saving time and reducing costs.",
+      "try-now": "Try Now"
     },
     "manual": {
-      "title": "テキストから動画を生成する方法",
-      "content": "",
       "1": {
         "title": "動画プロンプトを入力",
         "description": "動画の被写体、設定、動作、カメラアングル、動き、照明、感情、ビジュアルスタイル、最終目的を説明します。"
@@ -924,10 +922,11 @@
       "3": {
         "title": "生成、プレビュー、調整",
         "description": "動画を作成し、結果を確認し、プロンプトやモデル設定を調整して、モーションが目標に合うまで別バージョンを生成します。"
-      }
+      },
+      "title": "テキストから動画を生成する方法",
+      "content": ""
     },
     "faq": {
-      "title": "テキストから動画生成ツールFAQ",
       "1": {
         "question": "AIテキストから動画生成ツールとは何ですか？",
         "answer": "AIテキストから動画生成ツールは、書かれたプロンプトから短い動画を作成します。シーン、モーション、カメラ、スタイルを説明すると、選択したAIモデルが動画結果を生成します。"
@@ -951,31 +950,29 @@
       "6": {
         "question": "生成した動画を商用利用できますか？",
         "answer": "商用利用は、ご利用のプラン、プラットフォーム規約、モデルプロバイダーのルール、生成するコンテンツによって異なります。有償、クライアント向け、公開用途で出力を使う前に、最新の規約を確認してください。"
-      }
+      },
+      "title": "テキストから動画生成ツールFAQ"
     }
   },
   "text-to-image": {
     "heading": {
-      "title": "AIテキストから画像生成ツール: プロンプトから画像を作成",
-      "description": "Flaq AI Text to Image Generatorで、シンプルなテキストプロンプトから高品質なビジュアルを作成できます。無料クレジットから始め、主要画像モデルを選び、出力設定を調整し、デザイン、マーケティング、ストーリーテリング、教育、クリエイティブ制作向けの洗練された画像を生成できます。"
+      "title": "テキストから画像 — 無料・オープンソース · 登録不要",
+      "description": "登録不要で、この無料・オープンソースのテキストから画像テンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。"
     },
     "form": {
       "title": "テキストから画像"
     },
     "examples": {
-      "title": "AIテキストから画像生成ツールの主な機能",
-      "description": "書かれたアイデアを詳細なビジュアルに変換するための強力なAI画像作成ワークフロー。強力なプロンプト理解、柔軟なモデル選択、きれいな構図、高速なクリエイティブ反復向けに構築されています。",
       "1": {
         "title": "Enter product descriptions, scene details, or character features. The system will automatically interpret the semantics and generate a corresponding visual image."
       },
       "2": {
         "title": "The system deeply analyzes and interprets the text, outputting well-structured, detail-rich, and stylistically diverse image results."
-      }
+      },
+      "title": "AIテキストから画像生成ツールの主な機能",
+      "description": "書かれたアイデアを詳細なビジュアルに変換するための強力なAI画像作成ワークフロー。強力なプロンプト理解、柔軟なモデル選択、きれいな構図、高速なクリエイティブ反復向けに構築されています。"
     },
     "advantage": {
-      "title": "Advantages of Text to Image AI",
-      "description": "The core advantages of Text to Image AI lie in automating the traditionally complex, high-barrier image creation process, enabling users to rapidly obtain high-quality visual results while maintaining realism and creativity.",
-      "button-text": "Try Now",
       "1": {
         "title": "Efficient Generation, Greatly Saves Time",
         "description": "AI rapidly transforms text into images, dramatically reducing time costs for creators."
@@ -991,12 +988,12 @@
       "4": {
         "title": "Ideal for Personal and Business Use",
         "description": "Whether you're a designer, content creator, product team, developer, or brand owner, easily create ready-to-use image assets for a variety of applications."
-      }
+      },
+      "title": "Advantages of Text to Image AI",
+      "description": "The core advantages of Text to Image AI lie in automating the traditionally complex, high-barrier image creation process, enabling users to rapidly obtain high-quality visual results while maintaining realism and creativity.",
+      "button-text": "Try Now"
     },
     "use-cases": {
-      "title": "テキストから画像の活用シーン",
-      "description": "参照画像の準備や複雑なデザインワークフローを構築せずに、言葉からオリジナル画像が必要なときは、Flaq AI Text to Image Generatorを使用できます。",
-      "try-now": "作成を開始",
       "1": {
         "title": "マーケティングとSNSビジュアル",
         "description": "文章のクリエイティブブリーフから、キャンペーンコンセプト、商品シーン、ローンチグラフィック、SNS投稿、サムネイル案、広告バリエーションを直接生成できます。"
@@ -1012,11 +1009,12 @@
       "4": {
         "title": "ストーリーテリングとコンセプトアート",
         "description": "詳細なテキスト説明から、キャラクター、映画的フレーム、環境、ポスター、表紙、世界観構築シーン、物語性のあるアートワークを展開できます。"
-      }
+      },
+      "title": "テキストから画像の活用シーン",
+      "description": "参照画像の準備や複雑なデザインワークフローを構築せずに、言葉からオリジナル画像が必要なときは、Flaq AI Text to Image Generatorを使用できます。",
+      "try-now": "作成を開始"
     },
     "manual": {
-      "title": "テキストから画像を生成する方法",
-      "content": "Text to Image features a simple and intuitive workflow—no design experience required. Just enter your text description and the system automatically analyzes the semantics to generate the corresponding visual image.",
       "1": {
         "title": "画像プロンプトを入力",
         "description": "被写体、設定、スタイル、照明、構図、雰囲気、色、カメラアングル、表示したいテキストを含めて、作成したい画像を説明します。"
@@ -1028,10 +1026,11 @@
       "3": {
         "title": "生成、プレビュー、調整",
         "description": "生成をクリックし、画像結果を確認し、プロンプトや設定を調整してから、完成した画像をJPG、PNG、WebPなどの対応形式でダウンロードします。"
-      }
+      },
+      "title": "テキストから画像を生成する方法",
+      "content": "Text to Image features a simple and intuitive workflow—no design experience required. Just enter your text description and the system automatically analyzes the semantics to generate the corresponding visual image."
     },
     "faq": {
-      "title": "テキストから画像生成ツールFAQ",
       "1": {
         "question": "AIテキストから画像生成ツールとは何ですか？",
         "answer": "AIテキストから画像生成ツールは、書かれたプロンプトから画像を作成します。被写体、シーン、スタイル、出力要件を説明すると、選択したAIモデルがビジュアル結果を生成します。"
@@ -1051,16 +1050,17 @@
       "5": {
         "question": "クレジットコストはどのように計算されますか？",
         "answer": "見積もりは、選択したモデルと、解像度、品質、プロバイダー価格、無料クレジット、現在の割引ルールなどの対応パラメータから計算されます。"
-      }
+      },
+      "title": "テキストから画像生成ツールFAQ"
     }
   },
   "virtual-try-on": {
     "heading": {
-      "title": "Virtual Try On AI: Realistic Outfit Preview in Seconds",
-      "description": "See yourself in any outfit instantly with Virtual Try On AI. Upload a person photo and one or more clothing images, select from our ready-made style hints, and generate photorealistic try-on results powered by Flaq API—no fitting room, no guesswork."
+      "title": "バーチャル試着 — 無料・オープンソース · 登録不要",
+      "description": "登録不要で、この無料・オープンソースのバーチャル試着テンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。"
     },
     "form": {
-      "title": "Virtual Try On",
+      "title": "バーチャル試着",
       "upload-images-title": "Upload Images",
       "upload-subject-label": "Upload [Person]",
       "upload-object-label": "Upload [Clothing]",
@@ -1070,40 +1070,37 @@
       "ai-generation-label": "AI Generation"
     },
     "examples": {
-      "title": "Core Features of Virtual Try On AI",
-      "description": "Virtual Try On AI accurately renders garments onto uploaded person photos, preserving body proportions, fabric texture, and design details across a wide range of clothing styles and model types.",
       "1": {
-        "title": "Upload a person photo and a clothing image. The AI maps the garment onto the body with natural drape, accurate fit, and full detail preservation.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "Generated"
-        }
+        },
+        "title": "Upload a person photo and a clothing image. The AI maps the garment onto the body with natural drape, accurate fit, and full detail preservation."
       },
       "2": {
-        "title": "Choose from curated style hint templates to get started instantly—no sourcing required. The AI generates a complete try-on result based on your selection.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "Generated"
-        }
+        },
+        "title": "Choose from curated style hint templates to get started instantly—no sourcing required. The AI generates a complete try-on result based on your selection."
       },
       "3": {
-        "title": "Switch between different AI models to control output style and detail level. Each model delivers consistent, high-quality virtual try-on results.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "Generated"
-        }
-      }
+        },
+        "title": "Switch between different AI models to control output style and detail level. Each model delivers consistent, high-quality virtual try-on results."
+      },
+      "title": "Core Features of Virtual Try On AI",
+      "description": "Virtual Try On AI accurately renders garments onto uploaded person photos, preserving body proportions, fabric texture, and design details across a wide range of clothing styles and model types."
     },
     "advantage": {
-      "title": "Core Advantages of Virtual Try On AI",
-      "description": "Virtual Try On AI combines multiple state-of-the-art generation models with a simple upload workflow, making realistic outfit visualization accessible to anyone—from individual shoppers to e-commerce teams.",
-      "try-now": "Try Now",
       "1": {
         "title": "Fast Generation, Instant Results",
         "description": "Get photorealistic try-on results quickly. Our AI is pre-trained on millions of garment and body reference images, requiring no complex setup—just upload and see instant output."
@@ -1119,12 +1116,12 @@
       "4": {
         "title": "Multiple Models, One Platform",
         "description": "Switch between different AI models based on your output preference. Each model is optimized for different generation styles and clothing complexities—all accessible without any technical setup."
-      }
+      },
+      "title": "Core Advantages of Virtual Try On AI",
+      "description": "Virtual Try On AI combines multiple state-of-the-art generation models with a simple upload workflow, making realistic outfit visualization accessible to anyone—from individual shoppers to e-commerce teams.",
+      "try-now": "Try Now"
     },
     "use-cases": {
-      "title": "Use Cases for Virtual Try On AI",
-      "description": "Virtual Try On AI supports a wide range of personal and professional applications—from online shopping decisions to high-volume e-commerce content production.",
-      "try-now": "Try Now",
       "1": {
         "title": "Online Shopping & Purchase Decisions",
         "description": "See exactly how a garment will look on your body before buying. Reduce return rates and purchase uncertainty by visualizing real outfit combinations on yourself."
@@ -1140,11 +1137,12 @@
       "4": {
         "title": "Marketing & Social Media Content",
         "description": "Produce high-quality outfit imagery for campaigns, lookbooks, social posts, or brand promotions—without models, studios, or post-production. Generate multiple variations quickly to test different looks."
-      }
+      },
+      "title": "Use Cases for Virtual Try On AI",
+      "description": "Virtual Try On AI supports a wide range of personal and professional applications—from online shopping decisions to high-volume e-commerce content production.",
+      "try-now": "Try Now"
     },
     "manual": {
-      "title": "How to Use Virtual Try On AI",
-      "content": "Virtual Try On AI requires no technical experience. Upload your images, select a model and style hint if needed, and receive a realistic try-on result quickly.",
       "1": {
         "title": "Step 1: Upload a Person Photo",
         "description": "Upload one clear photo of a person. This will serve as the base body reference for the virtual try-on."
@@ -1160,10 +1158,11 @@
       "4": {
         "title": "Step 4: Generate and Download",
         "description": "Click generate and receive your virtual try-on result. Preview the output and download it for personal use, product listings, or content creation."
-      }
+      },
+      "title": "How to Use Virtual Try On AI",
+      "content": "Virtual Try On AI requires no technical experience. Upload your images, select a model and style hint if needed, and receive a realistic try-on result quickly."
     },
     "faq": {
-      "title": "FAQs about Virtual Try On AI",
       "1": {
         "question": "What AI models are supported for Virtual Try On?",
         "answer": "Multiple AI models are available, each with different generation characteristics suited to different clothing types and output styles. You can select the model that best fits your use case before generating."
@@ -1195,7 +1194,8 @@
       "8": {
         "question": "What output resolution does Virtual Try On AI produce?",
         "answer": "Output resolution varies by model. Results are optimized for visual quality suitable for both personal styling and professional e-commerce or marketing use."
-      }
+      },
+      "title": "FAQs about Virtual Try On AI"
     }
   },
   "Pricing": {
@@ -1212,48 +1212,48 @@
       "creator": "Flaq AI"
     },
     "home": {
-      "title": "Flaq SaaS Template: AI Image & Video Generation Platform",
-      "description": "Free open source template for building AI generation platforms. Create stunning images and videos with Flaq AI's powerful API. Perfect for developers.",
-      "keywords": "Flaq SaaS Template, AI Generation, Open Source",
+      "title": "AI画像・動画 — 無料・オープンソース · 登録不要",
+      "description": "登録不要で、この無料・オープンソースのAI画像・動画テンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。",
+      "keywords": "AI画像・動画プラットフォーム, 無料・オープンソース, 登録不要, no signup required, free AI generator, open source AI, free to use, Flaq API, AIGC",
       "openGraph": {
-        "title": "Flaq SaaS Template: AI Image & Video Generation Platform",
-        "description": "Free open source template for building AI generation platforms. Create stunning images and videos with Flaq AI's powerful API. Perfect for developers.",
+        "title": "AI画像・動画 — 無料・オープンソース · 登録不要",
+        "description": "登録不要で、この無料・オープンソースのAI画像・動画テンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。",
         "siteName": "Flaq SaaS Template"
       },
       "twitter": {
-        "title": "Flaq SaaS Template: AI Image & Video Generation Platform",
-        "description": "Free open source template for building AI generation platforms. Create stunning images and videos with Flaq AI's powerful API. Perfect for developers.",
+        "title": "AI画像・動画 — 無料・オープンソース · 登録不要",
+        "description": "登録不要で、この無料・オープンソースのAI画像・動画テンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。",
         "site": "flaq.ai",
         "creator": "Flaq AI"
       }
     },
     "image-to-video": {
-      "title": "アニメーション向け無料AI画像から動画生成ツール｜無料体験で高品質な生成効果を確認しデザイン制作に活用、素早く成果物へ｜無料体験で効果を確認し制作に活用",
-      "description": "Flaq AIの画像から動画モデルでアップロード画像を無料アニメーション化。参照を追加し、プロバイダーを選び、動画オプションとコストを確認して、モーションを作成できます。複雑な手順なしで、鮮明で安定した生成効果を無料で試せます。広告素材、デザイン案、商品コンセプト、SNS投稿、日常のアイデア制作に活用し、使える成果物をより早く得られます。"
+      "title": "画像から動画 — 無料・オープンソース · 登録不要",
+      "description": "登録不要で、この無料・オープンソースの画像から動画テンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。"
     },
     "text-to-video": {
-      "title": "主要モデル対応の無料AIテキストから動画生成ツール｜無料体験で高品質な生成効果を確認しデザイン制作に活用、素早く成果物へ｜無料体験で効果を確認し制作に活用",
-      "description": "Flaq AIでテキストプロンプトからAI動画を無料作成。主要動画モデルを選び、長さと解像度を設定し、クレジットコストを確認して、クリップをすばやく生成できます。複雑な手順なしで、鮮明で安定した生成効果を無料で試せます。広告素材、デザイン案、商品コンセプト、SNS投稿、日常のアイデア制作に活用し、使える成果物をより早く得られます。"
+      "title": "テキストから動画 — 無料・オープンソース · 登録不要",
+      "description": "登録不要で、この無料・オープンソースのテキストから動画テンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。"
     },
     "image-to-image": {
-      "title": "画像編集向け無料AI画像から画像生成ツール｜無料体験で高品質な生成効果を確認しデザイン制作に活用、素早く成果物へ｜無料体験で効果を確認し制作に活用",
-      "description": "Flaq AIの画像から画像モデルでアップロード画像を無料変換。参照を追加し、プロバイダーを選び、オプションとクレジットコストを確認して、洗練された編集を作成できます。複雑な手順なしで、鮮明で安定した生成効果を無料で試せます。広告素材、デザイン案、商品コンセプト、SNS投稿、日常のアイデア制作に活用し、使える成果物をより早く得られます。"
+      "title": "画像から画像 — 無料・オープンソース · 登録不要",
+      "description": "登録不要で、この無料・オープンソースの画像から画像テンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。"
     },
     "text-to-image": {
-      "title": "無料AIテキストから画像生成ツール、主要モデル対応｜無料体験で高品質な生成効果を確認しデザイン制作に活用、素早く成果物へ｜無料体験で効果を確認し制作に活用",
-      "description": "Flaq AIでテキストプロンプトからAI画像を無料作成。主要画像モデルを選び、比率と解像度を調整し、クレジットコストを確認して、洗練されたビジュアルをすばやく生成できます。複雑な手順なしで、鮮明で安定した生成効果を無料で試せます。広告素材、デザイン案、商品コンセプト、SNS投稿、日常のアイデア制作に活用し、使える成果物をより早く得られます。"
+      "title": "テキストから画像 — 無料・オープンソース · 登録不要",
+      "description": "登録不要で、この無料・オープンソースのテキストから画像テンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。"
     },
     "virtual-try-on": {
-      "title": "Virtual Try On AI - Realistic Outfit Preview",
-      "description": "Preview outfits realistically with Virtual Try On AI. Upload your photos and see how clothes look on you instantly. Powered by Flaq API technology."
+      "title": "バーチャル試着 — 無料・オープンソース · 登録不要",
+      "description": "登録不要で、この無料・オープンソースのバーチャル試着テンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。"
     },
     "reference-to-video": {
-      "title": "無料の参照素材から動画生成AIツール：一貫した動画作成",
-      "description": "一貫した動画を作成できる参照素材から動画生成AIツールを無料でお試しください。主要な対応モデルを使い、参照画像、動画、音声から一貫性のあるAI動画を作成できます。"
+      "title": "参照動画 — 無料・オープンソース · 登録不要",
+      "description": "登録不要で、この無料・オープンソースの参照動画テンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。"
     },
     "ai-media-creator": {
-      "title": "無料AIメディアクリエイター：オンライン画像・動画作成ツール",
-      "description": "オンラインのAIメディアクリエイターを無料でお試しください。テキストやメディアを入力し、1つのワークスペースでAI画像と動画をページ内生成。ログインすると画像と動画の履歴も確認できます。"
+      "title": "AIメディア — 無料・オープンソース · 登録不要",
+      "description": "登録不要で、この無料・オープンソースのAIメディアテンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。"
     }
   },
   "Profile": {
@@ -1375,12 +1375,10 @@
   },
   "reference-to-video": {
     "heading": {
-      "title": "参照素材から動画生成AIツール",
-      "description": "対応する画像、動画、音声の参照素材をAI動画の制作指針に変換します。AIメディアクリエイターに進む前に、キャラクター、商品、動き、シーン、スタイルを導けます。"
+      "title": "参照動画 — 無料・オープンソース · 登録不要",
+      "description": "登録不要で、この無料・オープンソースの参照動画テンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。"
     },
     "core-feature": {
-      "title": "Core Features of Reference to Video AI Generator",
-      "description": "Build a reference-guided video brief with compatible media uploads, asset mentions, model-specific controls, and multiple generation models.",
       "1": {
         "title": "Flexible Reference Media",
         "description": "Add images, video clips, audio, documents, or links when the selected model supports them. Available upload controls update automatically with your model choice."
@@ -1392,12 +1390,11 @@
       "3": {
         "title": "Multiple Reference-to-Video Models",
         "description": "Choose from supported Seedance, MiniMax, Wan, and Happy Horse reference workflows, then match the model to the input types and output controls your project needs."
-      }
+      },
+      "title": "Core Features of Reference to Video AI Generator",
+      "description": "Build a reference-guided video brief with compatible media uploads, asset mentions, model-specific controls, and multiple generation models."
     },
     "advantage": {
-      "title": "Advantages of Reference to Video AI Generator",
-      "description": "Reference to Video helps creators, marketers, ecommerce teams, designers, storytellers, agencies, and social media producers develop AI videos from existing reference media.",
-      "try-now": "Try Now",
       "1": {
         "title": "Fewer Reshoots and Revisions",
         "description": "Start from existing reference media instead of filming every variation again. Create fresh scenes, product moments, character actions, and talking clips while using source assets as visual guidance."
@@ -1413,11 +1410,12 @@
       "4": {
         "title": "Flexible Video Results",
         "description": "Create reference-guided character videos, product scenes, social content, brand clips, UGC-style ads, cinematic concepts, animation previews, and visual experiments."
-      }
+      },
+      "title": "Advantages of Reference to Video AI Generator",
+      "description": "Reference to Video helps creators, marketers, ecommerce teams, designers, storytellers, agencies, and social media producers develop AI videos from existing reference media.",
+      "try-now": "Try Now"
     },
     "manual": {
-      "title": "参照素材から動画生成の使い方",
-      "content": "Create a reference-guided AI video in three steps.",
       "1": {
         "title": "参照モデルを選択",
         "description": "「参照素材から動画生成」を選び、プロジェクトに必要な入力形式、出力設定、操作項目に基づいて対応モデルを選択します。"
@@ -1429,10 +1427,11 @@
       "3": {
         "title": "AIメディアクリエイターで続行",
         "description": "下書きを確認してAIメディアクリエイターに進み、そこで生成を開始すると、動画履歴でタスクを追跡できます。"
-      }
+      },
+      "title": "参照素材から動画生成の使い方",
+      "content": "Create a reference-guided AI video in three steps."
     },
     "faq": {
-      "title": "参照素材から動画生成 よくある質問",
       "1": {
         "question": "参照素材から動画生成とは？",
         "answer": "参照素材から動画生成は、アップロードしたメディアをガイドとして使用し、新しい動画のキャラクター、商品、物体、動き、音、シーン、ビジュアルスタイルを導くAI生成ワークフローです。"
@@ -1456,17 +1455,16 @@
       "6": {
         "question": "Where do I find my generated video?",
         "answer": "Generated tasks appear in the AI Create video history. The history can use the generated video itself when a separate cover image is unavailable."
-      }
+      },
+      "title": "参照素材から動画生成 よくある質問"
     }
   },
   "ai-media-creator": {
     "heading": {
-      "title": "AIメディアクリエイター：画像と動画を1か所で生成",
-      "description": "1つのワークスペースで、プロンプトと対応メディア入力をAI生成画像または動画に変換できます。作成モードと対応モデルを選び、そのモデルが提供する設定を調整すれば、別のツールページで設定し直すことなく生成できます。"
+      "title": "AIメディア — 無料・オープンソース · 登録不要",
+      "description": "登録不要で、この無料・オープンソースのAIメディアテンプレートを使用・変更・セルフホストできます。モデル生成には Flaq Client Key が必要で、API 利用料は別途発生します。"
     },
     "core-feature": {
-      "title": "One AI Media Creation Workspace for Every Idea",
-      "description": "Move from an initial concept to generated media with a unified form that adapts its models, uploads, and settings to the selected creation type.",
       "1": {
         "title": "Image and Video Creation",
         "description": "Switch between image and video workflows while keeping the same familiar creation experience."
@@ -1482,12 +1480,11 @@
       "4": {
         "title": "Unified Local History",
         "description": "Review recent image and video tasks saved in this browser, including video previews when a separate cover image is unavailable."
-      }
+      },
+      "title": "One AI Media Creation Workspace for Every Idea",
+      "description": "Move from an initial concept to generated media with a unified form that adapts its models, uploads, and settings to the selected creation type."
     },
     "use-cases": {
-      "title": "AIメディアクリエイターの活用例",
-      "description": "AIメディアクリエイターは、マーケティング素材、SNSコンテンツ、ビジュアル開発、画像と動画生成を組み合わせるプロジェクトに活用できます。",
-      "button-text": "Create Now",
       "1": {
         "title": "商品・マーケティング素材",
         "description": "画像と動画を1つの作業環境で制作しながら、商品ビジュアル、キャンペーン画像、プロモーション動画、広告バリエーションを作成できます。"
@@ -1503,12 +1500,12 @@
       "4": {
         "title": "複合メディアのクリエイティブプロジェクト",
         "description": "静止画と動画の両方が必要なプロジェクトを構築し、各シーン、メッセージ、制作段階に合った形式と対応モデル設定を使用できます。"
-      }
+      },
+      "title": "AIメディアクリエイターの活用例",
+      "description": "AIメディアクリエイターは、マーケティング素材、SNSコンテンツ、ビジュアル開発、画像と動画生成を組み合わせるプロジェクトに活用できます。",
+      "button-text": "Create Now"
     },
     "manual": {
-      "title": "AIメディアクリエイターの使い方",
-      "description": "メディアワークフローと対応モデルを選び、プロンプトと対応入力を追加して、結果を生成・確認します。",
-      "button-text": "Start Creating",
       "1": {
         "title": "作成タイプとモデルを選択",
         "description": "必要な画像または動画ワークフローを選び、入力方法、出力形式、必要な制作設定に基づいて対応モデルを選択します。"
@@ -1520,10 +1517,12 @@
       "3": {
         "title": "生成して確認",
         "description": "ワークスペースでタスクを実行して出力を確認します。ログイン後は画像または動画の履歴ビューで保存済みの生成結果を追跡できます。"
-      }
+      },
+      "title": "AIメディアクリエイターの使い方",
+      "description": "メディアワークフローと対応モデルを選び、プロンプトと対応入力を追加して、結果を生成・確認します。",
+      "button-text": "Start Creating"
     },
     "faq": {
-      "title": "AIメディアクリエイター よくある質問",
       "1": {
         "question": "AIメディアクリエイターとは？",
         "answer": "AIメディアクリエイターは、Flaq AIの画像・動画生成用共通ワークスペースです。ワークフロー選択、対応モデル、プロンプト、対応メディア入力、生成設定、ログイン後の履歴を1ページにまとめています。"
@@ -1547,7 +1546,8 @@
       "6": {
         "question": "利用できる設定はモデルによって変わりますか？",
         "answer": "はい。アスペクト比、解像度、再生時間、品質オプション、アップロード枠などの設定は、選択したモデルに設定された機能に応じて表示されます。"
-      }
+      },
+      "title": "AIメディアクリエイター よくある質問"
     }
   },
   "ResourceEntrySections": {

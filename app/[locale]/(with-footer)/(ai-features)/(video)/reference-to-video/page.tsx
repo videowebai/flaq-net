@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
+import { createLocalizedMetadata } from '@/lib/seo/metadata';
+
 import ReferenceToVideoForm from './_components/ReferenceToVideoForm';
 import ReferenceToVideoPublicSections from './_components/ReferenceToVideoPublicSections';
 
@@ -11,10 +13,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     namespace: 'Metadata.reference-to-video',
   });
 
-  return {
+  return createLocalizedMetadata({
+    locale,
+    pathname: '/reference-to-video',
     title: t('title'),
     description: t('description'),
-  };
+  });
 }
 
 export default function Page() {

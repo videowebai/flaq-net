@@ -1,16 +1,21 @@
+import type { Metadata } from 'next';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
-export const metadata = {
-  robots: {
-    index: false,
-    follow: false,
-    googleBot: {
-      index: false,
-      follow: false,
-    },
-  },
-};
+import { createLocalizedMetadata } from '@/lib/seo/metadata';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'FooterNavigation.termsConditions' });
+
+  return createLocalizedMetadata({
+    locale,
+    pathname: '/terms-of-service',
+    title: t('1-h1'),
+    description: t('1-p'),
+  });
+}
 
 export default function Page() {
   const t = useTranslations('FooterNavigation.termsConditions');

@@ -11,6 +11,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prettier": "prettier --write .",
+    "seo:sync-copy": "node scripts/sync-seo-copy.mjs",
     "ts-check": "tsc --noEmit"
   },
   "lint-staged": {

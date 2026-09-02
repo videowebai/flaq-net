@@ -1,17 +1,17 @@
 import type { MetadataRoute } from 'next';
-import { defaultLocale, locales } from '@/i18n/languages';
+import { generateLanguagePaths, languages } from '@/i18n/languages';
 
 import { ALL_FEATURE_ROUTES, SUPPORT_LINKS } from '@/lib/constants';
 import { BASE_URL } from '@/lib/env';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const sitemapRoutes = [
-    { url: '', lastModified: new Date(), changeFrequency: 'daily', priority: 1 },
+    { url: '', lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
     ...ALL_FEATURE_ROUTES.map((r) => ({
       url: r.href.slice(1),
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
-      priority: 1,
+      priority: 0.9,
     })),
     ...SUPPORT_LINKS.map((r) => ({
       url: r.href.slice(1),
@@ -21,14 +21,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
   ] satisfies MetadataRoute.Sitemap;
 
-  return sitemapRoutes.flatMap((route) =>
-    locales.map((locale) => {
-      const lang = locale === defaultLocale ? '' : `/${locale}`;
-      const routeUrl = route.url === '' ? '' : `/${route.url}`;
+  return sitemapRoutes.flatMap((route) => {
+    const languagePaths = generateLanguagePaths(BASE_URL, route.url);
+
+    return languages.map(({ code }) => {
       return {
         ...route,
-        url: `${BASE_URL}${lang}${routeUrl}/`,
+        url: languagePaths[code],
+        alternates: {
+          languages: {
+            'x-default': languagePaths.en,
+            ...languagePaths,
+          },
+        },
       };
-    }),
-  );
+    });
+  });
 }

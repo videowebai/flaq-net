@@ -1,7 +1,6 @@
-import { use } from 'react';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import { generateLanguagePaths, getLanguageDirection } from '@/i18n/languages';
+import { getLanguageDirection } from '@/i18n/languages';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 
@@ -11,6 +10,7 @@ import './globals.css';
 
 import { NavigationGuardProvider } from 'next-navigation-guard';
 
+import { createLocalizedMetadata } from '@/lib/seo/metadata';
 import JsonLdScript from '@/components/scripts/JsonLdScript';
 
 import LazyGlobalUI from './LazyGlobalUI';
@@ -63,46 +63,12 @@ export async function generateMetadata(props: { params: Promise<{ locale: string
     namespace: 'Metadata.home',
   });
 
-  return {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL as string),
-    alternates: {
-      languages: {
-        'x-default': './',
-        ...generateLanguagePaths('', ''),
-      },
-      canonical: './',
-    },
+  return createLocalizedMetadata({
+    locale,
     title: t('title'),
     description: t('description'),
     keywords: t('keywords'),
-    openGraph: {
-      title: t('openGraph.title'),
-      description: t('openGraph.description'),
-      url: process.env.NEXT_PUBLIC_SITE_URL,
-      siteName: t('openGraph.siteName'),
-      type: 'website',
-      images: [
-        {
-          url: `${process.env.NEXT_PUBLIC_SITE_URL}/images/home/home-page.jpg`,
-          secureUrl: `${process.env.NEXT_PUBLIC_SITE_URL}/images/home/home-page.jpg`,
-          width: 1200,
-          height: 630,
-          alt: t('title'),
-        },
-      ],
-    },
-    twitter: {
-      title: t('twitter.title'),
-      description: t('twitter.description'),
-      site: t('twitter.site'),
-      creator: t('twitter.creator'),
-      card: 'summary_large_image',
-      images: {
-        url: `${process.env.NEXT_PUBLIC_SITE_URL}/images/home/home-page.jpg`,
-        alt: t('title'),
-      },
-    },
-  };
+  });
 }
 
 export default async function RootLayout(props: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
@@ -113,11 +79,13 @@ export default async function RootLayout(props: { children: React.ReactNode; par
   const { children } = props;
 
   const messages = await getMessages();
+  const metadata = await getTranslations({ locale, namespace: 'Metadata.home' });
 
   return (
     <html lang={locale} dir={getLanguageDirection(locale)} suppressHydrationWarning className='dark'>
       <head>
-        <JsonLdScript />
+        <link rel='describedby' href='/llms.txt' type='text/markdown' />
+        <JsonLdScript locale={locale} title={metadata('title')} description={metadata('description')} />
       </head>
       <body
         className={`${notoSans.className} ${din.variable} ${notoSans.variable} relative mx-auto flex min-h-screen flex-col bg-black text-white`}

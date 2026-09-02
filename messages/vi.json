@@ -387,8 +387,8 @@
     "reference-to-video-content": "Create video from image, video, audio, document, or link references"
   },
   "Footer": {
-    "title": "Flaq AI",
-    "subTitle": "Nền tảng tổng hợp & tăng tốc suy luận mô hình AI hàng đầu toàn cầu",
+    "title": "Ảnh và Video AI — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+    "subTitle": "Dùng và tự lưu trữ mẫu Ảnh và Video AI miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API.",
     "support": "Hỗ trợ",
     "docs": "Docs",
     "business": "Doanh nghiệp",
@@ -497,7 +497,6 @@
       "29-p": "Thông tin liên hệ: Nếu có câu hỏi về các Điều khoản này, vui lòng liên hệ với chúng tôi qua email contact@flaq.ai. Thông tin công ty: FLAQ AI PTE. LTD., 112 ROBINSON ROAD, #03-01, ROBINSON 112, SINGAPORE. Chúng tôi cam kết xử lý các yêu cầu của bạn một cách nhanh chóng."
     },
     "refundPolicy": {
-      "title": "Chính sách hoàn tiền dành cho flaq.ai",
       "1": {
         "title": "1. Điều kiện hoàn tiền",
         "description": "Do chúng tôi phụ thuộc vào các nền tảng đối tác và chi phí tính toán AI lớn, yêu cầu hoàn tiền phải được gửi trong vòng 3 ngày kể từ khi mua hàng. Sau khoảng thời gian này sẽ không hoàn tiền. Để biết thêm, vui lòng liên hệ contact@flaq.ai."
@@ -521,13 +520,14 @@
       "6": {
         "title": "6. Thay đổi chính sách này",
         "description": "1. Chúng tôi có quyền sửa đổi chính sách hoàn tiền này bất cứ lúc nào.\n2. Mọi thay đổi sẽ có hiệu lực ngay lập tức và thể hiện tại trang này.\n3. Nên kiểm tra chính sách này định kỳ.\n4. Để cập nhật hoặc thắc mắc chính sách, vui lòng liên hệ contact@flaq.ai."
-      }
+      },
+      "title": "Chính sách hoàn tiền dành cho flaq.ai"
     }
   },
   "Home": {
     "heading": {
-      "title": "Flaq AI: API tác nhân AI hợp nhất và tiết kiệm cho các mô hình hàng đầu",
-      "description": "Dùng thử các mô hình video, hình ảnh, âm nhạc và LLM hàng đầu thế giới qua một API, với mức giá tốt hơn và hiệu quả chi phí cao hơn so với API chính thức.",
+      "title": "Ảnh và Video AI — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+      "description": "Dùng và tự lưu trữ mẫu Ảnh và Video AI miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API.",
       "try-now": "Try Now",
       "try-now-video": "Dùng thử API Video",
       "try-now-image": "Dùng thử API Ảnh"
@@ -546,9 +546,6 @@
       }
     },
     "unique-features": {
-      "title": "Key Features of Flaq SaaS Template",
-      "description": "A complete open source template with essential features for building your own AI generation platform.",
-      "button-text": "Try Now",
       "1": {
         "title": "Flaq AI Integration",
         "description": "Built-in integration with Flaq AI's open API for seamless image and video generation capabilities."
@@ -564,12 +561,12 @@
       "4": {
         "title": "Open Source & Customizable",
         "description": "Fully open source with clean code structure. Easy to customize and extend for your specific needs."
-      }
+      },
+      "title": "Key Features of Flaq SaaS Template",
+      "description": "A complete open source template with essential features for building your own AI generation platform.",
+      "button-text": "Try Now"
     },
     "use-cases": {
-      "title": "Tình huống ứng dụng tiêu biểu trên Flaq AI",
-      "description": "Cụm API hiệu suất cao của Flaq AI không chỉ là công cụ—mà là động lực đổi mới cho ngành công nghiệp. Từ quy trình sáng tạo đến tự động hóa doanh nghiệp, chúng tôi cung cấp hỗ trợ kỹ thuật cho mọi trường hợp.",
-      "button-text": "Try Now",
       "1": {
         "title": "Nền tảng Marketing Nội dung Tự động",
         "description": "Tạo hàng loạt hình ảnh thương hiệu với Nano Banana Pro API và tự động viết bài với LLM, giúp xuất bản tức thời từ nội dung đến hình ảnh."
@@ -585,7 +582,10 @@
       "4": {
         "title": "Phát triển mẫu thử & Tăng trưởng Lập trình viên",
         "description": "Nhanh chóng kiểm thử nhiều mô hình với 1 API key duy nhất và linh hoạt thay đổi thuật toán theo phản hồi thị trường mà không sửa code."
-      }
+      },
+      "title": "Tình huống ứng dụng tiêu biểu trên Flaq AI",
+      "description": "Cụm API hiệu suất cao của Flaq AI không chỉ là công cụ—mà là động lực đổi mới cho ngành công nghiệp. Từ quy trình sáng tạo đến tự động hóa doanh nghiệp, chúng tôi cung cấp hỗ trợ kỹ thuật cho mọi trường hợp.",
+      "button-text": "Try Now"
     },
     "exampleSection": {
       "title": "Examples Generated via Flaq API",
@@ -601,7 +601,6 @@
       }
     },
     "faq": {
-      "title": "Các câu hỏi thường gặp về Flaq AI",
       "1": {
         "question": "Flaq AI khác gì với việc dùng trực tiếp API của nhà cung cấp mô hình?",
         "answer": "Flaq AI chuẩn hóa định dạng dữ liệu, định tuyến dự phòng thông minh, tối ưu mạng nền tảng—giảm đáng kể độ trễ và không phải duy trì nhiều tài khoản API."
@@ -633,51 +632,50 @@
       "8": {
         "question": "Tuyên bố miễn trừ trách nhiệm về hành vi xâm phạm quyền sở hữu trí tuệ là gì?",
         "answer": "Flaq AI cung cấp các công cụ AI để giúp người dùng vận dụng trí tưởng tượng nhằm tạo ra nội dung hình ảnh mong muốn. Nếu người dùng đưa vào nội dung liên quan đến người nổi tiếng hoặc các quyền sở hữu trí tuệ khác rồi quảng bá nội dung đó, dẫn đến vấn đề xâm phạm, người dùng phải chịu trách nhiệm pháp lý."
-      }
+      },
+      "title": "Các câu hỏi thường gặp về Flaq AI"
     }
   },
   "image-to-image": {
     "heading": {
-      "title": "Trình tạo AI Image to Image: Chỉnh sửa hình ảnh bằng hình ảnh tham chiếu",
-      "description": "Tải lên hình ảnh tham chiếu và biến đổi nó bằng Flaq AI Image to Image Generator. Bắt đầu với credit miễn phí, dùng prompt ngôn ngữ tự nhiên để đổi phong cách ảnh, giữ chủ thể và bố cục, chỉnh sửa chi tiết hình ảnh và tạo hình ảnh trau chuốt cho thiết kế, marketing, sản phẩm và quy trình sáng tạo."
+      "title": "Ảnh thành Ảnh — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+      "description": "Dùng và tự lưu trữ mẫu Ảnh thành Ảnh miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API."
     },
     "form": {
-      "title": "Hình ảnh thành hình ảnh"
+      "title": "Ảnh thành Ảnh"
     },
     "examples": {
-      "title": "Tính năng cốt lõi của AI Image to Image Generator",
-      "description": "Một công cụ tạo image-to-image linh hoạt cho tạo theo tham chiếu, chỉnh sửa hình ảnh, chuyển phong cách, mockup sản phẩm và biến thể hình ảnh nhanh trong khi giữ các chi tiết nguồn quan trọng.",
       "1": {
-        "title": "The AI image-to-image converter enables high-quality style conversion and reconstruction while maintaining original characteristics and details.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "A girl with a backpack, standing relaxed near a bookshelf and behind a chair. Keep every other detail in the scene completely unchanged."
-        }
+        },
+        "title": "The AI image-to-image converter enables high-quality style conversion and reconstruction while maintaining original characteristics and details."
       },
       "2": {
-        "title": "The AI image-to-image converter supports fine-grained control of style transfer while preserving the source image's complete content.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "Convert a realistic image into retro, grid-style pixel video game art."
-        }
+        },
+        "title": "The AI image-to-image converter supports fine-grained control of style transfer while preserving the source image's complete content."
       },
       "3": {
-        "title": "The AI image-to-image converter preserves the original structure and layout during transformation, enabling creators to achieve more accurate composition control and generate high-quality, stable output images.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "Ultra-realistic 8K overhead photo in strict knolling style. Take the object from the reference image and fully disassemble it into 8 to 12 main parts, arranging them neatly in a grid or radial layout on a minimalist wood or matte gray tabletop. Use uniform spacing and perfect alignment, no overlap or extraneous items. The scene is softly and diffusely lit by multiple light sources, casting subtle shadows and balancing neutral colors, with all elements in perfect focus. Show highly detailed real-world materials (metal, plastic, rubber grips, circuit boards, screws). For each part, add a slim white rectangular border, and place a short, clear English label next to it in a simple sans-serif font, not covering the part; annotations must be legible and not intrusive."
-        }
-      }
+        },
+        "title": "The AI image-to-image converter preserves the original structure and layout during transformation, enabling creators to achieve more accurate composition control and generate high-quality, stable output images."
+      },
+      "title": "Tính năng cốt lõi của AI Image to Image Generator",
+      "description": "Một công cụ tạo image-to-image linh hoạt cho tạo theo tham chiếu, chỉnh sửa hình ảnh, chuyển phong cách, mockup sản phẩm và biến thể hình ảnh nhanh trong khi giữ các chi tiết nguồn quan trọng."
     },
     "core-feature": {
-      "title": "Core Advantages of Image-to-Image Converter",
-      "description": "A professional AI image-to-image tool offering high-resolution outputs and a streamlined, user-friendly interface. Easily generate high-quality works from reference images. Diverse settings provide creative freedom, making image editing, design, and art creation more efficient and flexible.",
       "1": {
         "title": "Realistic and Delicate Visual Presentation",
         "description": "Outstanding in rendering textures, lighting, and composition, the system produces highly accurate, richly detailed, and realistic images for vivid results."
@@ -689,12 +687,11 @@
       "3": {
         "title": "Powerful Text Understanding and Parsing",
         "description": "Leveraging advanced natural language processing, the system accurately understands prompts and descriptions to quickly generate and optimize image content for smarter, more efficient creation."
-      }
+      },
+      "title": "Core Advantages of Image-to-Image Converter",
+      "description": "A professional AI image-to-image tool offering high-resolution outputs and a streamlined, user-friendly interface. Easily generate high-quality works from reference images. Diverse settings provide creative freedom, making image editing, design, and art creation more efficient and flexible."
     },
     "advantage": {
-      "title": "Applications of the AI Image-to-Image Converter",
-      "description": "The AI image-to-image converter is suitable for poster design, brand marketing, product showcases, and artistic creation. It enables precise image and text control, greatly improving creative efficiency and visual quality and providing powerful creative capabilities for designers, business teams, and educators.",
-      "try-now": "Try Now",
       "1": {
         "title": "Poster & Visual Design",
         "description": "Supports poster and various creative visual editing, with flexible adjustment of fonts, sizes, and styles—perfect for event promotion and brand marketing."
@@ -710,11 +707,12 @@
       "4": {
         "title": "Artistic Creation & Cultural Innovation",
         "description": "Empowers artists and designers with rich creative tools for style transformation, cross-domain inspiration, and maximized artistic possibilities."
-      }
+      },
+      "title": "Applications of the AI Image-to-Image Converter",
+      "description": "The AI image-to-image converter is suitable for poster design, brand marketing, product showcases, and artistic creation. It enables precise image and text control, greatly improving creative efficiency and visual quality and providing powerful creative capabilities for designers, business teams, and educators.",
+      "try-now": "Try Now"
     },
     "manual": {
-      "title": "Cách tạo hình ảnh từ hình ảnh",
-      "content": "This step-by-step guide will help you get started and achieve the best results with the AI image-to-image conversion tool.",
       "1": {
         "title": "Tải lên hình ảnh tham chiếu của bạn",
         "description": "Bắt đầu bằng ảnh sản phẩm, chân dung, bản phác thảo, bản nháp thiết kế, tham chiếu phong cách hoặc bất kỳ hình ảnh nào cần định hướng kết quả được tạo."
@@ -726,10 +724,11 @@
       "3": {
         "title": "Tạo và tinh chỉnh",
         "description": "Chọn model và thiết lập được hỗ trợ, tạo hình ảnh, xem trước kết quả, rồi tải xuống hình ảnh hoàn chỉnh ở các định dạng được hỗ trợ như JPG, PNG hoặc WebP."
-      }
+      },
+      "title": "Cách tạo hình ảnh từ hình ảnh",
+      "content": "This step-by-step guide will help you get started and achieve the best results with the AI image-to-image conversion tool."
     },
     "faq": {
-      "title": "FAQ về Image-to-Image Generator",
       "1": {
         "question": "Trình tạo AI image to image là gì?",
         "answer": "Trình tạo AI image to image dùng hình ảnh đã tải lên làm đầu vào trực quan, sau đó tạo hình ảnh mới dựa trên prompt của bạn. Công cụ có thể giúp đổi phong cách, chỉnh sửa, cải thiện hoặc diễn giải lại hình ảnh hiện có."
@@ -753,30 +752,29 @@
       "6": {
         "question": "Tôi có thể dùng kết quả image-to-image cho mục đích thương mại không?",
         "answer": "Việc sử dụng thương mại phụ thuộc vào quyền của bạn đối với hình ảnh đã tải lên, gói của bạn, điều khoản nền tảng, quy định của nhà cung cấp model và nội dung được tạo. Hãy xem lại điều khoản hiện tại trước khi dùng đầu ra trong công việc trả phí, cho khách hàng hoặc công khai."
-      }
+      },
+      "title": "FAQ về Image-to-Image Generator"
     }
   },
   "image-to-video": {
     "heading": {
-      "title": "Trình tạo AI Image to Video có âm thanh",
-      "description": "Biến ảnh và hình ảnh tham chiếu thành video AI ngắn trên flaq.ai. Bắt đầu với credit miễn phí, tải lên hình ảnh, mô tả chuyển động, chọn model image-to-video được hỗ trợ và tạo clip mượt mà cho sản phẩm, chân dung, bài đăng xã hội, quảng cáo và concept sáng tạo."
+      "title": "Ảnh thành Video — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+      "description": "Dùng và tự lưu trữ mẫu Ảnh thành Video miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API."
     },
     "form": {
-      "title": "Hình ảnh thành video"
+      "title": "Ảnh thành Video"
     },
     "example": {
-      "title": "Ví dụ về AI Image to Video Generator",
-      "description": "Các ví dụ của Image to Video AI Generator cho thấy hình ảnh nguồn có thể trở thành clip chuyển động với hành động theo prompt, chuyển động camera, độ nhất quán hình ảnh và âm thanh tùy chọn khi model đã chọn hỗ trợ.",
       "1": {
         "prompt": "cutting the tomato"
       },
       "2": {
         "prompt": "The man is skiing"
-      }
+      },
+      "title": "Ví dụ về AI Image to Video Generator",
+      "description": "Các ví dụ của Image to Video AI Generator cho thấy hình ảnh nguồn có thể trở thành clip chuyển động với hành động theo prompt, chuyển động camera, độ nhất quán hình ảnh và âm thanh tùy chọn khi model đã chọn hỗ trợ."
     },
     "core-feature": {
-      "title": "Advantages about the Image to Video AI Generator",
-      "description": "AI Video Generator not only generates content quickly but also focuses on visual hierarchy and narrative logic, making it an important productivity tool for content creators and business teams.",
       "1": {
         "title": "High-Quality Video Output",
         "description": "AI Video Generator produces high-quality videos with smooth motion and clear visuals, meeting professional video production standards."
@@ -788,12 +786,11 @@
       "3": {
         "title": "Natural Motion and Spatial Consistency",
         "description": "Character movements connect smoothly, scene transitions are seamless, both enhancing immersion and ensuring narrative continuity and logic."
-      }
+      },
+      "title": "Advantages about the Image to Video AI Generator",
+      "description": "AI Video Generator not only generates content quickly but also focuses on visual hierarchy and narrative logic, making it an important productivity tool for content creators and business teams."
     },
     "advantage": {
-      "title": "Use Cases about the Image to Video AI Generator",
-      "description": "With the Image to Video AI Generator, creators can unleash their imagination across various scenarios—from film shorts and social media content to brand advertising, educational training, and virtual reality experiences. This advanced tool can quickly transform text descriptions into high-quality, realistic and vivid video works, not only improving creative efficiency but also saving production costs, making creativity come to life faster.",
-      "try-now": "Try Now",
       "1": {
         "title": "Film and Video Creation",
         "description": "AI Video Generator can quickly transform text descriptions into cinematic short films. Whether it's dramatic segments, sci-fi scenes, or emotional narratives, it can present precise cinematography, character consistency, and style matching, significantly improving the creative efficiency of film and video content."
@@ -809,11 +806,12 @@
       "4": {
         "title": "Educational and Training Videos",
         "description": "Teachers and training personnel can use AI Video Generator to create instructional videos, teaching demonstrations, or animated courseware. With AI-generated visuals and audio coordination, abstract or complex knowledge becomes more intuitive and easier to understand."
-      }
+      },
+      "title": "Use Cases about the Image to Video AI Generator",
+      "description": "With the Image to Video AI Generator, creators can unleash their imagination across various scenarios—from film shorts and social media content to brand advertising, educational training, and virtual reality experiences. This advanced tool can quickly transform text descriptions into high-quality, realistic and vivid video works, not only improving creative efficiency but also saving production costs, making creativity come to life faster.",
+      "try-now": "Try Now"
     },
     "manual": {
-      "title": "Cách tạo video từ hình ảnh",
-      "content": "",
       "1": {
         "title": "Tải lên hình ảnh tham chiếu của bạn",
         "description": "Bắt đầu với ảnh, hình sản phẩm, chân dung, thiết kế hoặc tham chiếu hình ảnh bạn muốn tạo chuyển động. Một số model cũng hỗ trợ khung cuối."
@@ -825,10 +823,11 @@
       "3": {
         "title": "Tạo, xem trước và tinh chỉnh",
         "description": "Chọn model image-to-video được hỗ trợ, tạo clip, xem trước kết quả, rồi tinh chỉnh prompt hoặc thiết lập để có phiên bản tốt hơn."
-      }
+      },
+      "title": "Cách tạo video từ hình ảnh",
+      "content": ""
     },
     "faq": {
-      "title": "FAQ về Image-to-Video Generator",
       "1": {
         "question": "Trình tạo AI image to video là gì?",
         "answer": "Trình tạo AI image to video dùng hình ảnh đã tải lên làm điểm bắt đầu trực quan, sau đó tạo video hoạt ảnh ngắn dựa trên prompt chuyển động và model đã chọn của bạn."
@@ -852,30 +851,29 @@
       "6": {
         "question": "Tôi có thể dùng kết quả image-to-video cho mục đích thương mại không?",
         "answer": "Việc sử dụng thương mại phụ thuộc vào quyền của bạn đối với hình ảnh đã tải lên, gói của bạn, điều khoản nền tảng, quy định của nhà cung cấp model và nội dung được tạo. Hãy xem lại điều khoản hiện tại trước khi dùng đầu ra trong công việc trả phí, cho khách hàng hoặc công khai."
-      }
+      },
+      "title": "FAQ về Image-to-Video Generator"
     }
   },
   "text-to-video": {
     "heading": {
-      "title": "Trình tạo AI Text to Video có âm thanh",
-      "description": "Tạo video AI từ prompt văn bản trên flaq.ai. Bắt đầu với credit miễn phí, chọn các model text-to-video hàng đầu, mô tả cảnh, chuyển động, camera và phong cách, rồi tạo video ngắn mượt mà cho quảng cáo, mạng xã hội, kể chuyện, giáo dục và sản xuất sáng tạo."
+      "title": "Văn bản thành Video — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+      "description": "Dùng và tự lưu trữ mẫu Văn bản thành Video miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API."
     },
     "form": {
-      "title": "Văn bản thành video"
+      "title": "Văn bản thành Video"
     },
     "example": {
-      "title": "Ví dụ về AI Text to Video Generator",
-      "description": "Các ví dụ của Text to Video AI Generator cho thấy ý tưởng chỉ bằng prompt có thể trở thành clip động với chuyển động rõ, khung hình điện ảnh, vật lý chân thực và âm thanh tùy chọn khi model đã chọn hỗ trợ.",
       "1": {
         "prompt": "A short hair beautiful European influencer is trying to sell to the camera a smooth cylindrical object, tapering slightly at one end, made of firm or flexible material with a polished, minimal design, recorded with an iPhone, smiling"
       },
       "2": {
         "prompt": "A man soaring gracefully through outer space as the camera orbits smoothly around him"
-      }
+      },
+      "title": "Ví dụ về AI Text to Video Generator",
+      "description": "Các ví dụ của Text to Video AI Generator cho thấy ý tưởng chỉ bằng prompt có thể trở thành clip động với chuyển động rõ, khung hình điện ảnh, vật lý chân thực và âm thanh tùy chọn khi model đã chọn hỗ trợ."
     },
     "core-feature": {
-      "title": "Advantages about Text to Video AI Generator",
-      "description": "AI Video Generator not only generates content quickly but also focuses on visual hierarchy and narrative logic, making it an important productivity tool for content creators and business teams.",
       "1": {
         "title": "Cutting-Edge AI Technology",
         "description": "Based on advanced artificial intelligence models with deep semantic understanding and physics modeling capabilities, generating realistic and vivid video content from text or images."
@@ -887,12 +885,11 @@
       "3": {
         "title": "High-Quality Video Output",
         "description": "Generates high-quality videos with smooth motion and cinematic visual quality for various creative scenarios."
-      }
+      },
+      "title": "Advantages about Text to Video AI Generator",
+      "description": "AI Video Generator not only generates content quickly but also focuses on visual hierarchy and narrative logic, making it an important productivity tool for content creators and business teams."
     },
     "advantage": {
-      "title": "Application Scenarios about Text to Video AI Generator",
-      "description": "Text to Video AI Generator helps you quickly turn text into high-quality videos for short films, social media, marketing, training, and more—saving time and reducing costs.",
-      "try-now": "Try Now",
       "1": {
         "title": "Film and Video Creation",
         "description": "Text to Video AI Generator can rapidly transform text descriptions into cinematic short films. Whether dramatic segments, sci-fi scenes, or emotional narratives, it can precisely present cinematography, character consistency, and style matching, significantly improving film and video content creation efficiency."
@@ -908,11 +905,12 @@
       "4": {
         "title": "Educational and Training Videos",
         "description": "Teachers and training personnel can use AI Video Generator to create instructional videos, demonstrations, or animated courseware. AI-generated visuals combined with audio make abstract or complex knowledge more intuitive and understandable."
-      }
+      },
+      "title": "Application Scenarios about Text to Video AI Generator",
+      "description": "Text to Video AI Generator helps you quickly turn text into high-quality videos for short films, social media, marketing, training, and more—saving time and reducing costs.",
+      "try-now": "Try Now"
     },
     "manual": {
-      "title": "Cách tạo video từ văn bản",
-      "content": "",
       "1": {
         "title": "Nhập prompt video của bạn",
         "description": "Mô tả chủ thể, bối cảnh, hành động, góc máy, chuyển động, ánh sáng, cảm xúc, phong cách hình ảnh và mục đích cuối cùng của video."
@@ -924,10 +922,11 @@
       "3": {
         "title": "Tạo, xem trước và tinh chỉnh",
         "description": "Tạo video của bạn, xem lại kết quả, điều chỉnh prompt hoặc thiết lập model, rồi tạo phiên bản khác cho đến khi chuyển động phù hợp với mục tiêu của bạn."
-      }
+      },
+      "title": "Cách tạo video từ văn bản",
+      "content": ""
     },
     "faq": {
-      "title": "FAQ về Text-to-Video Generator",
       "1": {
         "question": "Trình tạo AI text to video là gì?",
         "answer": "Trình tạo AI text to video tạo video ngắn từ prompt bằng văn bản. Bạn mô tả cảnh, chuyển động, camera và phong cách, sau đó model AI đã chọn tạo ra kết quả video."
@@ -951,31 +950,29 @@
       "6": {
         "question": "Tôi có thể dùng video đã tạo cho mục đích thương mại không?",
         "answer": "Việc sử dụng thương mại phụ thuộc vào gói của bạn, điều khoản nền tảng, quy định của nhà cung cấp model và nội dung bạn tạo. Hãy xem lại điều khoản hiện tại trước khi dùng đầu ra trong công việc trả phí, cho khách hàng hoặc công khai."
-      }
+      },
+      "title": "FAQ về Text-to-Video Generator"
     }
   },
   "text-to-image": {
     "heading": {
-      "title": "Trình tạo AI Text to Image: Tạo hình ảnh từ prompt",
-      "description": "Tạo hình ảnh chất lượng cao từ prompt văn bản đơn giản với Flaq AI Text to Image Generator. Bắt đầu bằng credit miễn phí, chọn các model hình ảnh hàng đầu, tinh chỉnh thiết lập đầu ra và tạo hình ảnh trau chuốt cho thiết kế, marketing, kể chuyện, giáo dục và sản xuất sáng tạo."
+      "title": "Văn bản thành Ảnh — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+      "description": "Dùng và tự lưu trữ mẫu Văn bản thành Ảnh miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API."
     },
     "form": {
-      "title": "Văn bản thành hình ảnh"
+      "title": "Văn bản thành Ảnh"
     },
     "examples": {
-      "title": "Tính năng cốt lõi của AI Text to Image Generator",
-      "description": "Một quy trình tạo hình ảnh AI mạnh mẽ để biến ý tưởng viết thành hình ảnh chi tiết, được xây dựng cho khả năng hiểu prompt mạnh, lựa chọn model linh hoạt, bố cục sạch và lặp ý tưởng sáng tạo nhanh.",
       "1": {
         "title": "Enter product descriptions, scene details, or character features. The system will automatically interpret the semantics and generate a corresponding visual image."
       },
       "2": {
         "title": "The system deeply analyzes and interprets the text, outputting well-structured, detail-rich, and stylistically diverse image results."
-      }
+      },
+      "title": "Tính năng cốt lõi của AI Text to Image Generator",
+      "description": "Một quy trình tạo hình ảnh AI mạnh mẽ để biến ý tưởng viết thành hình ảnh chi tiết, được xây dựng cho khả năng hiểu prompt mạnh, lựa chọn model linh hoạt, bố cục sạch và lặp ý tưởng sáng tạo nhanh."
     },
     "advantage": {
-      "title": "Advantages of Text to Image AI",
-      "description": "The core advantages of Text to Image AI lie in automating the traditionally complex, high-barrier image creation process, enabling users to rapidly obtain high-quality visual results while maintaining realism and creativity.",
-      "button-text": "Try Now",
       "1": {
         "title": "Efficient Generation, Greatly Saves Time",
         "description": "AI rapidly transforms text into images, dramatically reducing time costs for creators."
@@ -991,12 +988,12 @@
       "4": {
         "title": "Ideal for Personal and Business Use",
         "description": "Whether you're a designer, content creator, product team, developer, or brand owner, easily create ready-to-use image assets for a variety of applications."
-      }
+      },
+      "title": "Advantages of Text to Image AI",
+      "description": "The core advantages of Text to Image AI lie in automating the traditionally complex, high-barrier image creation process, enabling users to rapidly obtain high-quality visual results while maintaining realism and creativity.",
+      "button-text": "Try Now"
     },
     "use-cases": {
-      "title": "Trường hợp sử dụng Text-to-Image",
-      "description": "Dùng Flaq AI Text to Image Generator bất cứ khi nào bạn cần hình ảnh gốc từ lời mô tả, không cần chuẩn bị hình ảnh tham chiếu hoặc xây dựng quy trình thiết kế phức tạp.",
-      "try-now": "Bắt đầu tạo",
       "1": {
         "title": "Hình ảnh marketing và mạng xã hội",
         "description": "Tạo ý tưởng chiến dịch, cảnh sản phẩm, đồ họa ra mắt, bài đăng mạng xã hội, ý tưởng thumbnail và biến thể quảng cáo trực tiếp từ bản brief sáng tạo bằng văn bản."
@@ -1012,11 +1009,12 @@
       "4": {
         "title": "Kể chuyện và concept art",
         "description": "Phát triển nhân vật, khung hình điện ảnh, môi trường, poster, bìa, cảnh xây dựng thế giới và tác phẩm kể chuyện từ mô tả văn bản chi tiết."
-      }
+      },
+      "title": "Trường hợp sử dụng Text-to-Image",
+      "description": "Dùng Flaq AI Text to Image Generator bất cứ khi nào bạn cần hình ảnh gốc từ lời mô tả, không cần chuẩn bị hình ảnh tham chiếu hoặc xây dựng quy trình thiết kế phức tạp.",
+      "try-now": "Bắt đầu tạo"
     },
     "manual": {
-      "title": "Cách tạo hình ảnh từ văn bản",
-      "content": "Text to Image features a simple and intuitive workflow—no design experience required. Just enter your text description and the system automatically analyzes the semantics to generate the corresponding visual image.",
       "1": {
         "title": "Nhập prompt hình ảnh của bạn",
         "description": "Mô tả hình ảnh bạn muốn, bao gồm chủ thể, bối cảnh, phong cách, ánh sáng, bố cục, tâm trạng, màu sắc, góc máy và bất kỳ chữ nào cần xuất hiện."
@@ -1028,10 +1026,11 @@
       "3": {
         "title": "Tạo, xem trước và tinh chỉnh",
         "description": "Nhấp tạo, xem kết quả hình ảnh, điều chỉnh prompt hoặc thiết lập, rồi tải xuống hình ảnh hoàn chỉnh ở các định dạng được hỗ trợ như JPG, PNG hoặc WebP."
-      }
+      },
+      "title": "Cách tạo hình ảnh từ văn bản",
+      "content": "Text to Image features a simple and intuitive workflow—no design experience required. Just enter your text description and the system automatically analyzes the semantics to generate the corresponding visual image."
     },
     "faq": {
-      "title": "FAQ về Text-to-Image Generator",
       "1": {
         "question": "Trình tạo AI text to image là gì?",
         "answer": "Trình tạo AI text to image tạo hình ảnh từ prompt bằng văn bản. Bạn mô tả chủ thể, cảnh, phong cách và yêu cầu đầu ra, sau đó model AI đã chọn tạo ra kết quả hình ảnh."
@@ -1051,16 +1050,17 @@
       "5": {
         "question": "Chi phí credit được tính như thế nào?",
         "answer": "Ước tính được tính từ model đã chọn và các tham số được hỗ trợ như độ phân giải, chất lượng, giá nhà cung cấp, credit miễn phí và quy tắc ưu đãi hiện tại."
-      }
+      },
+      "title": "FAQ về Text-to-Image Generator"
     }
   },
   "virtual-try-on": {
     "heading": {
-      "title": "Virtual Try On AI: Realistic Outfit Preview in Seconds",
-      "description": "See yourself in any outfit instantly with Virtual Try On AI. Upload a person photo and one or more clothing images, select from our ready-made style hints, and generate photorealistic try-on results powered by Flaq API—no fitting room, no guesswork."
+      "title": "Thử Đồ Ảo — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+      "description": "Dùng và tự lưu trữ mẫu Thử Đồ Ảo miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API."
     },
     "form": {
-      "title": "Virtual Try On",
+      "title": "Thử Đồ Ảo",
       "upload-images-title": "Upload Images",
       "upload-subject-label": "Upload [Person]",
       "upload-object-label": "Upload [Clothing]",
@@ -1070,40 +1070,37 @@
       "ai-generation-label": "AI Generation"
     },
     "examples": {
-      "title": "Core Features of Virtual Try On AI",
-      "description": "Virtual Try On AI accurately renders garments onto uploaded person photos, preserving body proportions, fabric texture, and design details across a wide range of clothing styles and model types.",
       "1": {
-        "title": "Upload a person photo and a clothing image. The AI maps the garment onto the body with natural drape, accurate fit, and full detail preservation.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "Generated"
-        }
+        },
+        "title": "Upload a person photo and a clothing image. The AI maps the garment onto the body with natural drape, accurate fit, and full detail preservation."
       },
       "2": {
-        "title": "Choose from curated style hint templates to get started instantly—no sourcing required. The AI generates a complete try-on result based on your selection.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "Generated"
-        }
+        },
+        "title": "Choose from curated style hint templates to get started instantly—no sourcing required. The AI generates a complete try-on result based on your selection."
       },
       "3": {
-        "title": "Switch between different AI models to control output style and detail level. Each model delivers consistent, high-quality virtual try-on results.",
         "1": {
           "title": "Original"
         },
         "2": {
           "title": "Generated"
-        }
-      }
+        },
+        "title": "Switch between different AI models to control output style and detail level. Each model delivers consistent, high-quality virtual try-on results."
+      },
+      "title": "Core Features of Virtual Try On AI",
+      "description": "Virtual Try On AI accurately renders garments onto uploaded person photos, preserving body proportions, fabric texture, and design details across a wide range of clothing styles and model types."
     },
     "advantage": {
-      "title": "Core Advantages of Virtual Try On AI",
-      "description": "Virtual Try On AI combines multiple state-of-the-art generation models with a simple upload workflow, making realistic outfit visualization accessible to anyone—from individual shoppers to e-commerce teams.",
-      "try-now": "Try Now",
       "1": {
         "title": "Fast Generation, Instant Results",
         "description": "Get photorealistic try-on results quickly. Our AI is pre-trained on millions of garment and body reference images, requiring no complex setup—just upload and see instant output."
@@ -1119,12 +1116,12 @@
       "4": {
         "title": "Multiple Models, One Platform",
         "description": "Switch between different AI models based on your output preference. Each model is optimized for different generation styles and clothing complexities—all accessible without any technical setup."
-      }
+      },
+      "title": "Core Advantages of Virtual Try On AI",
+      "description": "Virtual Try On AI combines multiple state-of-the-art generation models with a simple upload workflow, making realistic outfit visualization accessible to anyone—from individual shoppers to e-commerce teams.",
+      "try-now": "Try Now"
     },
     "use-cases": {
-      "title": "Use Cases for Virtual Try On AI",
-      "description": "Virtual Try On AI supports a wide range of personal and professional applications—from online shopping decisions to high-volume e-commerce content production.",
-      "try-now": "Try Now",
       "1": {
         "title": "Online Shopping & Purchase Decisions",
         "description": "See exactly how a garment will look on your body before buying. Reduce return rates and purchase uncertainty by visualizing real outfit combinations on yourself."
@@ -1140,11 +1137,12 @@
       "4": {
         "title": "Marketing & Social Media Content",
         "description": "Produce high-quality outfit imagery for campaigns, lookbooks, social posts, or brand promotions—without models, studios, or post-production. Generate multiple variations quickly to test different looks."
-      }
+      },
+      "title": "Use Cases for Virtual Try On AI",
+      "description": "Virtual Try On AI supports a wide range of personal and professional applications—from online shopping decisions to high-volume e-commerce content production.",
+      "try-now": "Try Now"
     },
     "manual": {
-      "title": "How to Use Virtual Try On AI",
-      "content": "Virtual Try On AI requires no technical experience. Upload your images, select a model and style hint if needed, and receive a realistic try-on result quickly.",
       "1": {
         "title": "Step 1: Upload a Person Photo",
         "description": "Upload one clear photo of a person. This will serve as the base body reference for the virtual try-on."
@@ -1160,10 +1158,11 @@
       "4": {
         "title": "Step 4: Generate and Download",
         "description": "Click generate and receive your virtual try-on result. Preview the output and download it for personal use, product listings, or content creation."
-      }
+      },
+      "title": "How to Use Virtual Try On AI",
+      "content": "Virtual Try On AI requires no technical experience. Upload your images, select a model and style hint if needed, and receive a realistic try-on result quickly."
     },
     "faq": {
-      "title": "FAQs about Virtual Try On AI",
       "1": {
         "question": "What AI models are supported for Virtual Try On?",
         "answer": "Multiple AI models are available, each with different generation characteristics suited to different clothing types and output styles. You can select the model that best fits your use case before generating."
@@ -1195,7 +1194,8 @@
       "8": {
         "question": "What output resolution does Virtual Try On AI produce?",
         "answer": "Output resolution varies by model. Results are optimized for visual quality suitable for both personal styling and professional e-commerce or marketing use."
-      }
+      },
+      "title": "FAQs about Virtual Try On AI"
     }
   },
   "Pricing": {
@@ -1212,48 +1212,48 @@
       "creator": "Flaq AI"
     },
     "home": {
-      "title": "Flaq SaaS Template: AI Image & Video Generation Platform",
-      "description": "Free open source template for building AI generation platforms. Create stunning images and videos with Flaq AI's powerful API. Perfect for developers.",
-      "keywords": "Flaq SaaS Template, AI Generation, Open Source",
+      "title": "Ảnh và Video AI — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+      "description": "Dùng và tự lưu trữ mẫu Ảnh và Video AI miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API.",
+      "keywords": "Nền tảng Tạo Ảnh và Video AI, Miễn phí và Mã nguồn mở, Không cần đăng ký, no signup required, free AI generator, open source AI, free to use, Flaq API, AIGC",
       "openGraph": {
-        "title": "Flaq SaaS Template: AI Image & Video Generation Platform",
-        "description": "Free open source template for building AI generation platforms. Create stunning images and videos with Flaq AI's powerful API. Perfect for developers.",
+        "title": "Ảnh và Video AI — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+        "description": "Dùng và tự lưu trữ mẫu Ảnh và Video AI miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API.",
         "siteName": "Flaq SaaS Template"
       },
       "twitter": {
-        "title": "Flaq SaaS Template: AI Image & Video Generation Platform",
-        "description": "Free open source template for building AI generation platforms. Create stunning images and videos with Flaq AI's powerful API. Perfect for developers.",
+        "title": "Ảnh và Video AI — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+        "description": "Dùng và tự lưu trữ mẫu Ảnh và Video AI miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API.",
         "site": "flaq.ai",
         "creator": "Flaq AI"
       }
     },
     "image-to-video": {
-      "title": "Trình tạo AI Image to Video miễn phí cho hoạt ảnh | Dùng thử miễn phí, kết quả tốt hơn và workflow sáng tạo",
-      "description": "Miễn phí tạo chuyển động cho hình ảnh đã tải lên bằng model image-to-video của Flaq AI. Thêm tham chiếu, chọn nhà cung cấp, đặt tùy chọn video, xem trước chi phí và tạo chuyển động."
+      "title": "Ảnh thành Video — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+      "description": "Dùng và tự lưu trữ mẫu Ảnh thành Video miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API."
     },
     "text-to-video": {
-      "title": "Trình tạo AI Text to Video miễn phí với model hàng đầu | Dùng thử miễn phí, kết quả tốt hơn và workflow sáng tạo",
-      "description": "Miễn phí tạo video AI từ prompt văn bản với Flaq AI. Chọn model video hàng đầu, đặt thời lượng và độ phân giải, xem trước chi phí credit và tạo clip nhanh. Được thiết kế cho thử nghiệm miễn phí và workflow API ổn định."
+      "title": "Văn bản thành Video — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+      "description": "Dùng và tự lưu trữ mẫu Văn bản thành Video miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API."
     },
     "image-to-image": {
-      "title": "Trình tạo AI Image to Image miễn phí để chỉnh sửa ảnh | Dùng thử miễn phí, kết quả tốt hơn và workflow sáng tạo",
-      "description": "Miễn phí biến đổi hình ảnh đã tải lên bằng model image-to-image của Flaq AI. Thêm tham chiếu, chọn nhà cung cấp, đặt tùy chọn, xem trước chi phí credit và tạo bản chỉnh sửa trau chuốt."
+      "title": "Ảnh thành Ảnh — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+      "description": "Dùng và tự lưu trữ mẫu Ảnh thành Ảnh miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API."
     },
     "text-to-image": {
-      "title": "Trình tạo AI Text to Image miễn phí với model hàng đầu | Dùng thử miễn phí, kết quả tốt hơn và workflow sáng tạo",
-      "description": "Miễn phí tạo hình ảnh AI từ prompt văn bản với Flaq AI. Chọn model hình ảnh hàng đầu, chỉnh tỷ lệ và độ phân giải, xem trước chi phí credit và tạo hình ảnh trau chuốt nhanh."
+      "title": "Văn bản thành Ảnh — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+      "description": "Dùng và tự lưu trữ mẫu Văn bản thành Ảnh miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API."
     },
     "virtual-try-on": {
-      "title": "Virtual Try On AI - Realistic Outfit Preview",
-      "description": "Preview outfits realistically with Virtual Try On AI. Upload your photos and see how clothes look on you instantly. Powered by Flaq API technology."
+      "title": "Thử Đồ Ảo — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+      "description": "Dùng và tự lưu trữ mẫu Thử Đồ Ảo miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API."
     },
     "reference-to-video": {
-      "title": "Trình tạo video AI từ nội dung tham chiếu miễn phí: Tạo video nhất quán",
-      "description": "Dùng thử miễn phí Trình tạo video AI từ nội dung tham chiếu để tạo video nhất quán. Tạo video AI nhất quán từ hình ảnh, video và âm thanh tham chiếu bằng các mô hình reference-to-video hàng đầu."
+      "title": "Tư liệu thành Video — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+      "description": "Dùng và tự lưu trữ mẫu Tư liệu thành Video miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API."
     },
     "ai-media-creator": {
-      "title": "Trình tạo nội dung AI miễn phí: Công cụ tạo hình ảnh và video trực tuyến",
-      "description": "Dùng thử miễn phí Trình tạo nội dung AI: Công cụ tạo hình ảnh và video trực tuyến. Tạo hình ảnh và video AI trong một không gian làm việc với đầu vào văn bản hoặc đa phương tiện, tạo ngay trên trang và xem lịch sử hình ảnh, video khi đăng nhập Flaq AI."
+      "title": "Nội dung AI — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+      "description": "Dùng và tự lưu trữ mẫu Nội dung AI miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API."
     }
   },
   "Profile": {
@@ -1375,12 +1375,10 @@
   },
   "reference-to-video": {
     "heading": {
-      "title": "Trình tạo video AI từ nội dung tham chiếu",
-      "description": "Biến hình ảnh, video và âm thanh tham chiếu tương thích thành định hướng sáng tạo cho video AI. Định hướng nhân vật, sản phẩm, chuyển động, cảnh và phong cách trước khi tiếp tục trong Trình tạo nội dung đa phương tiện AI."
+      "title": "Tư liệu thành Video — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+      "description": "Dùng và tự lưu trữ mẫu Tư liệu thành Video miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API."
     },
     "core-feature": {
-      "title": "Core Features of Reference to Video AI Generator",
-      "description": "Build a reference-guided video brief with compatible media uploads, asset mentions, model-specific controls, and multiple generation models.",
       "1": {
         "title": "Flexible Reference Media",
         "description": "Add images, video clips, audio, documents, or links when the selected model supports them. Available upload controls update automatically with your model choice."
@@ -1392,12 +1390,11 @@
       "3": {
         "title": "Multiple Reference-to-Video Models",
         "description": "Choose from supported Seedance, MiniMax, Wan, and Happy Horse reference workflows, then match the model to the input types and output controls your project needs."
-      }
+      },
+      "title": "Core Features of Reference to Video AI Generator",
+      "description": "Build a reference-guided video brief with compatible media uploads, asset mentions, model-specific controls, and multiple generation models."
     },
     "advantage": {
-      "title": "Advantages of Reference to Video AI Generator",
-      "description": "Reference to Video helps creators, marketers, ecommerce teams, designers, storytellers, agencies, and social media producers develop AI videos from existing reference media.",
-      "try-now": "Try Now",
       "1": {
         "title": "Fewer Reshoots and Revisions",
         "description": "Start from existing reference media instead of filming every variation again. Create fresh scenes, product moments, character actions, and talking clips while using source assets as visual guidance."
@@ -1413,11 +1410,12 @@
       "4": {
         "title": "Flexible Video Results",
         "description": "Create reference-guided character videos, product scenes, social content, brand clips, UGC-style ads, cinematic concepts, animation previews, and visual experiments."
-      }
+      },
+      "title": "Advantages of Reference to Video AI Generator",
+      "description": "Reference to Video helps creators, marketers, ecommerce teams, designers, storytellers, agencies, and social media producers develop AI videos from existing reference media.",
+      "try-now": "Try Now"
     },
     "manual": {
-      "title": "Cách sử dụng tính năng Nội dung tham chiếu thành video",
-      "content": "Create a reference-guided AI video in three steps.",
       "1": {
         "title": "Chọn mô hình tham chiếu",
         "description": "Chọn Nội dung tham chiếu thành video, sau đó chọn mô hình tương thích dựa trên loại đầu vào, thiết lập đầu ra và các tùy chọn mà dự án cần."
@@ -1429,10 +1427,11 @@
       "3": {
         "title": "Tiếp tục trong Trình tạo nội dung đa phương tiện AI",
         "description": "Xem lại bản nháp, tiếp tục đến Trình tạo nội dung đa phương tiện AI và bắt đầu tạo tại đó để theo dõi tác vụ trong Lịch sử video."
-      }
+      },
+      "title": "Cách sử dụng tính năng Nội dung tham chiếu thành video",
+      "content": "Create a reference-guided AI video in three steps."
     },
     "faq": {
-      "title": "Câu hỏi thường gặp về Trình tạo video từ nội dung tham chiếu",
       "1": {
         "question": "Nội dung tham chiếu thành video là gì?",
         "answer": "Nội dung tham chiếu thành video là quy trình tạo bằng AI sử dụng nội dung đã tải lên để định hướng nhân vật, sản phẩm, vật thể, chuyển động, âm thanh, cảnh và phong cách hình ảnh trong video mới."
@@ -1456,17 +1455,16 @@
       "6": {
         "question": "Where do I find my generated video?",
         "answer": "Generated tasks appear in the AI Create video history. The history can use the generated video itself when a separate cover image is unavailable."
-      }
+      },
+      "title": "Câu hỏi thường gặp về Trình tạo video từ nội dung tham chiếu"
     }
   },
   "ai-media-creator": {
     "heading": {
-      "title": "Trình tạo nội dung đa phương tiện AI: Tạo hình ảnh và video ở một nơi",
-      "description": "Biến prompt và nội dung đa phương tiện tương thích thành hình ảnh hoặc video do AI tạo trong một không gian làm việc. Chọn chế độ tạo, chọn mô hình được hỗ trợ, thiết lập các tùy chọn mà mô hình cung cấp rồi tạo mà không cần thiết lập lại trên trang công cụ riêng."
+      "title": "Nội dung AI — Miễn phí và Mã nguồn mở · Không cần đăng ký",
+      "description": "Dùng và tự lưu trữ mẫu Nội dung AI miễn phí, mã nguồn mở mà không cần đăng ký. Việc tạo nội dung cần Flaq Client Key và tín dụng API."
     },
     "core-feature": {
-      "title": "One AI Media Creation Workspace for Every Idea",
-      "description": "Move from an initial concept to generated media with a unified form that adapts its models, uploads, and settings to the selected creation type.",
       "1": {
         "title": "Image and Video Creation",
         "description": "Switch between image and video workflows while keeping the same familiar creation experience."
@@ -1482,12 +1480,11 @@
       "4": {
         "title": "Unified Local History",
         "description": "Review recent image and video tasks saved in this browser, including video previews when a separate cover image is unavailable."
-      }
+      },
+      "title": "One AI Media Creation Workspace for Every Idea",
+      "description": "Move from an initial concept to generated media with a unified form that adapts its models, uploads, and settings to the selected creation type."
     },
     "use-cases": {
-      "title": "Các trường hợp sử dụng Trình tạo nội dung đa phương tiện AI",
-      "description": "Sử dụng Trình tạo nội dung đa phương tiện AI cho tài nguyên tiếp thị, nội dung xã hội, phát triển hình ảnh và các dự án kết hợp tạo hình ảnh với video.",
-      "button-text": "Create Now",
       "1": {
         "title": "Tài nguyên sản phẩm và tiếp thị",
         "description": "Tạo hình ảnh sản phẩm, hình ảnh chiến dịch, đoạn phim quảng bá và các biến thể quảng cáo trong khi duy trì quy trình sản xuất hình ảnh lẫn video trong một môi trường làm việc."
@@ -1503,12 +1500,12 @@
       "4": {
         "title": "Dự án sáng tạo đa phương tiện kết hợp",
         "description": "Xây dựng dự án cần cả tài nguyên tĩnh và chuyển động, sử dụng định dạng cùng các tùy chọn mô hình được hỗ trợ phù hợp với từng cảnh, thông điệp hoặc giai đoạn sản xuất."
-      }
+      },
+      "title": "Các trường hợp sử dụng Trình tạo nội dung đa phương tiện AI",
+      "description": "Sử dụng Trình tạo nội dung đa phương tiện AI cho tài nguyên tiếp thị, nội dung xã hội, phát triển hình ảnh và các dự án kết hợp tạo hình ảnh với video.",
+      "button-text": "Create Now"
     },
     "manual": {
-      "title": "Cách sử dụng Trình tạo nội dung đa phương tiện AI",
-      "description": "Chọn quy trình đa phương tiện, chọn mô hình tương thích, thêm prompt cùng đầu vào được hỗ trợ, sau đó tạo và xem lại kết quả.",
-      "button-text": "Start Creating",
       "1": {
         "title": "Chọn loại nội dung và mô hình",
         "description": "Chọn quy trình hình ảnh hoặc video bạn cần, sau đó chọn mô hình được hỗ trợ dựa trên phương thức đầu vào, định dạng đầu ra và các tùy chọn sáng tạo cần thiết."
@@ -1520,10 +1517,12 @@
       "3": {
         "title": "Tạo và xem lại",
         "description": "Chạy tác vụ trong không gian làm việc, sau đó xem lại đầu ra và dùng chế độ xem lịch sử hình ảnh hoặc video để theo dõi các kết quả đã lưu khi đăng nhập."
-      }
+      },
+      "title": "Cách sử dụng Trình tạo nội dung đa phương tiện AI",
+      "description": "Chọn quy trình đa phương tiện, chọn mô hình tương thích, thêm prompt cùng đầu vào được hỗ trợ, sau đó tạo và xem lại kết quả.",
+      "button-text": "Start Creating"
     },
     "faq": {
-      "title": "Câu hỏi thường gặp về Trình tạo nội dung đa phương tiện AI",
       "1": {
         "question": "Trình tạo nội dung đa phương tiện AI là gì?",
         "answer": "Trình tạo nội dung đa phương tiện AI là không gian làm việc dùng chung của Flaq AI để tạo hình ảnh và video. Công cụ kết hợp lựa chọn quy trình, mô hình được hỗ trợ, prompt, đầu vào đa phương tiện tương thích, tùy chọn tạo và lịch sử khi đăng nhập trên một trang."
@@ -1547,7 +1546,8 @@
       "6": {
         "question": "Các tùy chọn có thay đổi giữa các mô hình không?",
         "answer": "Có. Tỷ lệ, độ phân giải, thời lượng, tùy chọn chất lượng, vị trí tải lên và các tùy chọn khác xuất hiện theo tính năng được cấu hình cho mô hình đã chọn."
-      }
+      },
+      "title": "Câu hỏi thường gặp về Trình tạo nội dung đa phương tiện AI"
     }
   },
   "ResourceEntrySections": {
