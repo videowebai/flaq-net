@@ -27,7 +27,7 @@ const allowLocalImageOptimization = process.env.ALLOW_LOCAL_IMAGE_OPTIMIZATION =
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  htmlLimitedBots: '.*',
+  htmlLimitedBots: /.*/,
   typescript: {
     ignoreBuildErrors: true,
   },

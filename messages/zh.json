@@ -1552,10 +1552,10 @@
   },
   "ResourceEntrySections": {
     "affiliate": {
-      "eyebrow": "免费创作 · 推广赚取佣金",
-      "title": "免费加入，分享 Flaq.ai，立即开始赚取收益！",
-      "description": "加入 Flaq.ai 联盟计划，与需要可靠 AI 工具的创作者分享您的推荐链接，并通过推荐赚取佣金。",
-      "button": "加入联盟计划"
+      "eyebrow": "联盟计划",
+      "title": "加入 Flaq.ai 联盟计划",
+      "description": "向关注图像生成、视频生成、模型 API、创意工作流和开发者集成的创作者、开发者及团队推荐 Flaq.ai。推荐用户的首笔有效付费订单可获得 20% 佣金，注册后 60 天内的后续有效付费订单可获得 10% 佣金。",
+      "button": "开始赚取佣金"
     },
     "modelMarket": {
       "eyebrow": "Flaq AI 模型市场",

@@ -1,15 +1,16 @@
 import { use } from 'react';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import { generateLanguagePaths } from '@/i18n/languages';
+import { generateLanguagePaths, getLanguageDirection } from '@/i18n/languages';
 import { NextIntlClientProvider } from 'next-intl';
-import { getTranslations, getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 
 import { Toaster } from '@/components/ui/sonner';
 
 import './globals.css';
 
 import { NavigationGuardProvider } from 'next-navigation-guard';
+
 import JsonLdScript from '@/components/scripts/JsonLdScript';
 
 import LazyGlobalUI from './LazyGlobalUI';
@@ -114,11 +115,13 @@ export default async function RootLayout(props: { children: React.ReactNode; par
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning className='dark'>
+    <html lang={locale} dir={getLanguageDirection(locale)} suppressHydrationWarning className='dark'>
       <head>
         <JsonLdScript />
       </head>
-      <body className={`${notoSans.className} ${din.variable} ${notoSans.variable} relative mx-auto flex min-h-screen flex-col bg-black text-white`}>
+      <body
+        className={`${notoSans.className} ${din.variable} ${notoSans.variable} relative mx-auto flex min-h-screen flex-col bg-black text-white`}
+      >
         <NavigationGuardProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Toaster

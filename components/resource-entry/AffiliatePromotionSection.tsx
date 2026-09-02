@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 import { getFlaqResourceUrl } from '@/lib/constants/resource-entry';
 
@@ -7,6 +7,7 @@ const AFFILIATE_PROMOTION_VIDEO = '/images/resource-entry/affiliate/hero.mp4';
 const AFFILIATE_PROMOTION_POSTER = '/images/resource-entry/affiliate/hero.webp';
 
 export default async function AffiliatePromotionSection() {
+  const locale = await getLocale();
   const t = await getTranslations('ResourceEntrySections.affiliate');
 
   return (
@@ -20,7 +21,7 @@ export default async function AffiliatePromotionSection() {
             </h2>
             <p className='mt-5 max-w-2xl text-base leading-7 text-white/70'>{t('description')}</p>
             <a
-              href={getFlaqResourceUrl('/affiliate-program')}
+              href={getFlaqResourceUrl('/affiliate-program', locale)}
               target='_blank'
               rel='noopener noreferrer'
               className='bg-color-main mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90 md:text-base'

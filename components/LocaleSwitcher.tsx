@@ -37,7 +37,7 @@ export default function LocaleSwitcher() {
         <Icon src='/icons/global.svg' />
         <SelectValue placeholder='locale'>{localeVal.toUpperCase()}</SelectValue>
       </SelectTrigger>
-      <SelectContent className='bg-color-5 max-h-fit border-none shadow-2xl backdrop-blur-sm'>
+      <SelectContent className='bg-color-5 max-h-[min(70vh,28rem)] overflow-y-auto border-none shadow-2xl backdrop-blur-sm'>
         {languages.map((language) => (
           <SelectItem
             value={language.lang}

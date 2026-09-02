@@ -3,11 +3,13 @@
 Free and open-source SaaS template for building AI-powered image and video generation platforms using
 [Flaq.ai](https://flaq.ai) API. Start your AIGC business instantly.
 
----
+**Read this README in:** [English](./README.md) · [日本語](./README_ja.md) · [Bahasa Indonesia](./README_id.md) ·
+[Italiano](./README_it.md) · [Português (Brasil)](./README_pt.md) · [Español](./README_es.md) ·
+[Deutsch](./README_de.md) · [Русский](./README_ru.md) · [Français](./README_fr.md) ·
+[简体中文](./README_zh.md) · [繁體中文](./README_tw.md) · [한국어](./README_ko.md) · [ไทย](./README_th.md) ·
+[Tiếng Việt](./README_vi.md) · [العربية](./README_ar.md)
 
-**中文版本请参阅：[中文说明](./README_zh.md)**
-
----
+> The README language set mirrors `i18n/languages.ts`, so every UI locale has a matching project introduction.
 
 ## Table of Contents
 
@@ -26,6 +28,7 @@ Free and open-source SaaS template for building AI-powered image and video gener
     - [Build](#build)
     - [Lint \& Format](#lint--format)
   - [AIGC Capabilities](#aigc-capabilities)
+  - [Flaq.ai Affiliate Program](#flaqai-affiliate-program)
   - [Internationalization (i18n)](#internationalization-i18n)
   - [Project Structure](#project-structure)
   - [Deployment](#deployment)
@@ -38,7 +41,8 @@ Free and open-source SaaS template for building AI-powered image and video gener
 - 🎬 **Text-to-Video** — Create high-quality videos from simple text descriptions
 - 📹 **Image-to-Video** — Animate static images into dynamic video content
 - 👗 **Virtual Try-On** — AI-powered virtual clothing try-on experience
-- 🌐 **Internationalization** — Built-in support for English and Simplified Chinese (中文)
+- 🌐 **Internationalization** — 15 locales aligned with Flaq.ai, with locale-aware routing and SEO alternates
+- 🤝 **Affiliate Promotion** — Responsive Flaq.ai affiliate callout with localized copy and destination links
 - 🔒 **Secure API Key Management** — Encrypted client-side storage for your Flaq.ai credentials
 - ☁️ **Cloudflare R2 Storage** — Built-in image hosting with Cloudflare's global CDN
 - 📱 **Responsive Design** — Fully responsive UI built with Tailwind CSS and Radix UI
@@ -78,7 +82,7 @@ Free and open-source SaaS template for building AI-powered image and video gener
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/flaq-saas-template.git
+git clone https://github.com/flaqai/flaq-saas-template.git
 cd flaq-saas-template
 
 # 2. Install pnpm if you haven't already
@@ -209,14 +213,27 @@ Each tool includes:
 - Result gallery with download and share options
 - History of previously generated assets
 
+## Flaq.ai Affiliate Program
+
+Public landing and generation pages include a localized promotion for the
+[Flaq.ai Affiliate Program](https://flaq.ai/affiliate-program?utm_source=flaq-saas-template). The call-to-action opens
+the matching Flaq.ai language page and includes `utm_source=flaq-saas-template` for source attribution.
+
+According to the current program terms, affiliates can earn 20% on a referred user's first valid paid order and 10% on
+subsequent valid paid orders made within 60 days of registration. Eligibility and payout are governed by the terms
+published on the linked program page.
+
 ## Internationalization (i18n)
 
-This template supports **English** (default) and **Simplified Chinese (中文)** out of the box.
+This template supports **15 locales** out of the box: English (default), Japanese, Indonesian, Italian, Brazilian
+Portuguese, Spanish, German, Russian, French, Simplified Chinese, Traditional Chinese, Korean, Thai, Vietnamese, and
+Arabic.
 
-- Translation files are located in the `messages/` directory (`en.json`, `zh.json`)
+- Translation files are located in the `messages/` directory, one JSON file per locale
 - Locale is auto-detected from the browser's `Accept-Language` header
 - Users can manually switch languages via the footer or the language dialog
-- URL structure: `/` for English, `/zh/` for Chinese
+- URL structure: `/` for English and `/{locale}/` for other languages (for example, `/ja/` or `/zh/`)
+- Arabic pages automatically use right-to-left document direction
 
 To add more languages:
 
@@ -229,7 +246,7 @@ To add more languages:
 ```
 .
 ├── app/                     # Next.js App Router pages
-│   ├── [locale]/           # Internationalized routes (en, zh)
+│   ├── [locale]/           # Internationalized routes (15 supported locales)
 │   │   ├── (with-footer)/  # Pages with footer layout
 │   │   │   ├── (home)/     # Landing page
 │   │   │   └── (ai-features)/ # AIGC feature pages
@@ -251,7 +268,7 @@ To add more languages:
 │   ├── constants/          # App constants, model configs, navigation
 │   ├── utils/              # Utility functions
 │   └── env.ts              # Environment variable helpers
-├── messages/               # Translation files (en.json, zh.json)
+├── messages/               # One translation file for each supported locale
 ├── network/                # API client and network utilities
 │   ├── clientFetch.ts      # Flaq.ai API client with auth
 │   ├── image/              # Image generation API calls

@@ -2,11 +2,13 @@
 
 免费开源的 SaaS 模板，基于 [Flaq.ai](https://flaq.ai) API 构建 AI 图片与视频生成平台。即刻开启您的 AIGC 业务。
 
----
+**选择 README 语言：** [English](./README.md) · [日本語](./README_ja.md) · [Bahasa Indonesia](./README_id.md) ·
+[Italiano](./README_it.md) · [Português (Brasil)](./README_pt.md) · [Español](./README_es.md) ·
+[Deutsch](./README_de.md) · [Русский](./README_ru.md) · [Français](./README_fr.md) ·
+[简体中文](./README_zh.md) · [繁體中文](./README_tw.md) · [한국어](./README_ko.md) · [ไทย](./README_th.md) ·
+[Tiếng Việt](./README_vi.md) · [العربية](./README_ar.md)
 
-**English version: [README.md](./README.md)**
-
----
+> README 的语言集合与 `i18n/languages.ts` 保持一致，每一种界面语言都有对应的项目介绍。
 
 ## 目录
 
@@ -20,6 +22,7 @@
   - [Flaq.ai API Key 配置](#flaqai-api-key-配置)
 - [使用方法](#使用方法)
 - [AIGC 能力](#aigc-能力)
+- [Flaq.ai 联盟计划](#flaqai-联盟计划)
 - [国际化 (i18n)](#国际化-i18n)
 - [项目结构](#项目结构)
 - [部署](#部署)
@@ -32,7 +35,8 @@
 - 🎬 **文生视频** — 从简单的文本描述创建高质量视频
 - 📹 **图生视频** — 将静态图片动画化为动态视频内容
 - 👗 **虚拟试衣** — AI 驱动的虚拟服装试穿体验
-- 🌐 **国际化** — 内置英文和简体中文支持
+- 🌐 **国际化** — 内置与 Flaq.ai 对齐的 15 种语言、语言路由与 SEO 多语言链接
+- 🤝 **联盟推广** — 内置响应式 Flaq.ai 联盟推荐区块，文案与跳转均随当前语言切换
 - 🔒 **安全密钥管理** — 加密的客户端存储保护您的 Flaq.ai 凭证
 - ☁️ **Cloudflare R2 存储** — 内置图片托管，享受 Cloudflare 全球 CDN 加速
 - 📱 **响应式设计** — 基于 Tailwind CSS 和 Radix UI 的全响应式界面
@@ -72,7 +76,7 @@
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/your-username/flaq-saas-template.git
+git clone https://github.com/flaqai/flaq-saas-template.git
 cd flaq-saas-template
 
 # 2. 安装 pnpm（如未安装）
@@ -191,14 +195,24 @@ pnpm ts-check
 - 结果画廊，支持下载和分享
 - 历史生成记录
 
+## Flaq.ai 联盟计划
+
+公开落地页和生成页面均包含本地化的
+[Flaq.ai 联盟计划](https://flaq.ai/zh/affiliate-program?utm_source=flaq-saas-template)
+推荐区块。按钮会根据当前语言打开 Flaq.ai 对应的联盟计划页面，并携带 `utm_source=flaq-saas-template` 用于来源归因。
+
+根据 Flaq.ai 当前公布的规则，推荐用户的首笔有效付费订单可获得 20% 佣金，注册后 60 天内的后续有效付费订单可获得 10% 佣金。具体资格与结算规则以联盟计划页面发布的条款为准。
+
 ## 国际化 (i18n)
 
-本模板默认支持 **英文** 和 **简体中文（中文）**。
+本模板默认支持
+**15 种语言**：英文、日语、印度尼西亚语、意大利语、巴西葡萄牙语、西班牙语、德语、俄语、法语、简体中文、繁体中文、韩语、泰语、越南语和阿拉伯语。
 
-- 翻译文件位于 `messages/` 目录（`en.json`、`zh.json`）
+- 翻译文件位于 `messages/` 目录，每种语言对应一个 JSON 文件
 - 语言会根据浏览器的 `Accept-Language` 请求头自动检测
 - 用户可通过页脚或语言对话框手动切换语言
-- URL 结构：`/` 为英文，`/zh/` 为中文
+- URL 结构：`/` 为英文，其他语言使用 `/{locale}/`（例如 `/ja/` 或 `/zh/`）
+- 阿拉伯语页面会自动使用从右到左的文档方向
 
 如需添加更多语言：
 
@@ -211,7 +225,7 @@ pnpm ts-check
 ```
 .
 ├── app/                     # Next.js App Router 页面
-│   ├── [locale]/           # 国际化路由 (en, zh)
+│   ├── [locale]/           # 国际化路由（支持 15 种语言）
 │   │   ├── (with-footer)/  # 带页脚的页面布局
 │   │   │   ├── (home)/     # 首页
 │   │   │   └── (ai-features)/ # AIGC 功能页面
@@ -233,7 +247,7 @@ pnpm ts-check
 │   ├── constants/          # 应用常量、模型配置、导航
 │   ├── utils/              # 工具函数
 │   └── env.ts              # 环境变量辅助函数
-├── messages/               # 翻译文件 (en.json, zh.json)
+├── messages/               # 每种支持语言对应一个翻译文件
 ├── network/                # API 客户端和网络工具
 │   ├── clientFetch.ts      # Flaq.ai API 客户端（含认证）
 │   ├── image/              # 图片生成 API 调用

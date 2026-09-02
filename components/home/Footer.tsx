@@ -1,4 +1,4 @@
-import { languages } from '@/i18n/languages';
+import { defaultLocale, languages } from '@/i18n/languages';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 
@@ -54,7 +54,11 @@ function InfoList({
 export default function Footer() {
   const t = useTranslations('Footer');
 
-  const FEATURE_LINK = [{ code: 'ai-create', href: '/ai-media-creator' }, ...VIDEO_CHILDREN_LIST, ...IMAGE_CHILDREN_LIST]
+  const FEATURE_LINK = [
+    { code: 'ai-create', href: '/ai-media-creator' },
+    ...VIDEO_CHILDREN_LIST,
+    ...IMAGE_CHILDREN_LIST,
+  ]
     .filter((r) => !r.hideInFooter)
     .map((r) => ({ title: t(`feature.${r.code}`), href: r.href }));
 
@@ -149,7 +153,7 @@ export default function Footer() {
       <div className='max-w-pc mx-auto grid w-full grid-cols-3 items-center justify-center gap-5 p-5 lg:flex lg:h-16 lg:p-0'>
         {languages.map((language) => (
           <Link
-            href={`${process.env.NEXT_PUBLIC_SITE_URL}/${language.lang}/`}
+            href={`${process.env.NEXT_PUBLIC_SITE_URL}/${language.lang === defaultLocale ? '' : `${language.lang}/`}`}
             key={language.code}
             className='hover:underline'
             prefetch={false}
